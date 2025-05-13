@@ -34,24 +34,24 @@ body {
   font-family: var(--title-font);
   font-size: 16px;
   font-weight: 400;
-  color: var(--body-color);
+  color: #000080;
   line-height: 26px;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 body.theme-blue {
-  --theme-color: #3e66f3;
+  --theme-color: #000080;
   background-color: #f8faff;
 }
 body.theme-blue2 {
-  --theme-color: #3e66f3;
+  --theme-color: #000080;
   background-color: #f3f2ea;
 }
 body.theme-blue3 {
-  --theme-color: #3e66f3;
+  --theme-color: #000080;
 }
 body.theme-blue4 {
-  --theme-color: #3e66f3;
+  --theme-color: #000080;
   --theme-color2: #0031dd;
 }
 body.theme-blue5 {
@@ -70,7 +70,7 @@ iframe {
   border: none;
   width: 100%;
 }
-.slick-slide:focus,
+.slick-slide:focus,3
 button:focus,
 a:focus,
 a:active,
@@ -1859,7 +1859,7 @@ textarea.is-invalid {
   border: none;
   text-transform: uppercase;
   text-align: center;
-  background-color: var(--theme-color);
+  background-color: #000080;
   color: var(--white-color);
   font-family: var(--body-font);
   font-size: 14px;
@@ -5403,15 +5403,7 @@ a.text-theme:hover,
   display: inline-block;
   position: relative;
 }
-.main-menu ul li.menu-item-has-children > a:after {
-  content: "\f078";
-  position: relative;
-  font-family: var(--icon-font);
-  margin-left: 4px;
-  font-weight: 600;
-  top: 0;
-  font-size: 1em;
-}
+
 .main-menu ul li:last-child {
   margin-right: 0 !important;
 }
@@ -5861,7 +5853,7 @@ a.text-theme:hover,
   width: 100%;
 }
 .header-layout4 .sticky-wrapper.sticky .menu-area {
-  background-color: #4848ce;
+  background-color: #000080;
 }
 .header-layout4 .menu-area {
   background: rgba(0, 0, 0, 0.29);
@@ -5872,7 +5864,7 @@ a.text-theme:hover,
 }
 .header-layout4 .main-menu > ul > li > a {
   color: var(--white-color) !important;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 600;
 }
 .header-layout4 .main-menu > ul > li > a:after {
@@ -5885,21 +5877,8 @@ a.text-theme:hover,
 .header-layout4 .main-menu > ul > li > a:hover:after {
   color: var(--white-color) !important;
 }
-.header-layout4 .main-menu ul li.menu-item-has-children > a:after {
-  content: "\2b";
-  font-size: 12px;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-}
-.header-layout4 .main-menu ul li.menu-item-has-children > a:hover:after {
-  content: "\f068";
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
+
+
 .header-layout4 .header-button .th-btn {
   padding: 17px 42.5px;
   font-weight: 700;
