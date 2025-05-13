@@ -1956,7 +1956,7 @@ textarea.is-invalid {
   background-color: var(--title-color);
 }
 .th-btn.style6 {
-  background-color: #6583f0;
+  background-color: #58ce8c;
   color: var(--title-color);
   box-shadow: none;
 }
@@ -3084,7 +3084,7 @@ hr.title-line {
   font-size: 14px;
 }
 .bg-theme {
-  background-color: var(--theme-color) !important;
+  background-color: #2E8B57 !important;
 }
 .bg-smoke {
   background-color: var(--smoke-color) !important;
@@ -5861,7 +5861,7 @@ a.text-theme:hover,
   width: 100%;
 }
 .header-layout4 .sticky-wrapper.sticky .menu-area {
-  background-color: white;
+  background-color: #4848ce;
 }
 .header-layout4 .menu-area {
   background: rgba(0, 0, 0, 0.29);
@@ -5871,12 +5871,12 @@ a.text-theme:hover,
   padding: 15px 0;
 }
 .header-layout4 .main-menu > ul > li > a {
-  color: var(--black-color) !important;
+  color: var(--white-color) !important;
   font-size: 16px;
   font-weight: 600;
 }
 .header-layout4 .main-menu > ul > li > a:after {
-  color: var(--black-color) !important;
+  color: var(--white-color) !important;
 }
 .header-layout4 .main-menu > ul > li > a:hover {
   background-color: rgba(255, 255, 255, 0.1);
@@ -16206,7 +16206,7 @@ span.select2-selection.select2-selection--single:focus {
   width: 100%;
   height: 512px;
   border-radius: 30px;
-  background-color: var(--theme-color);
+  background-color: #2E8B57;
   z-index: -1;
   overflow: hidden;
 }
