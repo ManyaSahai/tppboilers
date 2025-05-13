@@ -56,11 +56,13 @@
     <div id="preloader" class="preloader"><button class="th-btn th-radius preloaderCls">Cancel Preloader</button>
         <div id="loader" class="th-preloader">
             <div class="animation-preloader">
-                <div class="txt-loading"><span preloader-text="W" class="characters">W</span> <span preloader-text="E"
-                        class="characters">E</span> <span preloader-text="B" class="characters">B</span> <span
-                        preloader-text="T" class="characters">T</span> <span preloader-text="E"
-                        class="characters">E</span> <span preloader-text="C" class="characters">C</span> <span
-                        preloader-text="K" class="characters">K</span></div>
+                <div class="txt-loading"><span preloader-text="T" class="characters">T</span> <span preloader-text="P"
+                        class="characters">P</span> <span preloader-text="P" class="characters">P</span> <span
+                        preloader-text="B" class="characters">B</span> <span preloader-text="O"
+                        class="characters">O</span> <span preloader-text="I" class="characters">I</span> <span
+                        preloader-text="L" class="characters">L</span> <span preloader-text="E"
+                        class="characters">E</span> <span preloader-text="R" class="characters">R</span> <span
+                        preloader-text="S" class="characters">S</span></div>
             </div>
         </div>
     </div>
@@ -181,8 +183,16 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
                             <div class="header-logo"><a class="icon-masking" href="index.html"><img
-                                        src="assets/img/tplog.png" alt="Webteck"></a></div>
+                                        src="assets/img/logo_1.png" alt="TPP Boilers"></a></div>
                         </div>
+                        <style>
+                            .header-logo img {
+                                width: 194px;
+                                /* Adjust this value as needed (50% is just an example) */
+                                height: 46px
+                                    /* Maintain aspect ratio */
+                            }
+                        </style>
                         <div class="col-auto">
                             <nav class="main-menu style2 d-none d-lg-inline-block">
                                 <ul>
@@ -316,37 +326,39 @@
     </header>
     <div class="th-hero-wrapper hero-5" id="hero">
         <div class="hero-inner">
-            <div class="th-hero-bg" data-bg-src="assets/img/1.jpeg"></div>
+            <!-- Image slider -->
+            <div class="slider">
+                <div class="slide active" style="background-image: url('assets/img/1.jpeg');"></div>
+                <div class="slide" style="background-image: url('assets/img/2.jpeg');"></div>
+                <div class="slide" style="background-image: url('assets/img/3.jpeg');"></div>
+            </div>
+
             <style>
-                .th-hero-bg {
-                    /* Keep your existing background properties */
-                    background-image: url("assets/img/1.jpeg");
-                    background-size: cover;
-                    background-position: center;
-
-                    /* Add opacity to make the background transparent */
-                    opacity: 0.5;
-                    /* 0.5 = 50% transparent, adjust as needed */
-                }
-
-                /* Alternative method using rgba background color overlay */
-                .th-hero-bg-alt {
-                    position: relative;
-                }
-
-                .th-hero-bg-alt::before {
-                    content: "";
-                    background-image: url("assets/img/1.jpeg");
-                    background-size: cover;
-                    background-position: center;
+                /* Slider styles */
+                .slider {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    right: 0;
-                    bottom: 0;
-                    opacity: 0.5;
-                    /* Adjust transparency level as needed */
+                    width: 100%;
+                    height: 100%;
                     z-index: -1;
+                }
+
+                .slide {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-size: cover;
+                    background-position: center;
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
+                }
+
+                .slide.active {
+                    opacity: 0.5;
+                    /* 50% transparency */
                 }
             </style>
 
@@ -359,6 +371,28 @@
                             Services</a></div>
                 </div>
             </div>
+
+            <script>
+                // Simple image slider functionality
+                document.addEventListener('DOMContentLoaded', function () {
+                    const slides = document.querySelectorAll('.slide');
+                    let currentSlide = 0;
+
+                    function nextSlide() {
+                        // Remove active class from current slide
+                        slides[currentSlide].classList.remove('active');
+
+                        // Calculate next slide index
+                        currentSlide = (currentSlide + 1) % slides.length;
+
+                        // Add active class to new slide
+                        slides[currentSlide].classList.add('active');
+                    }
+
+                    // Set interval for automatic sliding (5 seconds)
+                    setInterval(nextSlide, 3000);
+                });
+            </script>
         </div>
     </div>
     <div class="counter-area-4 overflow-hidden space-bottom">
