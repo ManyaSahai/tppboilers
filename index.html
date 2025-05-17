@@ -589,12 +589,19 @@
                 </div>
                 <div class="about-area4">
                     <div class="title-area-wrapper">
-                        <div class="title-area mb-40"><span class="sub-title style1 text-white">Our Main Mission</span>
-                            <h2 class="sec-title text-white" style="font-size: 27px;">
+                        <div class="title-area mb-40 "><span class="sub-title style1 text-white">Our
+                                Main Mission</span>
+                            <h2 class="sec-title text-white" style="font-size: 16px; text-align: left;">
                                 To Deliver High-Quality Boiler Solutions Through Innovative Manufacturing, Engineering
                                 Excellence, and Cost-Effective Approaches—Ensuring Client Satisfaction and On-Time
                                 Delivery.
                             </h2>
+                            <style>
+                                .title-area {
+                                    margin-bottom: 76px;
+                                    color: navy;
+                                }
+                            </style>
 
                         </div><a href="index.html" class="th-btn style5 style-radius">More About Us</a>
                     </div>
@@ -602,6 +609,9 @@
             </div>
         </div>
     </div>
+
+
+    <!---- PRODUCT SECTION --->
     <!DOCTYPE html>
     <html lang="en">
 
@@ -618,25 +628,26 @@
 
             body {
                 font-family: 'Arial', sans-serif;
+                background-color: #f9ffff;
             }
 
-            .product-section {
+            .products-section {
                 padding: 80px 0;
                 background-color: #f9ffff;
             }
 
-            .container {
+            .products-container {
                 max-width: 1200px;
                 margin: 0 auto;
                 padding: 0 15px;
             }
 
-            .title-area {
+            .products-header {
                 text-align: center;
                 margin-bottom: 50px;
             }
 
-            .sub-title {
+            .products-subtitle {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -645,280 +656,270 @@
                 margin-bottom: 10px;
             }
 
-            .icon-masking {
+            .products-icon {
                 display: inline-block;
                 margin-right: 10px;
             }
 
-            .sec-title {
+            .products-title {
                 font-size: 36px;
                 color: #153e75;
                 margin-bottom: 20px;
             }
 
-            .product-carousel {
+            .products-carousel {
                 display: flex;
                 overflow-x: auto;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
                 gap: 20px;
                 padding: 10px 0 30px;
+                position: relative;
             }
 
             /* Hide scrollbar but allow scrolling */
-            .product-carousel::-webkit-scrollbar {
+            .products-carousel::-webkit-scrollbar {
                 display: none;
                 /* Chrome, Safari, Opera */
             }
 
-            .product-carousel {
+            .products-carousel {
                 -ms-overflow-style: none;
                 /* IE and Edge */
                 scrollbar-width: none;
                 /* Firefox */
             }
 
-            .carousel-container {
+            .carousel-wrapper {
                 position: relative;
-                padding: 0 50px;
+                padding: 0 60px;
+                overflow: hidden;
             }
 
-            .side-arrow {
+            .carousel-arrow {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 45px;
-                height: 45px;
+                width: 50px;
+                height: 50px;
                 border-radius: 50%;
                 background: white;
                 border: 2px solid #1b7d77;
                 color: #1b7d77;
-                font-size: 20px;
+                font-size: 22px;
                 cursor: pointer;
                 z-index: 10;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: all 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             }
 
-            .side-arrow:hover {
+            .carousel-arrow:hover {
                 background: #1b7d77;
                 color: white;
+                box-shadow: 0 6px 12px rgba(27, 125, 119, 0.2);
             }
 
-            .left-arrow {
-                left: 0;
+            .carousel-arrow-left {
+                left: 5px;
             }
 
-            .right-arrow {
-                right: 0;
+            .carousel-arrow-right {
+                right: 5px;
             }
 
-            .product-card {
+            .product-item {
                 min-width: 280px;
                 background: white;
-                border-radius: 12px;
+                border-radius: 15px;
                 overflow: hidden;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                position: relative;
             }
 
-            .product-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            .product-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 15px 30px rgba(21, 62, 117, 0.15);
             }
 
-            .product-img {
-                height: 200px;
+            .product-image {
+                height: 220px;
                 width: 100%;
                 overflow: hidden;
+                position: relative;
             }
 
-            .product-img img {
+            .product-image::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30%;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .product-item:hover .product-image::after {
+                opacity: 1;
+            }
+
+            .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.3s ease;
+                transition: transform 0.5s ease;
             }
 
-            .product-card:hover .product-img img {
-                transform: scale(1.05);
+            .product-item:hover .product-image img {
+                transform: scale(1.08);
             }
 
-            .product-info {
-                padding: 20px;
+            .product-details {
+                padding: 25px 20px;
                 text-align: center;
+                position: relative;
+            }
+
+            .product-details::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 50px;
+                height: 3px;
+                background: linear-gradient(to right, #1b7d77, #153e75);
+                border-radius: 3px;
             }
 
             .product-name {
                 color: #153e75;
-                font-size: 18px;
-                margin-bottom: 10px;
+                font-size: 20px;
+                margin-bottom: 15px;
                 font-weight: 600;
             }
 
-            .product-price {
-                color: #1b7d77;
-                font-size: 24px;
-                font-weight: 700;
-                margin-bottom: 15px;
-            }
-
-            .product-btn {
+            .product-button {
                 display: inline-block;
                 background: linear-gradient(135deg, #1b7d77, #153e75);
                 color: white;
-                padding: 10px 25px;
+                padding: 12px 28px;
                 border-radius: 30px;
                 text-decoration: none;
                 font-weight: 600;
-                transition: background 0.3s ease, transform 0.2s ease;
-            }
-
-            .product-btn:hover {
-                background: linear-gradient(135deg, #153e75, #1b7d77);
-                transform: translateY(-2px);
-            }
-
-            .scroll-controls {
-                display: flex;
-                justify-content: center;
-                gap: 15px;
-                margin-top: 25px;
-            }
-
-            .scroll-btn {
-                width: 45px;
-                height: 45px;
-                border-radius: 50%;
-                background: white;
-                border: 2px solid #1b7d77;
-                color: #1b7d77;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                font-size: 20px;
                 transition: all 0.3s ease;
+                box-shadow: 0 4px 10px rgba(27, 125, 119, 0.2);
             }
 
-            .scroll-btn:hover {
-                background: #1b7d77;
-                color: white;
+            .product-button:hover {
+                background: linear-gradient(135deg, #153e75, #1b7d77);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 15px rgba(27, 125, 119, 0.3);
             }
         </style>
     </head>
 
     <body>
-        <section class="product-section">
-            <div class="container">
-                <div class="title-area">
-                    <span class="sub-title">
-                        <div class="icon-masking">
+        <section class="products-section">
+            <div class="products-container">
+                <div class="products-header">
+                    <span class="products-subtitle">
+                        <div class="products-icon">
                             <img src="assets/img/theme-img/title_shape_1.svg" alt="shape">
                         </div>
-                        Featured Products
+                        Thermal Power Excellence
                     </span>
-                    <h2 class="sec-title">Our Premium Collection</h2>
+                    <h2 class="products-title"> Industry Leading Boilers</h2>
                 </div>
 
-                <div class="carousel-container" style="position: relative;">
-                    <button class="side-arrow left-arrow" id="leftArrow">&#8592;</button>
-                    <div class="product-carousel" id="productCarousel">
+                <div class="carousel-wrapper">
+                    <button class="carousel-arrow carousel-arrow-left" id="leftArrow">&#8592;</button>
+                    <div class="products-carousel" id="productCarousel">
                         <!-- Product 1 -->
-                        <div class="product-card">
-                            <div class="product-img">
+                        <div class="product-item">
+                            <div class="product-image">
                                 <img src="assets/img/product/coil.jpg" alt="Economisers Coil">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Economisers Coil</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Economisers Coil</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
 
                         <!-- Product 2 -->
-                        <div class="product-card">
-                            <div class="product-img">
+                        <div class="product-item">
+                            <div class="product-image">
                                 <img src="assets/img/product/superheater.jpg" alt="Superheaters Coils">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Superheaters Coils
-                                </div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Superheaters Coils</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
 
                         <!-- Product 3 -->
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Titanium Coil">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tube">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Pipes & Tube</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Pipes & Tube</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
 
                         <!-- Product 4 -->
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="assets/img/product/boilerbank.jpg" alt="Brass Coil">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Boiler Bank Tubes</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Boiler Bank Tubes</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
 
                         <!-- Product 5 -->
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="assets/img/product/water-wall-panels-03.jpg" alt="Nickel Coil">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Water Wall Panels</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Water Wall Panels</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
 
                         <!-- Product 6 -->
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Steel Coil">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="assets/img/product/studded-tubes-coils-01.jpg"
+                                    alt="Studded Bed Coils & Tubes">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Studded Bed Coils & Tubes</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Studded Bed Coils & Tubes</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
-
 
                         <!-- Product 7 -->
-                        <div class="product-card">
-                            <div class="product-img">
-                                <img src="assets/img/product/headers.jpg" alt="Stainless Coil">
+                        <div class="product-item">
+                            <div class="product-image">
+                                <img src="assets/img/product/headers.jpg" alt="Headers">
                             </div>
-                            <div class="product-info">
-
-                                <div class="product-price">Headers</div>
-                                <a href="#" class="product-btn">View Details</a>
+                            <div class="product-details">
+                                <div class="product-name">Headers</div>
+                                <a href="#" class="product-button">View Details</a>
                             </div>
                         </div>
-
-                        <!-- Product 8 -->
-
                     </div>
-                    <button class="side-arrow right-arrow" id="rightArrow">&#8594;</button>
+                    <button class="carousel-arrow carousel-arrow-right" id="rightArrow">&#8594;</button>
                 </div>
-
-                <!-- Removed scroll controls since we now have side arrows -->
             </div>
         </section>
 
@@ -928,12 +929,41 @@
                 const leftArrow = document.getElementById('leftArrow');
                 const rightArrow = document.getElementById('rightArrow');
 
+                // Calculate scroll amount based on card width + gap
+                const scrollAmount = 300;
+
                 leftArrow.addEventListener('click', function () {
-                    carousel.scrollBy({ left: -300, behavior: 'smooth' });
+                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                 });
 
                 rightArrow.addEventListener('click', function () {
-                    carousel.scrollBy({ left: 300, behavior: 'smooth' });
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                // Add automatic sliding animation (optional)
+                let isHovered = false;
+
+                carousel.addEventListener('mouseenter', () => {
+                    isHovered = true;
+                });
+
+                carousel.addEventListener('mouseleave', () => {
+                    isHovered = false;
+                });
+
+                // Check if arrows are at the beginning or end
+                carousel.addEventListener('scroll', function () {
+                    if (carousel.scrollLeft <= 0) {
+                        leftArrow.style.opacity = '0.5';
+                    } else {
+                        leftArrow.style.opacity = '1';
+                    }
+
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
+                        rightArrow.style.opacity = '0.5';
+                    } else {
+                        rightArrow.style.opacity = '1';
+                    }
                 });
             });
         </script>
@@ -1037,7 +1067,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Circular Client Logo Carousel</title>
+        <title>Modern Client Logo Carousel</title>
         <style>
             * {
                 margin: 0;
@@ -1050,38 +1080,48 @@
                 padding: 0;
                 margin: 0;
                 overflow-x: hidden;
+                background-color: #f9f9f9;
             }
 
             .carousel-container {
                 width: 100%;
-                margin: 0;
-                padding: 0;
+                margin: 50px 0;
+                padding: 30px 0;
+                background-color: white;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             }
 
             .carousel__header {
                 text-align: center;
-                margin-bottom: 20px;
+                margin-bottom: 40px;
+                padding: 0 20px;
             }
 
             .carousel__title {
                 font-size: 32px;
                 font-weight: 700;
-                color: #222;
+                color: #14416d;
+                /* Navy blue */
                 margin-bottom: 15px;
                 text-transform: uppercase;
+                letter-spacing: 1px;
             }
 
             .carousel__subtitle {
                 font-size: 18px;
-                font-weight: 600;
-                color: #333;
+                font-weight: 400;
+                color: #2e8b57;
+                /* Sea green */
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 1.6;
             }
 
             .carousel {
                 position: relative;
                 overflow: hidden;
                 width: 100%;
-                height: 180px;
+                height: 140px;
                 margin: 0;
                 padding: 0;
             }
@@ -1091,35 +1131,63 @@
                 position: absolute;
                 width: fit-content;
                 height: 100%;
-                animation: scroll 40s linear infinite;
+                animation: scroll 60s linear infinite;
                 padding: 0;
                 margin: 0;
             }
 
             .carousel__item {
                 flex-shrink: 0;
-                width: 120px;
-                height: 120px;
-                margin: 0;
-                padding: 0;
-                border-radius: 50%;
-                overflow: hidden;
+                width: 200px;
+                height: 100px;
+                margin: 0 20px;
+                padding: 10px;
                 background-color: white;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: transform 0.3s ease;
+                transition: all 0.3s ease;
+                position: relative;
             }
 
             .carousel__item:hover {
-                transform: scale(1.05);
+                transform: translateY(-5px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             }
 
             .carousel__image {
-                max-width: 75%;
-                max-height: 75%;
+                max-width: 85%;
+                max-height: 85%;
                 object-fit: contain;
+                transition: transform 0.3s ease;
+            }
+
+            .carousel__item:hover .carousel__image {
+                transform: scale(1.05);
+            }
+
+            .logo-name {
+                position: absolute;
+                bottom: -40px;
+                left: 0;
+                right: 0;
+                background-color: #14416d;
+                /* Navy blue */
+                color: white;
+                padding: 5px;
+                font-size: 12px;
+                text-align: center;
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            .carousel__item:hover .logo-name {
+                opacity: 1;
+                transform: translateY(0);
             }
 
             @keyframes scroll {
@@ -1128,19 +1196,21 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-120px * 33));
+                    transform: translateX(calc(-240px * 16));
+                    /* Adjust based on reduced set of logos */
                 }
+            }
+
+            /* Animation pause on hover */
+            .carousel:hover .carousel__track {
+                animation-play-state: paused;
             }
 
             /* Responsive adjustments */
             @media (max-width: 768px) {
                 .carousel__item {
-                    width: 100px;
-                    height: 100px;
-                }
-
-                .carousel {
-                    height: 150px;
+                    width: 160px;
+                    margin: 0 15px;
                 }
 
                 @keyframes scroll {
@@ -1149,19 +1219,19 @@
                     }
 
                     100% {
-                        transform: translateX(calc(-100px * 33));
+                        transform: translateX(calc(-190px * 16));
                     }
                 }
             }
 
             @media (max-width: 480px) {
                 .carousel__item {
-                    width: 80px;
-                    height: 80px;
+                    width: 120px;
+                    margin: 0 10px;
                 }
 
                 .carousel {
-                    height: 120px;
+                    height: 100px;
                 }
 
                 @keyframes scroll {
@@ -1170,7 +1240,7 @@
                     }
 
                     100% {
-                        transform: translateX(calc(-80px * 33));
+                        transform: translateX(calc(-140px * 16));
                     }
                 }
             }
@@ -1181,9 +1251,8 @@
         <div class="carousel-container">
             <div class="carousel__header">
                 <h2 class="carousel__title">OUR CLIENTS</h2>
-                <h6 class="carousel__subtitle" style="font-size: 28px; font-weight: 700; color: seagreen;">We've
-                    successfully delivered numerous projects for a wide range of
-                    clients across various industries.</h6>
+                <p class="carousel__subtitle">We've successfully delivered numerous projects for a wide range of clients
+                    across various industries.</p>
             </div>
 
             <div class="carousel">
@@ -1197,7 +1266,7 @@
             document.addEventListener('DOMContentLoaded', function () {
                 const carouselTrack = document.getElementById('carousel-track');
 
-                // Client logo paths
+                // Client logo paths - using a reduced set of 16 logos to avoid clutter
                 const clientPaths = [
                     'assets/img/clients/acc.jpg',
                     'assets/img/clients/adani.jpg',
@@ -1214,24 +1283,27 @@
                     'assets/img/clients/grasim-tpp-boilers.jpg',
                     'assets/img/clients/gsecl-tpp-boilers.jpg',
                     'assets/img/clients/hindalco-aditya-birla-group-tpp-boilers.jpg',
-                    'assets/img/clients/hindustan-zinc-limited-tpp-boilers.jpg',
-                    'assets/img/clients/hp-tpp-boilers.jpg',
-                    'assets/img/clients/indian-oil-tpp-boilers.jpg',
-                    'assets/img/clients/jk-paper-ltd-tpp-boilers.jpg',
-                    'assets/img/clients/l-n-t-tpp-boilers.jpg',
-                    'assets/img/clients/lanco-inspiring-growth--tpp-boilers.jpg',
-                    'assets/img/clients/lanco-tpp-boilers.jpg',
-                    'assets/img/clients/neco-tpp-boilers.jpg',
-                    'assets/img/clients/ntpc-tpp-logo.jpg',
-                    'assets/img/clients/reliance-tpp-boilers.jpg',
-                    'assets/img/clients/sail-tpp-boilers-logo.jpg',
-                    'assets/img/clients/shree-tpp-boilers.jpg',
-                    'assets/img/clients/sterlite-energy-tpp-boilers.jpg',
-                    'assets/img/clients/torrent-power-tpp-boilers.jpg',
-                    'assets/img/clients/ultra-tech-aditya-birla.jpg',
-                    'assets/img/clients/vasavadatta-cement-tpp-boilers.jpg',
-                    'assets/img/clients/vedanta-tpp-boilers.jpg',
-                    'assets/img/clients/wbpdcl-tpp-logo.jpg'
+                    'assets/img/clients/hindustan-zinc-limited-tpp-boilers.jpg'
+                ];
+
+                // Company names corresponding to logos (extracted from filenames)
+                const companyNames = [
+                    'ACC',
+                    'Adani',
+                    'Bharat Aluminium',
+                    'BHEL',
+                    'Birla Cement',
+                    'Birla Corporation',
+                    'BK Birla Group',
+                    'Aditya Birla Chemicals',
+                    'CSEB',
+                    'DVC',
+                    'Essar Oil',
+                    'GNFC',
+                    'Grasim',
+                    'GSECL',
+                    'Hindalco',
+                    'Hindustan Zinc Limited'
                 ];
 
                 const clientCount = clientPaths.length;
@@ -1243,10 +1315,15 @@
 
                     const img = document.createElement('img');
                     img.src = clientPaths[i];
-                    img.alt = `Client ${i + 1}`;
+                    img.alt = companyNames[i];
                     img.className = 'carousel__image';
 
+                    const nameSpan = document.createElement('span');
+                    nameSpan.className = 'logo-name';
+                    nameSpan.textContent = companyNames[i];
+
                     itemDiv.appendChild(img);
+                    itemDiv.appendChild(nameSpan);
                     carouselTrack.appendChild(itemDiv);
                 }
 
@@ -1258,17 +1335,17 @@
                 });
 
                 // Adjust animation speed based on the number of logos
-                const animationDuration = clientCount * 1.2; // 1.2 seconds per logo
+                const animationDuration = clientCount * 3.5; // 3.5 seconds per logo
                 carouselTrack.style.animation = `scroll ${animationDuration}s linear infinite`;
 
-                // Pause animation on hover
-                const carousel = document.querySelector('.carousel');
-                carousel.addEventListener('mouseenter', () => {
-                    carouselTrack.style.animationPlayState = 'paused';
-                });
-
-                carousel.addEventListener('mouseleave', () => {
-                    carouselTrack.style.animationPlayState = 'running';
+                // Logo click functionality
+                const logoItems = document.querySelectorAll('.carousel__item');
+                logoItems.forEach(item => {
+                    item.addEventListener('click', () => {
+                        const logoName = item.querySelector('.logo-name').textContent;
+                        console.log(`Clicked on ${logoName}`);
+                        // You can add additional functionality here, like redirecting to a project page
+                    });
                 });
             });
         </script>
@@ -1298,171 +1375,7 @@
         </div>
     </section>
 
-    <section class="bg-top-right overflow-hidden space" id="blog-sec" data-bg-src="assets/img/bg/blog_bg_1.png">
-        <div class="container">
-            <div class="title-area text-center"><span class="sub-title">
-                    <div class="icon-masking me-2"><span class="mask-icon"
-                            data-mask-src="assets/img/theme-img/title_shape_1.svg"></span> <img
-                            src="assets/img/theme-img/title_shape_1.svg" alt="shape"></div>NEWS & ARTICLES
-                </span>
-                <h2 class="sec-title">Get Every Single Update <span class="text-theme">Blog</span></h2>
-            </div>
-            <div class="slider-area">
-                <div class="swiper th-slider has-shadow" id="blogSlider1"
-                    data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>15
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>2
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may
-                                            collecting Power.</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>16
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>3
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited
-                                            time
-                                            management.</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>17
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>2
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back
-                                            the It
-                                            Solution Industry?</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_4.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>19
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>4
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from
-                                            Cicero's
-                                            1st-century BC</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_1.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>15
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>2
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may
-                                            collecting Power.</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_2.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>16
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>3
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited
-                                            time
-                                            management.</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_3.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>17
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>2
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back
-                                            the It
-                                            Solution Industry?</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img"><img src="assets/img/blog/blog_1_4.jpg" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta"><a href="blog.html"><i class="fal fa-calendar-days"></i>19
-                                            Jan, 2024</a> <a href="blog.html"><i class="fal fa-comments"></i>4
-                                            Comments</a></div>
-                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from
-                                            Cicero's
-                                            1st-century BC</a></h3>
-                                    <div class="blog-bottom"><a href="blog.html" class="author"><img
-                                                src="assets/img/blog/author-1-1.png" alt="avater"> By
-                                            Themeholy</a> <a href="blog-details.html" class="line-btn">Read
-                                            More<i class="fas fa-arrow-right"></i></a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><button data-slider-prev="#blogSlider1" class="slider-arrow style3 slider-prev"><i
-                        class="far fa-arrow-left"></i></button> <button data-slider-next="#blogSlider1"
-                    class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <div class="shape-mockup" data-bottom="0" data-left="0">
-            <div class="particle-2 small" id="particle-4"></div>
-        </div>
-    </section>
+
     <footer class="footer-wrapper footer-layout5">
         <div class="container th-container5">
             <div class="footer-top">
@@ -1486,10 +1399,10 @@
                         <div class="widget footer-widget">
                             <h3 class="widget_title">About Company</h3>
                             <div class="th-widget-about">
-                                <p class="about-text">Professionally redefine transparent ROI through low-risk
-                                    high-yield imperatives. Progressively create empowered. cost effective users
-                                    via
-                                    team driven.</p>
+                                <p class="about-text">A specialized small-scale industry led by experienced
+                                    professionals, offering high-quality boiler components and steel fabrications with
+                                    over 500 man-years of expertise. We combine advanced manufacturing with strict
+                                    quality control to deliver cost-effective, custom-engineered solutions.</p>
                                 <div class="th-social"><a href="https://www.facebook.com/"><i
                                             class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
                                             class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
@@ -1507,60 +1420,32 @@
                                 <ul class="menu">
                                     <li><a href="">About Us</a></li>
                                     <li><a href="">Meet Our Team</a></li>
-                                    <li><a href="">Our Projects</a></li>
-                                    <li><a href="">Help & FAQs</a></li>
+                                    <li><a href="">Clients</a></li>
+                                    <li><a href="">Policy</a></li>
+                                    <li><a href="">Certification Standards</a></li>
+
                                     <li><a href="">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">IT SERVICES</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="service-details.html">Web Development</a></li>
-                                    <li><a href="service-details.html">Business Development</a></li>
-                                    <li><a href="service-details.html">Product Management</a></li>
-                                    <li><a href="service-details.html">UI/UX Design</a></li>
-                                    <li><a href="service-details.html">Cloud services</a></li>
-                                </ul>
-                            </div>
+                        <div class="widget footer-widget" style="text-align: center;">
+                            <h3 class="widget_title">Download</h3>
+                            <a href="path-to-your-brochure.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
+              border: 2px solid navy; border-radius: 5px; text-decoration: none;
+              display: inline-block; transition: all 0.3s ease;">
+                                Download Brochure
+                            </a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-2-1.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit"
-                                                href="blog-details.html">Unsatiable entreaties may collecting
-                                                Power.</a>
-                                        </h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>21 June, 2024</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Regional
-                                                Manager limited time management.</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>22 June, 2024</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
                 </div>
             </div>
+        </div>
+        </div>
+        </div>
         </div>
         <div class="copyright-wrap">
             <div class="container">
