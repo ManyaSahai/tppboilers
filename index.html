@@ -672,14 +672,12 @@
             @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
             * {
-
                 box-sizing: border-box;
             }
 
             body {
                 font-family: 'Montserrat', sans-serif;
                 background: linear-gradient(135deg, #f5f7fa 0%, #e6f0f0 100%);
-
             }
 
             .products-section {
@@ -817,16 +815,21 @@
                 right: -30px;
             }
 
+            .product-container {
+                display: flex;
+                gap: 30px;
+                min-width: calc(50% - 15px);
+                scroll-snap-align: center;
+            }
+
             .product-item {
-                min-width: 320px;
+                width: calc(50% - 15px);
                 background: white;
                 border-radius: 20px;
                 overflow: hidden;
                 box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
                 transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 position: relative;
-                scroll-snap-align: center;
-                flex: 0 0 auto;
             }
 
             .product-item:hover {
@@ -913,7 +916,7 @@
                 background: linear-gradient(135deg, #000080, #3CB371);
                 /* Navy Blue to Sea Green */
                 color: white;
-                padding: 12px 30px;
+                padding: 6px 15px;
                 border-radius: 30px;
                 text-decoration: none;
                 font-weight: 600;
@@ -1055,8 +1058,12 @@
                     right: -15px;
                 }
 
+                .product-container {
+                    min-width: 100%;
+                }
+
                 .product-item {
-                    min-width: 280px;
+                    width: 100%;
                 }
             }
         </style>
@@ -1078,100 +1085,112 @@
                 <div class="carousel-wrapper">
                     <button class="carousel-arrow carousel-arrow-left" id="leftArrow">❮</button>
                     <div class="products-carousel" id="productCarousel">
-                        <!-- Product 1 -->
-                        <div class="product-item">
-                            <div class="product-badge">Best Seller</div>
-                            <div class="product-image">
-                                <img src="assets/img/product/coil.jpg" alt="Economisers Coil">
+                        <!-- Container 1 with 2 products -->
+                        <div class="product-container">
+                            <!-- Product 1 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/coil.jpg" alt="Economisers Coil">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Economisers Coil</h3>
+                                    <p class="product-description">High-efficiency economizer coils designed to recover
+                                        waste heat and improve boiler efficiency by 5-10%.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Economisers Coil</h3>
-                                <p class="product-description">High-efficiency economizer coils designed to recover
-                                    waste heat and improve boiler efficiency by 5-10%.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
+
+                            <!-- Product 2 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/superheater.jpg" alt="Superheaters Coils">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Superheaters Coils</h3>
+                                    <p class="product-description">Advanced superheater coils that increase steam
+                                        temperature without raising pressure, improving turbine efficiency.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Product 2 -->
-                        <div class="product-item">
-                            <div class="product-badge">New</div>
-                            <div class="product-image">
-                                <img src="assets/img/product/superheater.jpg" alt="Superheaters Coils">
+                        <!-- Container 2 with 2 products -->
+                        <div class="product-container">
+                            <!-- Product 3 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tube">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Pipes & Tube</h3>
+                                    <p class="product-description">High-grade alloy pipes and tubes resistant to high
+                                        pressure and temperature for critical boiler applications.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Superheaters Coils</h3>
-                                <p class="product-description">Advanced superheater coils that increase steam
-                                    temperature without raising pressure, improving turbine efficiency.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
+
+                            <!-- Product 4 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Boiler Bank Tubes</h3>
+                                    <p class="product-description">Durable boiler bank tubes designed for optimal heat
+                                        transfer and extended service life in harsh conditions.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Product 3 -->
-                        <div class="product-item">
-                            <div class="product-image">
-                                <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tube">
+                        <!-- Container 3 with 2 products -->
+                        <div class="product-container">
+                            <!-- Product 5 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Water Wall Panels</h3>
+                                    <p class="product-description">Membrane wall panels that form the enclosure of the
+                                        furnace while efficiently absorbing radiant heat.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Pipes & Tube</h3>
-                                <p class="product-description">High-grade alloy pipes and tubes resistant to high
-                                    pressure and temperature for critical boiler applications.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
+
+                            <!-- Product 6 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/studded-tubes-coils-01.jpg"
+                                        alt="Studded Bed Coils & Tubes">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Studded Bed Coils & Tubes</h3>
+                                    <p class="product-description">Specialized studded tubes for fluidized bed boilers
+                                        with
+                                        enhanced heat transfer and erosion resistance.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Product 4 -->
-                        <div class="product-item">
-                            <div class="product-badge">Premium</div>
-                            <div class="product-image">
-                                <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
+                        <!-- Container 4 with 1 product (7th product) -->
+                        <div class="product-container">
+                            <!-- Product 7 -->
+                            <div class="product-item">
+                                <div class="product-image">
+                                    <img src="assets/img/product/headers.jpg" alt="Headers">
+                                </div>
+                                <div class="product-details">
+                                    <h3 class="product-name">Headers</h3>
+                                    <p class="product-description">High-pressure headers that distribute water and steam
+                                        throughout the boiler system with maximum reliability.</p>
+                                    <a href="#" class="product-button">View Details <i>→</i></a>
+                                </div>
                             </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Boiler Bank Tubes</h3>
-                                <p class="product-description">Durable boiler bank tubes designed for optimal heat
-                                    transfer and extended service life in harsh conditions.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
-                            </div>
-                        </div>
 
-                        <!-- Product 5 -->
-                        <div class="product-item">
-                            <div class="product-image">
-                                <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Water Wall Panels</h3>
-                                <p class="product-description">Membrane wall panels that form the enclosure of the
-                                    furnace while efficiently absorbing radiant heat.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product 6 -->
-                        <div class="product-item">
-                            <div class="product-badge">Innovative</div>
-                            <div class="product-image">
-                                <img src="assets/img/product/studded-tubes-coils-01.jpg"
-                                    alt="Studded Bed Coils & Tubes">
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Studded Bed Coils & Tubes</h3>
-                                <p class="product-description">Specialized studded tubes for fluidized bed boilers with
-                                    enhanced heat transfer and erosion resistance.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
-                            </div>
-                        </div>
-
-                        <!-- Product 7 -->
-                        <div class="product-item">
-                            <div class="product-image">
-                                <img src="assets/img/product/headers.jpg" alt="Headers">
-                            </div>
-                            <div class="product-details">
-                                <h3 class="product-name">Headers</h3>
-                                <p class="product-description">High-pressure headers that distribute water and steam
-                                    throughout the boiler system with maximum reliability.</p>
-                                <a href="#" class="product-button">View Details <i>→</i></a>
-                            </div>
+                            <!-- Empty space to maintain layout -->
+                            <div class="product-item" style="visibility: hidden;"></div>
                         </div>
                     </div>
                     <button class="carousel-arrow carousel-arrow-right" id="rightArrow">❯</button>
@@ -1188,13 +1207,13 @@
                 const rightArrow = document.getElementById('rightArrow');
                 const dotsContainer = document.getElementById('carouselDots');
 
-                // Calculate scroll amount based on card width + gap
-                const productItem = document.querySelector('.product-item');
-                const scrollAmount = productItem.offsetWidth + 30;
+                // Calculate scroll amount based on container width + gap
+                const productContainer = document.querySelector('.product-container');
+                const scrollAmount = productContainer.offsetWidth + 30;
 
                 // Create dots
-                const productCount = document.querySelectorAll('.product-item').length;
-                for (let i = 0; i < productCount; i++) {
+                const containerCount = document.querySelectorAll('.product-container').length;
+                for (let i = 0; i < containerCount; i++) {
                     const dot = document.createElement('div');
                     dot.classList.add('carousel-dot');
                     if (i === 0) dot.classList.add('active');
@@ -1207,8 +1226,8 @@
                 // Update dots based on scroll position
                 function updateDots() {
                     const scrollPos = carousel.scrollLeft;
-                    const itemWidth = productItem.offsetWidth + 30;
-                    const activeIndex = Math.round(scrollPos / itemWidth);
+                    const containerWidth = productContainer.offsetWidth + 30;
+                    const activeIndex = Math.round(scrollPos / containerWidth);
 
                     dots.forEach((dot, index) => {
                         if (index === activeIndex) {
@@ -1240,9 +1259,9 @@
                 dots.forEach(dot => {
                     dot.addEventListener('click', function () {
                         const index = parseInt(this.dataset.index);
-                        const itemWidth = productItem.offsetWidth + 30;
+                        const containerWidth = productContainer.offsetWidth + 30;
                         carousel.scrollTo({
-                            left: index * itemWidth,
+                            left: index * containerWidth,
                             behavior: 'smooth'
                         });
                     });
