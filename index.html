@@ -11,6 +11,8 @@
     <meta name="keywords" content="Webteck - Technology & IT Solutions HTML Template">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
@@ -44,19 +46,25 @@
     <div class="cursor"></div>
     <div class="cursor2"></div>
 
-    <div id="preloader" class="preloader"><button class="th-btn th-radius preloaderCls">Cancel Preloader</button>
+    <div id="preloader" class="preloader">
         <div id="loader" class="th-preloader">
             <div class="animation-preloader">
-                <div class="txt-loading"><span preloader-text="T" class="characters">T</span> <span preloader-text="P"
-                        class="characters">P</span> <span preloader-text="P" class="characters">P</span> <span
-                        preloader-text="B" class="characters">B</span> <span preloader-text="O"
-                        class="characters">O</span> <span preloader-text="I" class="characters">I</span> <span
-                        preloader-text="L" class="characters">L</span> <span preloader-text="E"
-                        class="characters">E</span> <span preloader-text="R" class="characters">R</span> <span
-                        preloader-text="S" class="characters">S</span></div>
+                <div class="txt-loading">
+                    <span preloader-text="T" class="characters" style="color: navy;">T</span>
+                    <span preloader-text="P" class="characters" style="color: navy;">P</span>
+                    <span preloader-text="P" class="characters" style="color: navy;">P</span>
+                    <span preloader-text="B" class="characters" style="color: navy;">B</span>
+                    <span preloader-text="O" class="characters" style="color: navy;">O</span>
+                    <span preloader-text="I" class="characters" style="color: navy;">I</span>
+                    <span preloader-text="L" class="characters" style="color: navy;">L</span>
+                    <span preloader-text="E" class="characters" style="color: navy;">E</span>
+                    <span preloader-text="R" class="characters" style="color: navy;">R</span>
+                    <span preloader-text="S" class="characters" style="color: navy;">S</span>
+                </div>
             </div>
         </div>
     </div>
+
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo"><a class="icon-masking" href="#index.html">
@@ -630,11 +638,13 @@
                     <div class="title-area-wrapper">
                         <div class="title-area mb-40 "><span class="sub-title style1 text-white">Our
                                 Main Mission</span>
-                            <h2 class="sec-title text-white" style="font-size: 16px; text-align: left;">
+                            <h2 class="sec-title text-white"
+                                style="font-size: 16px; text-align: left; font-weight: normal;">
                                 To Deliver High-Quality Boiler Solutions Through Innovative Manufacturing, Engineering
                                 Excellence, and Cost-Effective Approaches—Ensuring Client Satisfaction and On-Time
                                 Delivery.
                             </h2>
+
                             <style>
                                 .title-area {
                                     margin-bottom: 76px;
@@ -657,53 +667,94 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Product Carousel</title>
+        <title>Advanced Product Carousel</title>
         <style>
+            @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
             * {
-                margin: 0;
-                padding: 0;
+
                 box-sizing: border-box;
             }
 
             body {
-                font-family: 'Arial', sans-serif;
-                background-color: #f9ffff;
+                font-family: 'Montserrat', sans-serif;
+                background: linear-gradient(135deg, #f5f7fa 0%, #e6f0f0 100%);
+
             }
 
             .products-section {
-                padding: 80px 0;
-                background-color: #f9ffff;
+                padding: 60px 0;
+                position: relative;
+                overflow: hidden;
             }
 
             .products-container {
-                max-width: 1200px;
+                max-width: 1400px;
                 margin: 0 auto;
-                padding: 0 15px;
+                padding: 0 30px;
+                position: relative;
             }
 
             .products-header {
                 text-align: center;
-                margin-bottom: 50px;
+                margin-bottom: 60px;
+                position: relative;
+                z-index: 2;
             }
 
             .products-subtitle {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #1b7d77;
+                display: inline-block;
+                color: #3CB371;
+                /* Sea Green */
                 font-weight: 600;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                font-size: 14px;
+                position: relative;
+                padding-bottom: 8px;
             }
 
-            .products-icon {
-                display: inline-block;
-                margin-right: 10px;
+            .products-subtitle::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 3px;
+                background: linear-gradient(to right, #000080, #3CB371);
+                /* Navy Blue to Sea Green */
+                border-radius: 3px;
             }
 
             .products-title {
-                font-size: 36px;
-                color: #153e75;
+                font-size: 42px;
+                color: #000080;
+                /* Navy Blue */
                 margin-bottom: 20px;
+                font-weight: 700;
+                background: linear-gradient(135deg, #000080 0%, #3CB371 100%);
+                /* Navy Blue to Sea Green */
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                line-height: 1.2;
+            }
+
+            .products-title span {
+                display: block;
+                font-size: 18px;
+                font-weight: 400;
+                color: #000080;
+                /* Navy Blue */
+                margin-top: 10px;
+                background: none;
+                -webkit-text-fill-color: #000080;
+            }
+
+            .carousel-wrapper {
+                position: relative;
+                padding: 0 20px;
             }
 
             .products-carousel {
@@ -711,193 +762,347 @@
                 overflow-x: auto;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
-                gap: 20px;
-                padding: 10px 0 30px;
+                gap: 30px;
+                padding: 30px 10px;
                 position: relative;
+                scroll-snap-type: x mandatory;
             }
 
-            /* Hide scrollbar but allow scrolling */
             .products-carousel::-webkit-scrollbar {
                 display: none;
-                /* Chrome, Safari, Opera */
             }
 
             .products-carousel {
                 -ms-overflow-style: none;
-                /* IE and Edge */
                 scrollbar-width: none;
-                /* Firefox */
-            }
-
-            .carousel-wrapper {
-                position: relative;
-                padding: 0 60px;
-                overflow: hidden;
             }
 
             .carousel-arrow {
                 position: absolute;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 50px;
-                height: 50px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
                 background: white;
-                border: 2px solid #1b7d77;
-                color: #1b7d77;
-                font-size: 22px;
+                border: none;
+                color: #000080;
+                /* Navy Blue */
+                font-size: 24px;
                 cursor: pointer;
                 z-index: 10;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                opacity: 0.9;
             }
 
             .carousel-arrow:hover {
-                background: #1b7d77;
+                background: #000080;
+                /* Navy Blue */
                 color: white;
-                box-shadow: 0 6px 12px rgba(27, 125, 119, 0.2);
+                transform: translateY(-50%) scale(1.1);
+                box-shadow: 0 15px 30px rgba(0, 0, 128, 0.3);
+                /* Navy Blue shadow */
+                opacity: 1;
             }
 
             .carousel-arrow-left {
-                left: 5px;
+                left: -30px;
             }
 
             .carousel-arrow-right {
-                right: 5px;
+                right: -30px;
             }
 
             .product-item {
-                min-width: 280px;
+                min-width: 320px;
                 background: white;
-                border-radius: 15px;
+                border-radius: 20px;
                 overflow: hidden;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-                transition: transform 0.4s ease, box-shadow 0.4s ease;
+                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+                transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 position: relative;
+                scroll-snap-align: center;
+                flex: 0 0 auto;
             }
 
             .product-item:hover {
-                transform: translateY(-8px);
-                box-shadow: 0 15px 30px rgba(21, 62, 117, 0.15);
+                transform: translateY(-10px) scale(1.02);
+                box-shadow: 0 25px 50px rgba(0, 0, 128, 0.15);
+                /* Navy Blue shadow */
             }
 
             .product-image {
-                height: 220px;
+                height: 250px;
                 width: 100%;
                 overflow: hidden;
                 position: relative;
             }
 
-            .product-image::after {
+            .product-image::before {
                 content: '';
                 position: absolute;
-                bottom: 0;
+                top: 0;
                 left: 0;
                 width: 100%;
-                height: 30%;
-                background: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .product-item:hover .product-image::after {
-                opacity: 1;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.03) 100%);
+                z-index: 1;
             }
 
             .product-image img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                transition: transform 0.5s ease;
+                transition: transform 1s ease;
             }
 
             .product-item:hover .product-image img {
-                transform: scale(1.08);
+                transform: scale(1.1);
+            }
+
+            .product-badge {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: linear-gradient(135deg, #000080, #3CB371);
+                /* Navy Blue to Sea Green */
+                color: white;
+                padding: 5px 15px;
+                border-radius: 20px;
+                font-size: 12px;
+                font-weight: 600;
+                z-index: 2;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
 
             .product-details {
-                padding: 25px 20px;
-                text-align: center;
+                padding: 25px;
                 position: relative;
-            }
-
-            .product-details::before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 50px;
-                height: 3px;
-                background: linear-gradient(to right, #1b7d77, #153e75);
-                border-radius: 3px;
+                background: white;
             }
 
             .product-name {
-                color: #153e75;
-                font-size: 20px;
+                color: #000080;
+                /* Navy Blue */
+                font-size: 22px;
                 margin-bottom: 15px;
                 font-weight: 600;
+                transition: color 0.3s ease;
+            }
+
+            .product-item:hover .product-name {
+                color: #3CB371;
+                /* Sea Green */
+            }
+
+            .product-description {
+                color: #555;
+                font-size: 14px;
+                margin-bottom: 20px;
+                line-height: 1.6;
             }
 
             .product-button {
-                display: inline-block;
-                background: linear-gradient(135deg, #1b7d77, #153e75);
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(135deg, #000080, #3CB371);
+                /* Navy Blue to Sea Green */
                 color: white;
-                padding: 12px 28px;
+                padding: 12px 30px;
                 border-radius: 30px;
                 text-decoration: none;
                 font-weight: 600;
                 transition: all 0.3s ease;
-                box-shadow: 0 4px 10px rgba(27, 125, 119, 0.2);
+                box-shadow: 0 5px 15px rgba(0, 0, 128, 0.3);
+                /* Navy Blue shadow */
+                position: relative;
+                overflow: hidden;
+            }
+
+            .product-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: 0.5s;
+            }
+
+            .product-button:hover::before {
+                left: 100%;
             }
 
             .product-button:hover {
-                background: linear-gradient(135deg, #153e75, #1b7d77);
                 transform: translateY(-3px);
-                box-shadow: 0 8px 15px rgba(27, 125, 119, 0.3);
+                box-shadow: 0 8px 25px rgba(0, 0, 128, 0.4);
+                /* Navy Blue shadow */
+            }
+
+            .product-button i {
+                margin-left: 8px;
+                transition: transform 0.3s ease;
+            }
+
+            .product-button:hover i {
+                transform: translateX(5px);
+            }
+
+            .carousel-dots {
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+            }
+
+            .carousel-dot {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                background: #d1d8e0;
+                margin: 0 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .carousel-dot.active {
+                background: #3CB371;
+                /* Sea Green */
+                transform: scale(1.2);
+                box-shadow: 0 0 10px rgba(60, 179, 113, 0.5);
+                /* Sea Green shadow */
+            }
+
+            .floating-shapes {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .shape {
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.1;
+                filter: blur(20px);
+            }
+
+            .shape-1 {
+                width: 300px;
+                height: 300px;
+                background: #000080;
+                /* Navy Blue */
+                top: -100px;
+                left: -100px;
+                animation: float 15s infinite ease-in-out;
+            }
+
+            .shape-2 {
+                width: 200px;
+                height: 200px;
+                background: #3CB371;
+                /* Sea Green */
+                bottom: -50px;
+                right: -50px;
+                animation: float 12s infinite ease-in-out reverse;
+            }
+
+            @keyframes float {
+
+                0%,
+                100% {
+                    transform: translate(0, 0) rotate(0deg);
+                }
+
+                25% {
+                    transform: translate(50px, 50px) rotate(5deg);
+                }
+
+                50% {
+                    transform: translate(0, 100px) rotate(0deg);
+                }
+
+                75% {
+                    transform: translate(-50px, 50px) rotate(-5deg);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .products-title {
+                    font-size: 32px;
+                }
+
+                .carousel-arrow {
+                    width: 50px;
+                    height: 50px;
+                    font-size: 20px;
+                }
+
+                .carousel-arrow-left {
+                    left: -15px;
+                }
+
+                .carousel-arrow-right {
+                    right: -15px;
+                }
+
+                .product-item {
+                    min-width: 280px;
+                }
             }
         </style>
     </head>
 
     <body>
         <section class="products-section">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
             <div class="products-container">
                 <div class="products-header">
-                    <span class="products-subtitle">
-                        <div class="products-icon">
-                            <img src="assets/img/theme-img/title_shape_1.svg" alt="shape">
-                        </div>
-                        Thermal Power Excellence
-                    </span>
-                    <h2 class="products-title"> Industry Leading Boilers</h2>
+                    <div class="products-subtitle">Thermal Power Excellence</div>
+                    <h2 class="products-title">Industry Leading Boilers<br><span>Premium quality components for maximum
+                            efficiency</span></h2>
                 </div>
 
                 <div class="carousel-wrapper">
-                    <button class="carousel-arrow carousel-arrow-left" id="leftArrow">&#8592;</button>
+                    <button class="carousel-arrow carousel-arrow-left" id="leftArrow">❮</button>
                     <div class="products-carousel" id="productCarousel">
                         <!-- Product 1 -->
                         <div class="product-item">
+                            <div class="product-badge">Best Seller</div>
                             <div class="product-image">
                                 <img src="assets/img/product/coil.jpg" alt="Economisers Coil">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Economisers Coil</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Economisers Coil</h3>
+                                <p class="product-description">High-efficiency economizer coils designed to recover
+                                    waste heat and improve boiler efficiency by 5-10%.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
                         <!-- Product 2 -->
                         <div class="product-item">
+                            <div class="product-badge">New</div>
                             <div class="product-image">
                                 <img src="assets/img/product/superheater.jpg" alt="Superheaters Coils">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Superheaters Coils</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Superheaters Coils</h3>
+                                <p class="product-description">Advanced superheater coils that increase steam
+                                    temperature without raising pressure, improving turbine efficiency.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
@@ -907,19 +1112,24 @@
                                 <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tube">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Pipes & Tube</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Pipes & Tube</h3>
+                                <p class="product-description">High-grade alloy pipes and tubes resistant to high
+                                    pressure and temperature for critical boiler applications.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
                         <!-- Product 4 -->
                         <div class="product-item">
+                            <div class="product-badge">Premium</div>
                             <div class="product-image">
                                 <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Boiler Bank Tubes</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Boiler Bank Tubes</h3>
+                                <p class="product-description">Durable boiler bank tubes designed for optimal heat
+                                    transfer and extended service life in harsh conditions.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
@@ -929,20 +1139,25 @@
                                 <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Water Wall Panels</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Water Wall Panels</h3>
+                                <p class="product-description">Membrane wall panels that form the enclosure of the
+                                    furnace while efficiently absorbing radiant heat.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
                         <!-- Product 6 -->
                         <div class="product-item">
+                            <div class="product-badge">Innovative</div>
                             <div class="product-image">
                                 <img src="assets/img/product/studded-tubes-coils-01.jpg"
                                     alt="Studded Bed Coils & Tubes">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Studded Bed Coils & Tubes</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Studded Bed Coils & Tubes</h3>
+                                <p class="product-description">Specialized studded tubes for fluidized bed boilers with
+                                    enhanced heat transfer and erosion resistance.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
 
@@ -952,13 +1167,17 @@
                                 <img src="assets/img/product/headers.jpg" alt="Headers">
                             </div>
                             <div class="product-details">
-                                <div class="product-name">Headers</div>
-                                <a href="#" class="product-button">View Details</a>
+                                <h3 class="product-name">Headers</h3>
+                                <p class="product-description">High-pressure headers that distribute water and steam
+                                    throughout the boiler system with maximum reliability.</p>
+                                <a href="#" class="product-button">View Details <i>→</i></a>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-arrow carousel-arrow-right" id="rightArrow">&#8594;</button>
+                    <button class="carousel-arrow carousel-arrow-right" id="rightArrow">❯</button>
                 </div>
+
+                <div class="carousel-dots" id="carouselDots"></div>
             </div>
         </section>
 
@@ -967,10 +1186,69 @@
                 const carousel = document.getElementById('productCarousel');
                 const leftArrow = document.getElementById('leftArrow');
                 const rightArrow = document.getElementById('rightArrow');
+                const dotsContainer = document.getElementById('carouselDots');
 
                 // Calculate scroll amount based on card width + gap
-                const scrollAmount = 300;
+                const productItem = document.querySelector('.product-item');
+                const scrollAmount = productItem.offsetWidth + 30;
 
+                // Create dots
+                const productCount = document.querySelectorAll('.product-item').length;
+                for (let i = 0; i < productCount; i++) {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.dataset.index = i;
+                    dotsContainer.appendChild(dot);
+                }
+
+                const dots = document.querySelectorAll('.carousel-dot');
+
+                // Update dots based on scroll position
+                function updateDots() {
+                    const scrollPos = carousel.scrollLeft;
+                    const itemWidth = productItem.offsetWidth + 30;
+                    const activeIndex = Math.round(scrollPos / itemWidth);
+
+                    dots.forEach((dot, index) => {
+                        if (index === activeIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+
+                    // Arrow visibility
+                    if (carousel.scrollLeft <= 10) {
+                        leftArrow.style.opacity = '0.5';
+                        leftArrow.style.pointerEvents = 'none';
+                    } else {
+                        leftArrow.style.opacity = '0.9';
+                        leftArrow.style.pointerEvents = 'auto';
+                    }
+
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
+                        rightArrow.style.opacity = '0.5';
+                        rightArrow.style.pointerEvents = 'none';
+                    } else {
+                        rightArrow.style.opacity = '0.9';
+                        rightArrow.style.pointerEvents = 'auto';
+                    }
+                }
+
+                // Click on dot
+                dots.forEach(dot => {
+                    dot.addEventListener('click', function () {
+                        const index = parseInt(this.dataset.index);
+                        const itemWidth = productItem.offsetWidth + 30;
+                        carousel.scrollTo({
+                            left: index * itemWidth,
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+
+                // Arrow click handlers
                 leftArrow.addEventListener('click', function () {
                     carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                 });
@@ -979,31 +1257,66 @@
                     carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
                 });
 
-                // Add automatic sliding animation (optional)
+                // Auto-scroll (optional)
+                let autoScrollInterval;
                 let isHovered = false;
+
+                function startAutoScroll() {
+                    autoScrollInterval = setInterval(() => {
+                        if (!isHovered && carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth - 10) {
+                            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        } else if (!isHovered) {
+                            // If at end, scroll back to start
+                            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                        }
+                    }, 4000);
+                }
+
+                function stopAutoScroll() {
+                    clearInterval(autoScrollInterval);
+                }
 
                 carousel.addEventListener('mouseenter', () => {
                     isHovered = true;
+                    stopAutoScroll();
                 });
 
                 carousel.addEventListener('mouseleave', () => {
                     isHovered = false;
+                    startAutoScroll();
                 });
 
-                // Check if arrows are at the beginning or end
-                carousel.addEventListener('scroll', function () {
-                    if (carousel.scrollLeft <= 0) {
-                        leftArrow.style.opacity = '0.5';
-                    } else {
-                        leftArrow.style.opacity = '1';
-                    }
+                carousel.addEventListener('scroll', updateDots);
 
-                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5) {
-                        rightArrow.style.opacity = '0.5';
-                    } else {
-                        rightArrow.style.opacity = '1';
+                // Initialize
+                updateDots();
+                startAutoScroll();
+
+                // Touch events for mobile
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                carousel.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                    stopAutoScroll();
+                }, { passive: true });
+
+                carousel.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                    startAutoScroll();
+                }, { passive: true });
+
+                function handleSwipe() {
+                    const difference = touchStartX - touchEndX;
+                    if (difference > 50) {
+                        // Swipe left
+                        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    } else if (difference < -50) {
+                        // Swipe right
+                        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
                     }
-                });
+                }
             });
         </script>
     </body>
@@ -1115,7 +1428,8 @@
             }
 
             .page {
-                font-family: 'Arial', sans-serif;
+                font-family: 'Montserrat';
+
                 padding: 0;
                 margin: 0;
                 overflow-x: hidden;
@@ -1128,6 +1442,7 @@
                 padding: 30px 0;
                 background-color: white;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+
             }
 
             .carousel__header {
@@ -1154,6 +1469,12 @@
                 max-width: 800px;
                 margin: 0 auto;
                 line-height: 1.6;
+
+
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+
             }
 
             .carousel {
@@ -1290,7 +1611,7 @@
         <div class="carousel-container">
             <div class="carousel__header">
                 <h2 class="carousel__title">OUR CLIENTS</h2>
-                <p class="carousel__subtitle">We've successfully delivered numerous projects for a wide range of clients
+                <p class="carousel__subtitle">We've successfully delivered numerous projects for a range of clients
                     across various industries.</p>
             </div>
 
@@ -1443,9 +1764,15 @@
                                     over 500 man-years of expertise. We combine advanced manufacturing with strict
                                     quality control to deliver cost-effective, custom-engineered solutions.</p>
                                 <div class="th-social"><a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
-                                            class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a>
+                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"
+                                        target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="black">
+                                            <path
+                                                d="M22.97 0H1.03C.46 0 0 .46 0 1.03v21.94C0 23.54.46 24 1.03 24h21.94c.57 0 1.03-.46 1.03-1.03V1.03C24 .46 23.54 0 22.97 0zM7.16 7.36h2.84l2.17 2.64 2.16-2.64h2.84l-3.9 4.67 4.04 5.02h-2.93l-2.41-2.96-2.42 2.96H7.17l4.03-5.02-4.04-4.67z" />
+                                        </svg>
+                                    </a>
+                                    </i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                                     <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a
                                         href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                                 </div>
@@ -1471,7 +1798,7 @@
                     <div class="col-md-6 col-xl-auto">
                         <div class="widget footer-widget" style="text-align: center;">
                             <h3 class="widget_title">Download</h3>
-                            <a href="path-to-your-brochure.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
+                            <a href="" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
               border: 2px solid navy; border-radius: 5px; text-decoration: none;
               display: inline-block; transition: all 0.3s ease;">
                                 Download Brochure
@@ -1498,7 +1825,7 @@
                         <div class="footer-links">
                             <ul>
                                 <li><a href="index.html">Terms & Condition</a></li>
-                                <li><a href="index.html">Careers</a></li>
+
                                 <li><a href="index.html">Privacy Policy</a></li>
                             </ul>
                         </div>
