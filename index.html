@@ -640,9 +640,10 @@
                                 Main Mission</span>
                             <h2 class="sec-title text-white"
                                 style="font-size: 16px; text-align: left; font-weight: normal;">
-                                To Deliver High-Quality Boiler Solutions Through Innovative Manufacturing, Engineering
-                                Excellence, and Cost-Effective Approaches—Ensuring Client Satisfaction and On-Time
-                                Delivery.
+                                To deliver high-quality boiler solutions by leveraging innovative manufacturing
+                                techniques, engineering excellence, and cost-effective strategies. We are committed to
+                                exceeding client expectations through precision, reliability, and performance—ensuring
+                                complete satisfaction and on-time project delivery across all industries we serve.
                             </h2>
 
                             <style>
@@ -678,6 +679,8 @@
             body {
                 font-family: 'Montserrat', sans-serif;
                 background: linear-gradient(135deg, #f5f7fa 0%, #e6f0f0 100%);
+                margin: 0;
+                padding: 0;
             }
 
             .products-section {
@@ -822,8 +825,16 @@
                 scroll-snap-align: center;
             }
 
+            /* For mobile we need full width */
+            @media (max-width: 768px) {
+                .product-container {
+                    min-width: calc(100% - 15px);
+                    flex-direction: column;
+                }
+            }
+
             .product-item {
-                width: calc(50% - 15px);
+                flex: 1;
                 background: white;
                 border-radius: 20px;
                 overflow: hidden;
@@ -1058,12 +1069,30 @@
                     right: -15px;
                 }
 
-                .product-container {
-                    min-width: 100%;
+                .products-container {
+                    padding: 0 15px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .products-title {
+                    font-size: 28px;
                 }
 
-                .product-item {
-                    width: 100%;
+                .products-subtitle {
+                    font-size: 12px;
+                }
+
+                .product-name {
+                    font-size: 20px;
+                }
+
+                .product-description {
+                    font-size: 13px;
+                }
+
+                .carousel-wrapper {
+                    padding: 0 10px;
                 }
             }
         </style>
@@ -1174,7 +1203,7 @@
                             </div>
                         </div>
 
-                        <!-- Container 4 with 1 product (7th product) -->
+                        <!-- Container 4 with 7th product (Headers) -->
                         <div class="product-container">
                             <!-- Product 7 -->
                             <div class="product-item">
@@ -1188,9 +1217,6 @@
                                     <a href="#" class="product-button">View Details <i>→</i></a>
                                 </div>
                             </div>
-
-                            <!-- Empty space to maintain layout -->
-                            <div class="product-item" style="visibility: hidden;"></div>
                         </div>
                     </div>
                     <button class="carousel-arrow carousel-arrow-right" id="rightArrow">❯</button>
@@ -1207,26 +1233,50 @@
                 const rightArrow = document.getElementById('rightArrow');
                 const dotsContainer = document.getElementById('carouselDots');
 
+                // Get all product containers
+                const productContainers = document.querySelectorAll('.product-container');
+
+                // Fix layout for the last container (make it half-width)
+                const lastContainer = productContainers[productContainers.length - 1];
+                if (window.innerWidth > 768) {
+                    lastContainer.style.minWidth = 'calc(25% - 15px)';
+                } else {
+                    lastContainer.style.minWidth = 'calc(50% - 15px)';
+                }
+
+                // Update container sizes on window resize
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth > 768) {
+                        lastContainer.style.minWidth = 'calc(25% - 15px)';
+                    } else {
+                        lastContainer.style.minWidth = 'calc(50% - 15px)';
+                    }
+                });
+
                 // Calculate scroll amount based on container width + gap
-                const productContainer = document.querySelector('.product-container');
-                const scrollAmount = productContainer.offsetWidth + 30;
+                function getScrollAmount() {
+                    if (window.innerWidth > 768) {
+                        return productContainers[0].offsetWidth + 30;
+                    } else {
+                        return productContainers[0].offsetWidth + 30;
+                    }
+                }
 
                 // Create dots
-                const containerCount = document.querySelectorAll('.product-container').length;
-                for (let i = 0; i < containerCount; i++) {
+                productContainers.forEach((container, index) => {
                     const dot = document.createElement('div');
                     dot.classList.add('carousel-dot');
-                    if (i === 0) dot.classList.add('active');
-                    dot.dataset.index = i;
+                    if (index === 0) dot.classList.add('active');
+                    dot.dataset.index = index;
                     dotsContainer.appendChild(dot);
-                }
+                });
 
                 const dots = document.querySelectorAll('.carousel-dot');
 
                 // Update dots based on scroll position
                 function updateDots() {
                     const scrollPos = carousel.scrollLeft;
-                    const containerWidth = productContainer.offsetWidth + 30;
+                    const containerWidth = getScrollAmount();
                     const activeIndex = Math.round(scrollPos / containerWidth);
 
                     dots.forEach((dot, index) => {
@@ -1259,9 +1309,8 @@
                 dots.forEach(dot => {
                     dot.addEventListener('click', function () {
                         const index = parseInt(this.dataset.index);
-                        const containerWidth = productContainer.offsetWidth + 30;
                         carousel.scrollTo({
-                            left: index * containerWidth,
+                            left: index * getScrollAmount(),
                             behavior: 'smooth'
                         });
                     });
@@ -1269,11 +1318,11 @@
 
                 // Arrow click handlers
                 leftArrow.addEventListener('click', function () {
-                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
                 });
 
                 rightArrow.addEventListener('click', function () {
-                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                 });
 
                 // Auto-scroll (optional)
@@ -1283,7 +1332,7 @@
                 function startAutoScroll() {
                     autoScrollInterval = setInterval(() => {
                         if (!isHovered && carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth - 10) {
-                            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                            carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                         } else if (!isHovered) {
                             // If at end, scroll back to start
                             carousel.scrollTo({ left: 0, behavior: 'smooth' });
@@ -1307,10 +1356,6 @@
 
                 carousel.addEventListener('scroll', updateDots);
 
-                // Initialize
-                updateDots();
-                startAutoScroll();
-
                 // Touch events for mobile
                 let touchStartX = 0;
                 let touchEndX = 0;
@@ -1330,12 +1375,16 @@
                     const difference = touchStartX - touchEndX;
                     if (difference > 50) {
                         // Swipe left
-                        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                        carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                     } else if (difference < -50) {
                         // Swipe right
-                        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                        carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
                     }
                 }
+
+                // Initialize
+                updateDots();
+                startAutoScroll();
             });
         </script>
     </body>
@@ -1815,15 +1864,16 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget" style="text-align: center;">
-                            <h3 class="widget_title">Download</h3>
+                        <div class="widget footer-widget" style="text-align: left;">
+                            <h3 class="widget_title">FOR MORE DETAILS</h3>
                             <a href="" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
-              border: 2px solid navy; border-radius: 5px; text-decoration: none;
-              display: inline-block; transition: all 0.3s ease;">
+            border: 2px solid navy; border-radius: 5px; text-decoration: none;
+            display: inline-block; transition: all 0.3s ease;">
                                 Download Brochure
                             </a>
                         </div>
                     </div>
+
 
 
                 </div>
