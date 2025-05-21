@@ -6,13 +6,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TPP Boilers - Products</title>
     <style>
+        .footer {
+            background-color: #07075b;
+            color: var(--white);
+            padding: 40px 10%;
+            text-align: center;
+            margin-top: 3px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-info {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--seagreen);
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .about-section {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 28px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: width 0.5s ease;
+        }
+
+        .about-section:hover h2::after {
+            width: 100px;
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
         :root {
-            --primary-color: #003366;
-            --secondary-color: #0099cc;
+            --primary-color: #2E8B57;
+            /* Sea Green */
+            --secondary-color: #3CB371;
+            /* Medium Sea Green */
             --background-color: #ffffff;
             --text-color: #333333;
             --light-gray: #f5f5f5;
             --border-color: #e0e0e0;
+            --accent-color: #20B2AA;
+            /* Light Sea Green */
         }
 
         * {
@@ -84,11 +186,11 @@
         }
 
         nav ul li a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         .hero {
-            background-color: var(--primary-color);
+            background-color: #003366;
             color: white;
             padding: 80px 0;
             position: relative;
@@ -134,12 +236,12 @@
         }
 
         .breadcrumb a {
-            color: #aaccff;
+            color: #d1f5e3;
             text-decoration: none;
         }
 
         .breadcrumb span {
-            color: var(--secondary-color);
+            color: white;
         }
 
         .product-content {
@@ -163,7 +265,7 @@
         .search-container h2 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: var(--primary-color);
+            color: #003366
         }
 
         .search-box {
@@ -182,10 +284,15 @@
 
         .search-box button {
             padding: 0 15px;
-            background-color: var(--primary-color);
+            background-color: #003366;
             border: none;
             border-radius: 0 4px 4px 0;
             cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--accent-color);
         }
 
         .search-icon {
@@ -228,7 +335,7 @@
         }
 
         .category-list a:hover {
-            color: var(--secondary-color);
+            color: var(--accent-color);
         }
 
         .product-listing {
@@ -279,7 +386,7 @@
         }
 
         .product-capacity {
-            color: var(--secondary-color);
+            color: var(--accent-color);
             font-weight: 500;
             margin-bottom: 10px;
         }
@@ -336,6 +443,22 @@
             color: white;
         }
 
+        .about-section {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+        }
+
         @media (max-width: 992px) {
             .product-content {
                 flex-direction: column;
@@ -353,18 +476,17 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <div>
-                        <div class="logo-text">TPP BOILERS</div>
-                        <div class="logo-subtext">ISO Certified Company</div>
-                    </div>
+                    <img src="assets/img/logo_1.png" alt="TPP Boilers Logo" height=40px width=auto />
+
                 </div>
+
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Service</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -382,20 +504,43 @@
         </div>
     </section>
 
+
     <section class="container">
+        <div class="about-section" id="animatedAbout">
+            <h2>About Our Products</h2>
+            <p>We specialize in fabrication and erection of Boiler Components like Super heater Coils
+                (Radiant-Superheaters, Pendant-Superheaters, Final-Super heaters), Steam Reheaters, Economizer Coils
+                (Plain Tubular Economizers, Finned Economizers, Cast Iron Grilled Economisers), Feed Water Heaters,
+                Boiler Bank Tubes, Steam Generating Bent to Shape Tubes and Water Wall Panels with or without Swaged
+                Ends, Steam Headers, Steam Drums, De-Superheaters, Evaporator Coils, Studded Bed Coils, Spiral coils,
+                Helical coils, HP/LP Tube Nest Steam Condensers, Spiral Finned Tubes, Steam Piping and other Tubular
+                fabricated products.</p>
+
+            <p>We fabricate components based on your drawing with high dimensional accuracy to give you ease in
+                replacement and ready to fit components shortening the down time of boilers. We have the expertise to do
+                reverse Engineering for your replacement boiler tube and pressure part projects and can suggest
+                modification of design or change of materials to improve boiler efficiency.</p>
+
+            <p>We carry an optimum stock of a range of Plates, Boiler Tubes and Pipes to cater to our clients Emergency
+                Boiler Shut down replacement jobs.</p>
+        </div>
+
+        <!-- (Rest of the HTML remains the same) -->
+
+
         <div class="product-content">
             <aside class="sidebar">
                 <div class="search-container">
                     <h2>Search</h2>
-                    <div class="search-box">
-                        <input type="text" placeholder="Search">
+                    <form class="search-box" onsubmit="searchProducts(); return false;">
+                        <input type="text" id="searchInput" placeholder="Search products...">
                         <button type="submit">
                             <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
                                     d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
                             </svg>
                         </button>
-                    </div>
+                    </form>
                 </div>
 
                 <div class="categories">
@@ -420,7 +565,7 @@
                     <!-- Product 1 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Water Wall Panels">
+                            <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">Up to 24 meters length</div>
@@ -434,11 +579,11 @@
                     <!-- Product 2 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Economisers">
+                            <img src="assets/img/product/coil.jpg" alt="Economisers">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">Various Types</div>
-                            <h3 class="product-title">Economisers</h3>
+                            <h3 class="product-title">Economisers Coils</h3>
                             <p class="product-description">Boiler feed-water heaters that recover heat from waste flue
                                 gases, increasing Fuel Economy, Steaming Capacity, and Life of the Boiler while Reducing
                                 Pollution.</p>
@@ -448,7 +593,7 @@
                     <!-- Product 3 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Superheaters">
+                            <img src="assets/img/product/superheater.jpg" alt="Superheaters">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">10 to 500 MW Capacity</div>
@@ -462,7 +607,7 @@
                     <!-- Product 4 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Studded Tubes / Coils">
+                            <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Studded Tubes / Coils">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">Up to 13mm Dia studs</div>
@@ -475,7 +620,7 @@
                     <!-- Product 5 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Boiler Bank Tubes">
+                            <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">114mm OD x 4mm - 50.8mm OD x 5.60mm</div>
@@ -489,7 +634,7 @@
                     <!-- Product 6 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Pipes & Tubes">
+                            <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tubes">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">8mm OD to 1016mm OD</div>
@@ -503,7 +648,7 @@
                     <!-- Product 7 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Finned Tubes">
+                            <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Finned Tubes">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">Multiple Types</div>
@@ -517,7 +662,7 @@
                     <!-- Product 8 -->
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="/api/placeholder/400/320" alt="Headers">
+                            <img src="assets/img/product/headers.jpg" alt="Headers">
                         </div>
                         <div class="product-info">
                             <div class="product-capacity">100mm to 600mm NB</div>
@@ -541,6 +686,90 @@
             </div>
         </div>
     </section>
+    <section class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/img/logo_1wh.png" alt="TPP BOILERS Logo" style="height: 50px; width: auto;">
+            </div>
+
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="#">Blog</a>
+                <a href="product.html">Products</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 TPP Boilers. All Rights Reserved.
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animation for about section
+        document.addEventListener('DOMContentLoaded', function () {
+            const aboutSection = document.getElementById('animatedAbout');
+
+            function checkVisibility() {
+                const sectionTop = aboutSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                // When the section is 100px into the viewport
+                if (sectionTop < windowHeight - 100) {
+                    aboutSection.classList.add('visible');
+                    // Remove the event listener after animation triggers
+                    window.removeEventListener('scroll', checkVisibility);
+                }
+            }
+
+            // Check on initial load
+            checkVisibility();
+
+            // Check on scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+
+        // (Previous searchProducts function remains the same)
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                const description = card.querySelector('.product-description').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update results count
+            const visibleProducts = document.querySelectorAll('.product-card[style="display: block;"]').length;
+            document.querySelector('.results-info').textContent = `Showing ${visibleProducts} of 24 Results`;
+        }
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                const description = card.querySelector('.product-description').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update results count
+            const visibleProducts = document.querySelectorAll('.product-card[style="display: block;"]').length;
+            document.querySelector('.results-info').textContent = `Showing ${visibleProducts} of 24 Results`;
+        }
+    </script>
 </body>
 
 </html>
