@@ -191,7 +191,7 @@ h4,
 h5,
 .h6,
 h6 {
-  font-family: var(--title-font);
+  font-family: 'MONTSERRAT';
   color: var(--title-color);
   text-transform: none;
   font-weight: 700;
