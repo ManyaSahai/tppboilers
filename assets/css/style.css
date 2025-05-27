@@ -7092,7 +7092,11 @@ a.text-theme:hover,
 .newsletter-form .th-btn {
   min-width: 150px;
 }
+.button.th-btn {
+  margin-top: 20px;
+}
 .newsletter-form .newsletter-btn {
+
   display: inline-block;
   border: none;
   background-color: var(--theme-color);
@@ -7206,7 +7210,7 @@ a.text-theme:hover,
   padding: 22px 40px;
   text-transform: capitalize;
   position: absolute;
-  top: 0px;
+  top: 21.5 px;
   right: 0px;
   border-radius: 100px;
 }
