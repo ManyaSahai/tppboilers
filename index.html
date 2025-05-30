@@ -1056,11 +1056,38 @@
                     scroll-snap-align: center;
                 }
 
-                /* For mobile we need full width */
+                /* Mobile: Show individual products */
                 @media (max-width: 768px) {
                     .product-container {
-                        min-width: calc(100% - 15px);
-                        flex-direction: column;
+                        min-width: 100%;
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+
+                    .product-container .product-item {
+                        display: none;
+                    }
+
+                    .product-container .product-item:first-child {
+                        display: block;
+                        width: calc(100% - 30px);
+                        max-width: 350px;
+                    }
+
+                    /* Create individual product containers for mobile */
+                    .mobile-product {
+                        display: none;
+                        min-width: 100%;
+                        scroll-snap-align: center;
+                        justify-content: center;
+                        padding: 0 15px;
+                    }
+
+                    .mobile-product .product-item {
+                        display: block !important;
+                        width: 100%;
+                        max-width: 350px;
+                        margin: 0 auto;
                     }
                 }
 
@@ -1468,6 +1495,111 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Mobile individual products (hidden on desktop) -->
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/superheater.jpg" alt="Superheaters Coils">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Superheaters Coils</h3>
+                                        <p class="product-description">Advanced superheater coils that increase steam
+                                            temperature without raising pressure, improving turbine efficiency.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tube">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Pipes & Tube</h3>
+                                        <p class="product-description">High-grade alloy pipes and tubes resistant to
+                                            high
+                                            pressure and temperature for critical boiler applications.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Boiler Bank Tubes</h3>
+                                        <p class="product-description">Durable boiler bank tubes designed for optimal
+                                            heat
+                                            transfer and extended service life in harsh conditions.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Water Wall Panels</h3>
+                                        <p class="product-description">Membrane wall panels that form the enclosure of
+                                            the
+                                            furnace while efficiently absorbing radiant heat.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/studded-tubes-coils-01.jpg"
+                                            alt="Studded Bed Coils & Tubes">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Studded Bed Coils & Tubes</h3>
+                                        <p class="product-description">Specialized studded tubes for fluidized bed
+                                            boilers
+                                            with enhanced heat transfer and erosion resistance.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/headers.jpg" alt="Headers">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Headers</h3>
+                                        <p class="product-description">High-pressure headers that distribute water and
+                                            steam
+                                            throughout the boiler system with maximum reliability.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mobile-product">
+                                <div class="product-item">
+                                    <div class="product-image">
+                                        <img src="assets/img/product/Heat-Exchanger.jpg" alt="Heat Exchanger">
+                                    </div>
+                                    <div class="product-details">
+                                        <h3 class="product-name">Heat Exchanger</h3>
+                                        <p class="product-description">Facilitates the transfer of heat between two or
+                                            more fluids, often without allowing them to mix.</p>
+                                        <a href="#" class="product-button">View Details <i>→</i></a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <button class="carousel-arrow carousel-arrow-right" id="rightArrow">❯</button>
                     </div>
@@ -1483,28 +1615,60 @@
                     const rightArrow = document.getElementById('rightArrow');
                     const dotsContainer = document.getElementById('carouselDots');
 
-                    // Get all product containers
-                    const productContainers = document.querySelectorAll('.product-container');
+                    let isMobile = window.innerWidth <= 768;
+                    let scrollableItems = [];
+                    let totalItems = 0;
 
-                    // Calculate scroll amount based on container width + gap
-                    function getScrollAmount() {
-                        if (window.innerWidth > 768) {
-                            return productContainers[0].offsetWidth + 30;
+                    function initializeCarousel() {
+                        isMobile = window.innerWidth <= 768;
+
+                        if (isMobile) {
+                            // Show mobile products, hide desktop containers' second products
+                            const mobileProducts = document.querySelectorAll('.mobile-product');
+                            const productContainers = document.querySelectorAll('.product-container');
+
+                            mobileProducts.forEach(product => product.style.display = 'flex');
+
+                            // Get all scrollable items for mobile (first product from each container + mobile products)
+                            scrollableItems = [];
+                            productContainers.forEach(container => {
+                                scrollableItems.push(container);
+                            });
+                            mobileProducts.forEach(product => {
+                                scrollableItems.push(product);
+                            });
+                            totalItems = scrollableItems.length;
                         } else {
-                            return productContainers[0].offsetWidth + 30;
+                            // Hide mobile products
+                            const mobileProducts = document.querySelectorAll('.mobile-product');
+                            mobileProducts.forEach(product => product.style.display = 'none');
+
+                            // Get desktop containers
+                            scrollableItems = Array.from(document.querySelectorAll('.product-container'));
+                            totalItems = scrollableItems.length;
                         }
+
+                        // Clear existing dots
+                        dotsContainer.innerHTML = '';
+
+                        // Create dots based on total items
+                        for (let i = 0; i < totalItems; i++) {
+                            const dot = document.createElement('div');
+                            dot.classList.add('carousel-dot');
+                            if (i === 0) dot.classList.add('active');
+                            dot.dataset.index = i;
+                            dotsContainer.appendChild(dot);
+                        }
+
+                        // Reset carousel position
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
                     }
 
-                    // Create dots
-                    productContainers.forEach((container, index) => {
-                        const dot = document.createElement('div');
-                        dot.classList.add('carousel-dot');
-                        if (index === 0) dot.classList.add('active');
-                        dot.dataset.index = index;
-                        dotsContainer.appendChild(dot);
-                    });
-
-                    const dots = document.querySelectorAll('.carousel-dot');
+                    // Calculate scroll amount based on current item
+                    function getScrollAmount() {
+                        if (scrollableItems.length === 0) return 0;
+                        return scrollableItems[0].offsetWidth + 30; // item width + gap
+                    }
 
                     // Update dots based on scroll position
                     function updateDots() {
@@ -1512,6 +1676,7 @@
                         const containerWidth = getScrollAmount();
                         const activeIndex = Math.round(scrollPos / containerWidth);
 
+                        const dots = document.querySelectorAll('.carousel-dot');
                         dots.forEach((dot, index) => {
                             if (index === activeIndex) {
                                 dot.classList.add('active');
@@ -1538,16 +1703,14 @@
                         }
                     }
 
-                    // Click on dot
-                    dots.forEach(dot => {
-                        dot.addEventListener('click', function () {
-                            const index = parseInt(this.dataset.index);
-                            carousel.scrollTo({
-                                left: index * getScrollAmount(),
-                                behavior: 'smooth'
-                            });
+                    // Dot click handler
+                    function handleDotClick(event) {
+                        const index = parseInt(event.target.dataset.index);
+                        carousel.scrollTo({
+                            left: index * getScrollAmount(),
+                            behavior: 'smooth'
                         });
-                    });
+                    }
 
                     // Arrow click handlers
                     leftArrow.addEventListener('click', function () {
@@ -1558,7 +1721,7 @@
                         carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                     });
 
-                    // Auto-scroll (optional)
+                    // Auto-scroll functionality
                     let autoScrollInterval;
                     let isHovered = false;
 
@@ -1567,7 +1730,6 @@
                             if (!isHovered && carousel.scrollLeft + carousel.clientWidth < carousel.scrollWidth - 10) {
                                 carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                             } else if (!isHovered) {
-                                // If at end, scroll back to start
                                 carousel.scrollTo({ left: 0, behavior: 'smooth' });
                             }
                         }, 4000);
@@ -1607,15 +1769,27 @@
                     function handleSwipe() {
                         const difference = touchStartX - touchEndX;
                         if (difference > 50) {
-                            // Swipe left
                             carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                         } else if (difference < -50) {
-                            // Swipe right
                             carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
                         }
                     }
 
-                    // Initialize
+                    // Window resize handler
+                    window.addEventListener('resize', () => {
+                        initializeCarousel();
+                        updateDots();
+                    });
+
+                    // Event delegation for dots
+                    dotsContainer.addEventListener('click', (e) => {
+                        if (e.target.classList.contains('carousel-dot')) {
+                            handleDotClick(e);
+                        }
+                    });
+
+                    // Initialize everything
+                    initializeCarousel();
                     updateDots();
                     startAutoScroll();
                 });
