@@ -178,11 +178,42 @@
                         in Design, Fabrication & Erection for Power & Process
                         Industries
                     </p>
-                    <div class="btn-group mt-35"><a href="index.html" class="th-btn style6 style-radius">View
+                    <div class="btn-group mt-35"><a href="product.html" class="th-btn style6 style-radius">View
                             Products</a></div>
                 </div>
             </div>
             <style>
+                @media (max-width: 768px) {
+                    .btn-group.mt-35 {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 20px;
+                    }
+
+                    .btn-group.mt-35 a {
+                        width: 80%;
+                        height: 50px;
+                        display: flex;
+                        align-items: flex-start;
+                        /* align text toward top */
+                        justify-content: center;
+                        /* center horizontally */
+
+                        /* small push up */
+                        font-size: 16px;
+                        /* make sure font fits */
+                        white-space: nowrap;
+                        /* prevent breaking into two lines */
+                        overflow: hidden;
+                        /* prevent overflow issues */
+                        text-overflow: ellipsis;
+                        /* if text is too long, show ... */
+                    }
+                }
+
+
+
                 /* 🌊 WAVE-PRESERVING FIX - PASTE AFTER </script> */
                 .th-hero-wrapper {
                     position: relative !important;
