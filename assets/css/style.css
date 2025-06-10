@@ -191,7 +191,7 @@ h4,
 h5,
 .h6,
 h6 {
-  font-family: 'MONTSERRAT';
+  font-family: "MONTSERRAT";
   color: var(--title-color);
   text-transform: none;
   font-weight: 700;
@@ -5595,6 +5595,7 @@ a.text-theme:hover,
   -ms-flex-align: center;
   align-items: center;
   gap: 10px;
+  margin-right: 70px;
 }
 .header-button .icon-btn {
   position: relative;
@@ -7096,7 +7097,6 @@ a.text-theme:hover,
   margin-top: 20px;
 }
 .newsletter-form .newsletter-btn {
-
   display: inline-block;
   border: none;
   background-color: var(--theme-color);

@@ -155,102 +155,108 @@
                                 height: 60px
                                     /* Maintain aspect ratio */
                             }
+
+                            /* Hover to show dropdown */
+                            .menu-item-has-children:hover .sub-menu {
+                                display: block !important;
+                            }
+
+                            /* Hover effect on links */
+                            .sub-menu a:hover {
+                                background: #f5f5f5;
+                            }
                         </style>
                         <div class="col-auto">
                             <nav class="main-menu style2 d-none d-lg-inline-block">
                                 <ul>
                                     <li class="menu-item-has-children mega-menu-wrap"><a href="#">Início</a>
-
                                     <li><a href="about.html">Sobre Nós</a></li>
-                                    <li><a href="product.html">Produtos</a>
-
-                                    </li>
-                                    <li><a href="#">Blog</a>
-
-                                    </li>
+                                    <li><a href="product.html">Produtos</a></li>
+                                    <li><a href="#">Blog</a></li>
                                     <li><a href="contact.html">Contato</a></li>
-                                    <li class="menu-item-has-children" style="position:relative; display:inline-block;">
-                                        <a href="/global/en.html" style="display:flex; align-items:center;">
-                                            <svg style="width:16px;height:16px;margin-right:5px;" viewBox="0 0 24 24"
-                                                fill="currentColor">
-                                                <path
-                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                                            </svg>
-                                            <span>Global</span>
-                                        </a>
-                                        <ul class="sub-menu"
-                                            style="display:none; position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd; min-width:200px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
-                                            <li style="padding:5px 15px;">
-                                                <a href="/global/en.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://www.siemens.com/etc.clientlibs/siemens-site/clientlibs/resources/clientlibs/resources/images/globe-icon.svg"
-                                                        style="width:16px;height:16px;margin-right:8px;">
-                                                    Inglês Global
-                                                </a>
-                                            </li>
-                                            <li style="padding:5px 15px;">
-                                                <a href="/br/pt.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://flagcdn.com/w20/br.png"
-                                                        style="width:16px;height:12px;margin-right:8px;">
-                                                    Brasil - Português
-                                                </a>
-                                            </li>
-                                            <li style="padding:5px 15px;">
-                                                <a href="/ca/en.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://flagcdn.com/w20/ca.png"
-                                                        style="width:16px;height:12px;margin-right:8px;">
-                                                    Canadá - Inglês | Français (Francês)
-                                                </a>
-                                            </li>
-                                            <li style="padding:5px 15px;">
-                                                <a href="/mx/es.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://flagcdn.com/w20/mx.png"
-                                                        style="width:16px;height:12px;margin-right:8px;">
-                                                    México - Español (Espanhol)
-                                                </a>
-                                            </li>
-                                            <li style="padding:5px 15px;">
-                                                <a href="/pe/es.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://flagcdn.com/w20/pe.png"
-                                                        style="width:16px;height:12px;margin-right:8px;">
-                                                    Peru - Español (Espanhol)
-                                                </a>
-                                            </li>
-                                            <li style="padding:5px 15px;">
-                                                <a href="/us/en.html"
-                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                    <img src="https://flagcdn.com/w20/us.png"
-                                                        style="width:16px;height:12px;margin-right:8px;">
-                                                    Estados Unidos - Inglês
-                                                </a>
-                                            </li>
-
-
-                                        </ul>
-                                    </li>
-                                    <style>
-                                        /* Hover to show dropdown */
-                                        .menu-item-has-children:hover .sub-menu {
-                                            display: block !important;
-                                        }
-
-                                        /* Hover effect on links */
-                                        .sub-menu a:hover {
-                                            background: #f5f5f5;
-                                        }
-                                    </style>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block d-lg-none"><i
                                     class="far fa-bars"></i></button>
                         </div>
                         <div class="col-auto d-none d-lg-inline-block">
-                            <div class="header-button"><a href="assets/img/TPPBroucher.pdf"
-                                    class="th-btn style6 style-radius">
-                                    Baixar Catálogo</a></div>
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="header-button">
+                                    <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius">
+
+                                        Baixar Catálogo
+                                    </a>
+                                </div>
+
+                                <!-- Global Language Selector moved here after brochure -->
+                                <div class="menu-item-has-children" style="position:relative; display:inline-block;">
+                                    <a href="/global/en.html"
+                                        style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                        <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                        </svg>
+                                        <span style="color: white; font-size: larger; font-weight: bold;">Global</span>
+                                    </a>
+                                    <ul class="sub-menu"
+                                        style="display:none; position:absolute; right:0; top:100%; background:#fff; border:1px solid #ddd; min-width:250px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="/global/en.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://www.siemens.com/etc.clientlibs/siemens-site/clientlibs/resources/clientlibs/resources/images/globe-icon.svg"
+                                                    style="width:16px;height:16px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Global English</span>
+                                            </a>
+                                        </li>
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="pt.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/br.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Brazil - Português
+                                                    (Portuguese)</span>
+                                            </a>
+                                        </li>
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="/ca/en.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/ca.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Canada - English |
+                                                    Français (French)</span>
+                                            </a>
+                                        </li>
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="/mx/es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/mx.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Mexico - Español
+                                                    (Spanish)</span>
+                                            </a>
+                                        </li>
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="/pe/es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/pe.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Peru - Español
+                                                    (Spanish)</span>
+                                            </a>
+                                        </li>
+                                        <li style="padding:8px 15px; white-space: nowrap;">
+                                            <a href="/us/en.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/us.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">United States -
+                                                    English</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
