@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPP Boilers - Productos</title>
+    <style>
+        :root {
+            --primary-color: #2E8B57;
+            /* Sea Green */
+            --secondary-color: #3CB371;
+            /* Medium Sea Green */
+            --background-color: #ffffff;
+            --text-color: #333333;
+            --light-gray: #f5f5f5;
+            --border-color: #e0e0e0;
+            --accent-color: #20B2AA;
+            /* Light Sea Green */
+            --white: #ffffff;
+            --navy-blue: #07075b;
+            --seagreen: #2E8B57;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+            max-width: 100%;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo-subtext {
+            font-size: 12px;
+            color: var(--secondary-color);
+        }
+
+        /* Existing styles */
+        nav ul {
+            display: flex;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hamburger button style */
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 0;
+                background: white;
+                /* Optional: set background for dropdown */
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+
+        .hero {
+            background-color: #003366;
+            color: white;
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            z-index: 1;
+        }
+
+        .hero::before {
+            top: -25px;
+            border-radius: 0 0 50% 50%;
+        }
+
+        .hero::after {
+            bottom: -25px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .breadcrumb a {
+            color: #d1f5e3;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .breadcrumb span {
+            color: white;
+            font-size: 14px;
+        }
+
+        .product-content {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            flex-direction: column;
+        }
+
+        .sidebar {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .search-container {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .search-container h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 100%;
+        }
+
+        .search-box input {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            padding: 0 15px;
+            background-color: #003366;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--accent-color);
+        }
+
+        .search-icon {
+            width: 18px;
+            height: 18px;
+            fill: white;
+        }
+
+        .categories {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .categories h2 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .category-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 14px;
+        }
+
+        .category-list a:hover {
+            color: var(--accent-color);
+        }
+
+        .product-listing {
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .results-info {
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-size: 14px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--light-gray);
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-capacity {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .product-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .product-description {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+
+        .pagination {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .pagination-text {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .page-numbers {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .page-numbers li {
+            margin: 5px;
+        }
+
+        .page-numbers a {
+            display: block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 14px;
+        }
+
+        .page-numbers a:hover,
+        .page-numbers a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .about-section {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .about-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 24px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: width 0.5s ease;
+        }
+
+        .about-section:hover h2::after {
+            width: 80px;
+        }
+
+        .about-section p {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .about-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .footer-info {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 14px;
+            max-width: 600px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--seagreen);
+        }
+
+        .footer-copyright {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (min-width: 768px) {
+            .header-content {
+                flex-wrap: nowrap;
+            }
+
+            .logo {
+                margin-bottom: 0;
+            }
+
+            nav ul li {
+                margin-left: 30px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero::before,
+            .hero::after {
+                height: 100px;
+            }
+
+            .hero::before {
+                top: -50px;
+            }
+
+            .hero::after {
+                bottom: -50px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .breadcrumb a,
+            .breadcrumb span {
+                font-size: 16px;
+            }
+
+            .product-content {
+                flex-direction: row;
+            }
+
+            .sidebar {
+                width: 300px;
+            }
+
+            .search-container {
+                padding: 30px;
+            }
+
+            .search-container h2 {
+                font-size: 24px;
+            }
+
+            .search-box input {
+                font-size: 16px;
+            }
+
+            .categories {
+                padding: 30px;
+            }
+
+            .categories h2 {
+                font-size: 24px;
+            }
+
+            .category-list a {
+                font-size: 16px;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .product-info {
+                padding: 20px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .product-description {
+                font-size: 14px;
+            }
+
+            .about-section {
+                padding: 40px;
+            }
+
+            .about-section h2 {
+                font-size: 28px;
+            }
+
+            .about-section p {
+                font-size: 16px;
+            }
+
+            .footer {
+                padding: 40px 10%;
+            }
+
+            .footer-logo {
+                font-size: 1.8rem;
+            }
+
+            .footer-info {
+                font-size: 16px;
+            }
+
+            .footer-links a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/img/logo_1.png" alt="TPP Boilers Logo" height=40px width=auto />
+                </div>
+                <nav>
+                    <button class="hamburger" id="hamburger">&#9776;</button>
+                    <ul id="nav-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="about.html">Nosotros</a></li>
+                        <li><a href="product.html">Productos</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+            });
+        </script>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Productos</h1>
+                <div class="breadcrumb">
+                    <a href="#">Inicio</a> | <span>Productos</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="about-section" id="animatedAbout">
+            <h2>Sobre Nuestros Productos</h2>
+            <p>Nos especializamos en la fabricación y montaje de componentes para calderas como serpentines de
+                sobrecalentadores (sobrecalentadores radiantes, sobrecalentadores colgantes, sobrecalentadores finales),
+                recalentadores de vapor, serpentines de economizadores (economizadores tubulares lisos, economizadores
+                con aletas, economizadores con rejillas de hierro fundido), calentadores de agua de alimentación, tubos
+                de bancos de calderas, tubos generadores de vapor curvados a medida y paneles de pared de agua con o sin
+                extremos estampados, cabezales de vapor, tambores de vapor, desobrecalentadores, serpentines
+                evaporadores, serpentines de lecho con espárragos, serpentines espirales, serpentines helicoidales,
+                condensadores de vapor de nidos de tubos HP/LP, tubos con aletas espirales, tuberías de vapor y otros
+                productos tubulares fabricados.</p>
+
+            <p>Fabricamos componentes basados en sus dibujos con alta precisión dimensional para facilitar el reemplazo
+                y proporcionar componentes listos para instalar, reduciendo el tiempo de inactividad de las calderas.
+                Tenemos la experiencia para realizar ingeniería inversa en sus proyectos de reemplazo de tubos de
+                caldera y partes bajo presión, y podemos sugerir modificaciones de diseño o cambios de materiales para
+                mejorar la eficiencia de la caldera.</p>
+
+            <p>Mantenemos un stock óptimo de una variedad de placas, tubos para calderas y tuberías para atender los
+                trabajos de emergencia de reemplazo durante paradas de calderas de nuestros clientes.</p>
+        </div>
+
+        <div class="product-content">
+            <aside class="sidebar">
+                <div class="search-container">
+                    <h2>Buscar</h2>
+                    <form class="search-box" onsubmit="searchProducts(); return false;">
+                        <input type="text" id="searchInput" placeholder="Buscar productos...">
+                        <button type="submit">
+                            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="categories">
+                    <h2>Categorías</h2>
+                    <ul class="category-list">
+                        <li><a href="#">Paneles de Pared de Agua</a></li>
+                        <li><a href="#">Economizadores</a></li>
+                        <li><a href="#">Sobrecalentadores</a></li>
+                        <li><a href="#">Tubos/Serpentines con Espárragos</a></li>
+                        <li><a href="#">Tubos de Banco de Calderas</a></li>
+                        <li><a href="#">Tuberías y Tubos</a></li>
+                        <li><a href="#">Tubos con Aletas</a></li>
+                        <li><a href="#">Cabezales</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <div class="product-listing">
+                <div class="results-info">Mostrando 1-8 de 24 resultados</div>
+
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/water-wall-panels-03.jpg" alt="Paneles de Pared de Agua">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">Hasta 24 metros de longitud</div>
+                            <h3 class="product-title">Paneles de Pared de Agua</h3>
+                            <p class="product-description">Utilizados en calderas modernas en lugar de tubos generadores
+                                de vapor para reducir la pérdida de calor debido a su naturaleza estanca a los gases y
+                                reducir los costos de aislamiento. Fabricados utilizando máquinas automáticas de
+                                soldadura de aletas a tubos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/coil.jpg" alt="Economizadores">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">Varios tipos</div>
+                            <h3 class="product-title">Serpentines de Economizadores</h3>
+                            <p class="product-description">Calentadores de agua de alimentación de calderas que
+                                recuperan calor de los gases de escape residuales, aumentando la economía de
+                                combustible, la capacidad de generación de vapor y la vida útil de la caldera, mientras
+                                reducen la contaminación.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/superheater.jpg" alt="Sobrecalentadores">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">10 a 500 MW de capacidad</div>
+                            <h3 class="product-title">Sobrecalentadores</h3>
+                            <p class="product-description">Componente crítico de las calderas en plantas termoeléctricas
+                                modernas, sujeto a temperaturas metálicas muy altas, determinando la capacidad de la
+                                caldera y mejorando su economía.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/studded-tubes-coils-01.jpg"
+                                alt="Tubos/Serpentines con Espárragos">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">Hasta espárragos de 13mm de diámetro</div>
+                            <h3 class="product-title">Tubos/Serpentines con Espárragos</h3>
+                            <p class="product-description">Utilizados para aumentar las áreas superficiales y lograr
+                                mayores tasas de transferencia de calor en serpentines de lecho fluidizado,
+                                sobrecalentadores de lecho fluidizado y como recalentadores en refinerías.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/boilerbank.jpg" alt="Tubos de Banco de Calderas">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">114mm DE x 4mm - 50.8mm DE x 5.60mm</div>
+                            <h3 class="product-title">Tubos de Banco de Calderas</h3>
+                            <p class="product-description">Tubos curvados a medida o tubos generadores de vapor donde el
+                                agua se convierte en vapor, transportando una mezcla de agua y vapor para un
+                                funcionamiento eficiente de la caldera.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Tuberías y Tubos">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">8mm DE a 1016mm DE</div>
+                            <h3 class="product-title">Tuberías y Tubos</h3>
+                            <p class="product-description">Tuberías, tubos y accesorios de acero según diversas
+                                especificaciones con certificado MTC e IBR para tuberías de vapor/línea, calderas,
+                                sobrecalentadores, economizadores y más.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Tubos con Aletas">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">Múltiples tipos</div>
+                            <h3 class="product-title">Tubos con Aletas</h3>
+                            <p class="product-description">Esenciales para el intercambio de calor gas-líquido con alta
+                                relación de coeficiente de película. Disponibles en aletas longitudinales, T-Fins,
+                                H-Fins, L-Fins, G-Fins y aletas onduladas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="assets/img/product/headers.jpg" alt="Cabezales">
+                        </div>
+                        <div class="product-info">
+                            <div class="product-capacity">100mm a 600mm DN</div>
+                            <h3 class="product-title">Cabezales</h3>
+                            <p class="product-description">Parte importante de todas las calderas, que recogen vapor de
+                                los tubos generadores bajo presiones que van desde 300psi hasta 2000psi. Fabricados
+                                cuidadosamente y probados a presión.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pagination">
+                    <div class="pagination-text">Página 1 de 3</div>
+                    <ul class="page-numbers">
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/img/logo_1wh.png" alt="TPP BOILERS Logo" style="height: 50px; width: auto;">
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Inicio</a>
+                <a href="about.html">Nosotros</a>
+                <a href="#">Blog</a>
+                <a href="product.html">Productos</a>
+                <a href="contact.html">Contacto</a>
+            </div>
+            <div class="footer-copyright">
+                © 2025 TPP Boilers. Todos los derechos reservados.
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Scroll animation for about section
+        document.addEventListener('DOMContentLoaded', function () {
+            const aboutSection = document.getElementById('animatedAbout');
+
+            function checkVisibility() {
+                const sectionTop = aboutSection.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                // When the section is 100px into the viewport
+                if (sectionTop < windowHeight - 100) {
+                    aboutSection.classList.add('visible');
+                    // Remove the event listener after animation triggers
+                    window.removeEventListener('scroll', checkVisibility);
+                }
+            }
+
+            // Check on initial load
+            checkVisibility();
+
+            // Check on scroll
+            window.addEventListener('scroll', checkVisibility);
+        });
+
+        function searchProducts() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+
+            productCards.forEach(card => {
+                const title = card.querySelector('.product-title').textContent.toLowerCase();
+                const description = card.querySelector('.product-description').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Update results count
+            const visibleProducts = document.querySelectorAll('.product-card[style="display: block;"]').length;
+            document.querySelector('.results-info').textContent = `Showing ${visibleProducts} of 24 Results`;
+        }
+    </script>
+</body>
+
+</html>

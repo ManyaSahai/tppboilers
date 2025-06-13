@@ -200,9 +200,9 @@
                         <div class="col-auto">
                             <nav class="main-menu style2 d-none d-lg-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap"><a href="#">Accueil</a>
-                                    <li><a href="about.html">À propos</a></li>
-                                    <li><a href="product.html">Produits</a></li>
+                                    <li class="menu-item-has-children mega-menu-wrap"><a href="frabout.html">Accueil</a>
+                                    <li><a href="frabout.html">À propos</a></li>
+                                    <li><a href="frproduct.html">Produits</a></li>
                                     <li><a href="#">Blog</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
@@ -2009,104 +2009,443 @@
         </body>
 
         </html>
-        <section class="overflow-hidden bg-white space" id="project-sec">
-            <div class="container th-container5">
-                <div class="row">
-                    <div class="col-xl-4">
-                        <div class="title-area mb-50 text-center text-md-start"><span class="sub-title">
-                                <div class="icon-masking me-2"><span class="mask-icon"
-                                        data-mask-src="assets/img/theme-img/title_shape_1.svg"></span> <img
-                                        src="assets/img/theme-img/title_shape_1.svg" alt="forme"></div>Histoires de
-                                Succès
-                            </span>
-                            <h2 class="sec-title">Notre travail qui vous a inspiré à travailler avec nous</h2>
-                        </div>
-                        <div class="project-btn"><a href="index.html" class="th-btn style-border style-radius">Voir
-                                Toutes les
-                                Histoires</a></div>
+        <!DOCTYPE html>
+        <html lang="fr">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Section Certificats</title>
+            <style>
+                * {
+                    margin: 0;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+                .cert-area {
+                    overflow: hidden;
+                    background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%);
+                    padding: 80px 0;
+                    position: relative;
+                }
+
+                .cert-area::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, #2e8b57, #1e3a8a);
+                }
+
+                .cert-container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                }
+
+                .cert-header {
+                    text-align: center;
+                    margin-bottom: 60px;
+                }
+
+                .cert-main-title {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    color: #1e3a8a;
+                    margin-bottom: 15px;
+                    line-height: 1.2;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+
+                .cert-desc {
+                    font-size: 1.1rem;
+                    color: #666;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    line-height: 1.6;
+                }
+
+                .cert-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                    gap: 30px;
+                    margin-top: 50px;
+                }
+
+                .cert-item {
+                    background: white;
+                    border-radius: 15px;
+                    padding: 25px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .cert-item::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, #2e8b57, #1e3a8a);
+                }
+
+                .cert-item:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                    border-color: #2e8b57;
+                }
+
+                .cert-icon {
+                    width: 60px;
+                    height: 60px;
+                    background: linear-gradient(135deg, #2e8b57, #1e3a8a);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 20px;
+                    color: white;
+                    font-size: 24px;
+                }
+
+                .cert-name {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    color: #1e3a8a;
+                    margin-bottom: 10px;
+                    line-height: 1.3;
+                }
+
+                .cert-org {
+                    font-size: 1rem;
+                    color: #2e8b57;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                }
+
+                .cert-info {
+                    font-size: 0.95rem;
+                    color: #666;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                }
+
+                .cert-btns {
+                    display: flex;
+                    gap: 10px;
+                    flex-wrap: wrap;
+                }
+
+                .cert-btn {
+                    padding: 10px 20px;
+                    border-radius: 25px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+
+                .cert-btn-primary {
+                    background: linear-gradient(135deg, #2e8b57, #1e3a8a);
+                    color: white;
+                    border: 2px solid transparent;
+                }
+
+                .cert-btn-primary:hover {
+                    background: linear-gradient(135deg, #1e3a8a, #2e8b57);
+                    transform: translateY(-2px);
+                    box-shadow: 0 5px 15px rgba(46, 139, 87, 0.4);
+                }
+
+                .cert-btn-outline {
+                    background: transparent;
+                    color: #2e8b57;
+                    border: 2px solid #2e8b57;
+                }
+
+                .cert-btn-outline:hover {
+                    background: #2e8b57;
+                    color: white;
+                    transform: translateY(-2px);
+                }
+
+                .cert-badge {
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    background: linear-gradient(135deg, #2e8b57, #1e3a8a);
+                    color: white;
+                    padding: 5px 12px;
+                    border-radius: 15px;
+                    font-size: 0.8rem;
+                    font-weight: 600;
+                }
+
+                .cert-stats {
+                    margin-top: 60px;
+                    padding: 40px 0;
+                    background: linear-gradient(135deg, #1e3a8a, #2e8b57);
+                    border-radius: 20px;
+                    color: white;
+                    text-align: center;
+                }
+
+                .cert-stats-grid {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 30px;
+                }
+
+                .cert-stat {
+                    padding: 20px;
+                }
+
+                .cert-number {
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin-bottom: 10px;
+                }
+
+                .cert-label {
+                    font-size: 1rem;
+                    opacity: 0.9;
+                }
+
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .cert-area {
+                        padding: 60px 0;
+                    }
+
+                    .cert-main-title {
+                        font-size: 2.5rem;
+                    }
+
+                    .cert-grid {
+                        grid-template-columns: 1fr;
+                        gap: 20px;
+                    }
+
+                    .cert-item {
+                        padding: 20px;
+                    }
+
+                    .cert-btns {
+                        flex-direction: column;
+                    }
+
+                    .cert-btn {
+                        text-align: center;
+                        justify-content: center;
+                    }
+
+                    .cert-stats-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 20px;
+                    }
+
+                    .cert-number {
+                        font-size: 2rem;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .cert-container {
+                        padding: 0 15px;
+                    }
+
+                    .cert-main-title {
+                        font-size: 2rem;
+                    }
+
+                    .cert-item {
+                        padding: 15px;
+                    }
+
+                    .cert-stats-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+        </head>
+
+        <body>
+            <section class="cert-area" id="certificates-sec">
+                <div class="cert-container">
+                    <!-- Section Header -->
+                    <div class="cert-header">
+                        <h2 class="cert-main-title">NOS CERTIFICATS</h2>
+                        <p class="cert-desc">
+                            Notre engagement envers la qualité et les normes professionnelles est validé par des
+                            certifications
+                            prestigieuses d'organismes et d'organisations leaders de l'industrie.
+                        </p>
                     </div>
-                    <div class="col-xl-8">
-                        <div class="slider-area project-slider4">
-                            <div class="swiper th-slider has-shadow" id="projectSlider1"
-                                data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"2"}}}'>
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="project-box4">
-                                            <div class="project-img"><img src="assets/img/project/project_4_1.jpg"
-                                                    alt="projet"></div>
-                                            <div class="project-content">
-                                                <div class="media-body">
-                                                    <h3 class="box-title"><a href="project-details.html">Croissance
-                                                            Technologique</a></h3>
-                                                    <div class="project-tags"><a
-                                                            href="project-details.html">Marketing</a>
-                                                        <a href="project-details.html">Service</a> <a
-                                                            href="project-details.html">Solution</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-box4">
-                                            <div class="project-img"><img src="assets/img/project/project_4_2.jpg"
-                                                    alt="projet"></div>
-                                            <div class="project-content">
-                                                <div class="media-body">
-                                                    <h3 class="box-title"><a href="project-details.html">Conseil
-                                                            Informatique</a>
-                                                    </h3>
-                                                    <div class="project-tags"><a
-                                                            href="project-details.html">Marketing</a>
-                                                        <a href="project-details.html">Service</a> <a
-                                                            href="project-details.html">Solution</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-box4">
-                                            <div class="project-img"><img src="assets/img/project/project_4_1.jpg"
-                                                    alt="projet"></div>
-                                            <div class="project-content">
-                                                <div class="media-body">
-                                                    <h3 class="box-title"><a href="project-details.html">Croissance
-                                                            Technologique</a></h3>
-                                                    <div class="project-tags"><a
-                                                            href="project-details.html">Marketing</a>
-                                                        <a href="project-details.html">Service</a> <a
-                                                            href="project-details.html">Solution</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="project-box4">
-                                            <div class="project-img"><img src="assets/img/project/project_4_2.jpg"
-                                                    alt="projet"></div>
-                                            <div class="project-content">
-                                                <div class="media-body">
-                                                    <h3 class="box-title"><a href="project-details.html">Conseil
-                                                            Informatique</a>
-                                                    </h3>
-                                                    <div class="project-tags"><a
-                                                            href="project-details.html">Marketing</a>
-                                                        <a href="project-details.html">Service</a> <a
-                                                            href="project-details.html">Solution</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                    <!-- Certificates Grid -->
+                    <div class="cert-grid">
+                        <!-- Certificate 1 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">📜</div>
+                            <h3 class="cert-name">Certificat ABMA</h3>
+                            <p class="cert-org">Association Américaine des
+                                Fabricants de Chaudières</p>
+                            <p class="cert-info">
+                                Reconnu comme leader dans l'industrie des chaudières.
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/ABMA Membership Certificate.pdf"
+                                    class="cert-btn cert-btn-primary" target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/ABMA Membership Certificate.pdf"
+                                    class="cert-btn cert-btn-outline" download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 2 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">🏅</div>
+                            <h3 class="cert-name">Certificat ASME</h3>
+                            <p class="cert-org">La Société Américaine des Ingénieurs Mécaniciens</p>
+                            <p class="cert-info">
+                                Certifié selon les normes ASME pour les récipients sous pression.
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/ASME Certificate TPP.pdf"
+                                    class="cert-btn cert-btn-primary" target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/ASME Certificate TPP.pdf"
+                                    class="cert-btn cert-btn-outline" download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 3 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">🎯</div>
+                            <h3 class="cert-name">Certificat ASME</h3>
+                            <p class="cert-org">La Société Américaine des Ingénieurs Mécaniciens</p>
+                            <p class="cert-info">
+                                ACHÈVEMENT RÉUSSI DU
+                                Code BPV, Section I : Chaudières de Puissance
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/ASME CERTIFICATE.pdf" class="cert-btn cert-btn-primary"
+                                    target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/ASME CERTIFICATE.pdf" class="cert-btn cert-btn-outline"
+                                    download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 4 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">🔒</div>
+                            <h3 class="cert-name">Certificat ASME</h3>
+                            <p class="cert-org">La Société Américaine des Ingénieurs Mécaniciens</p>
+                            <p class="cert-info">
+                                CERTIFICAT D'AUTORISATION
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/ASME certificate(1)_001 (002).jpg"
+                                    class="cert-btn cert-btn-primary" target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/ASME certificate(1)_001 (002).jpg"
+                                    class="cert-btn cert-btn-outline" download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Certificate 5 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">🌟</div>
+                            <h3 class="cert-name">Certificat de Performance</h3>
+                            <p class="cert-org">LENZING
+                                PT. SOUTH PACIFIC VISCOSE</p>
+                            <p class="cert-info">
+                                Reconnaissance pour des solutions innovantes et l'implémentation de technologies de
+                                pointe
+                                dans l'industrie des chaudières.
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/Performance Certificate Lanzing.pdf"
+                                    class="cert-btn cert-btn-primary" target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/Performance Certificate Lanzing.pdf"
+                                    class="cert-btn cert-btn-outline" download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+                        <!-- CERTIFICATE 6 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">📈</div>
+                            <h3 class="cert-name">Certificat ISO</h3>
+                            <p class="cert-org">L'Organisme de Certification
+                                de TÜV SÜD South Asia Private Limited</p>
+                            <p class="cert-info">
+                                Système de Management de la Qualité
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/ISO Certificate.pdf" class="cert-btn cert-btn-primary"
+                                    target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/ISO Certificate.pdf" class="cert-btn cert-btn-outline"
+                                    download>
+                                    ⬇️ Télécharger
+                                </a>
+                            </div>
+                        </div>
+                        <!-- CERTIFICATE 7 -->
+                        <div class="cert-item">
+                            <div class="cert-icon">✔️</div>
+                            <h3 class="cert-name">Certificat IBR</h3>
+                            <p class="cert-org">Bureau du Directeur des Chaudières, État du Gujarat</p>
+                            <p class="cert-info">
+                                Approbation d'entreprise pour la fabrication de pièces de chaudière sous pression
+                            </p>
+                            <div class="cert-btns">
+                                <a href="assets/img/certificates/IBR_Certificate_Boiler_Pressure_Part_Manufacture.pdf"
+                                    class="cert-btn cert-btn-primary" target="_blank">
+                                    📄 Voir le Certificat
+                                </a>
+                                <a href="assets/img/certificates/IBR_Certificate_Boiler_Pressure_Part_Manufacture.pdf"
+                                    class="cert-btn cert-btn-outline" download>
+                                    ⬇️ Télécharger
+                                </a>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
-            </div>
-        </section>
+            </section>
+        </body>
+
+        </html>
         <!-----CLIENT'S SECTION --->
         <!DOCTYPE html>
         <html lang="en">
