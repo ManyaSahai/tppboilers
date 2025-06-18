@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Certifications</title>
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --seagreen: #20b2aa;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--navy-blue);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #003366 100%);
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Certificates Grid */
+        .certificates-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--navy-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--seagreen);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .certificate-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 31, 63, 0.2);
+        }
+
+        .certificate-img {
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid var(--seagreen);
+        }
+
+        .certificate-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover .certificate-img img {
+            transform: scale(1.05);
+        }
+
+        .certificate-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .certificate-info h3 {
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .certificate-info p {
+            color: var(--seagreen);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack-section {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 60px 0;
+            margin-top: 50px;
+        }
+
+        .tech-stack-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tech-stack-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tech-stack-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .tech-stack-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--seagreen);
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .tech-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--seagreen);
+        }
+
+        .tech-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tech-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .certificate-img {
+                height: 250px;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 0;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Our Certifications</h1>
+            <p>Validating our commitment to excellence through recognized industry standards and achievements</p>
+        </div>
+    </header>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Accreditation</h2>
+            </div>
+
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ASME certificate(1)_001 (002).jpg" alt="ASME Certification">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ASME Certification</h3>
+                        <p>The American Society of Mechanical Engineers</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ABMA Membership Certificate.jpg" alt="ISO 9001 Certification">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ABMA Certification</h3>
+                        <p>American Boiler Manufacturers Association</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/IBR_Certificate_Boiler_Pressure_Part_Manufacture.jpg"
+                            alt="Performance Certificate">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Officer of the Directory of the Boiler</h3>
+                        <p> Gujarat State</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ISO Certificate_page-0001.jpg" alt="Safety Compliance">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ISO 9001:2015</h3>
+                        <p>Quality Management System</p>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ISO Certificate_page-0002.jpg"
+                            alt="Environmental Certification">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Enclosure of Certificate</h3>
+                        <p>South Asia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-section">
+        <div class="tech-stack-container">
+            <div class="tech-stack-title">
+                <h2>Certification Standards</h2>
+            </div>
+
+            <div class="tech-stack-grid">
+                <!-- Tech Item 1 -->
+                <div class="tech-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>ASME Standards</h3>
+                    <p>BPVC Section I</p>
+                </div>
+
+                <!-- Tech Item 2 -->
+                <div class="tech-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>ISO Standards</h3>
+                    <p>9001:2015</p>
+                </div>
+
+                <!-- Tech Item 3 -->
+                <div class="tech-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety</h3>
+                    <p>OSHA Compliance</p>
+                </div>
+
+                <!-- Tech Item 4 -->
+                <div class="tech-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Environmental</h3>
+                    <p>ISO 14001</p>
+                </div>
+
+                <!-- Tech Item 5 -->
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Performance</h3>
+                    <p>Industry Benchmarks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TPP Boilers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificateCards = document.querySelectorAll('.certificate-card');
+            const techItems = document.querySelectorAll('.tech-item');
+
+            // Animate certificates on scroll
+            const animateOnScroll = function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateOnScroll, {
+                threshold: 0.1
+            });
+
+            // Set initial state for animation
+            certificateCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            techItems.forEach((item, index) => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
