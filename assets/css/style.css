@@ -9832,7 +9832,7 @@ ul.comment-list .th-comment-item:first-child > .th-post-comment {
 }
 .hero-style5 {
   position: relative;
-  max-width: 650px;
+  max-width: auto;
   padding: 275px 0 348px 0;
   z-index: 9;
 }
