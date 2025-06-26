@@ -5378,7 +5378,7 @@ a.text-theme:hover,
   position: relative;
   font-weight: 600;
   font-size: 14px;
-  color: var(--title-color);
+  color: white;
   font-family: var(--title-font);
   text-transform: uppercase;
 }
@@ -7183,7 +7183,7 @@ a.text-theme:hover,
 }
 .footer-layout5 .footer-newsletter .newsletter-form i {
   position: absolute;
-  top: 22px;
+  top: auto;
   left: 30px;
   color: var(--theme-color);
 }
