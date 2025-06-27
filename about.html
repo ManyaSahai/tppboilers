@@ -26,6 +26,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
     <link rel="manifest" href="assets/img/favicons/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
@@ -65,7 +67,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Montserrat';
             background-color: var(--white);
             color: var(--dark-text);
             line-height: 1.6;
@@ -74,7 +76,7 @@
 
         /* Home Button */
         .home-button {
-            position: fixed;
+            position: absolute;
             top: 30px;
             left: 30px;
             z-index: 1000;
@@ -129,7 +131,7 @@
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat';
             color: var(--white);
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 700;
@@ -205,7 +207,7 @@
         }
 
         .intro-text h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat';
             font-size: clamp(2rem, 4vw, 3.2rem);
             color: var(--navy);
             margin-bottom: 24px;
@@ -218,7 +220,7 @@
         }
 
         .intro-text .lead {
-            font-size: 1.25rem;
+            font-size: 1.85rem;
             color: var(--medium-gray);
             margin-bottom: 40px;
             line-height: 1.7;
@@ -297,7 +299,7 @@
         }
 
         .section-header h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat';
             font-size: clamp(2rem, 4vw, 3rem);
             color: var(--navy);
             margin-bottom: 16px;
@@ -438,7 +440,7 @@
         }
 
         .materials-text h2 {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Montserrat';
             font-size: clamp(2rem, 4vw, 3rem);
             color: var(--navy);
             margin-bottom: 24px;
@@ -585,101 +587,6 @@
         }
 
         /* Footer */
-        .footer {
-            background: var(--navy-dark);
-            color: var(--white);
-            padding: 80px 40px 40px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-        }
-
-        .footer-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 24px;
-            font-weight: 700;
-        }
-
-        .footer-section p {
-            opacity: 0.8;
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-link:hover {
-            background: var(--seagreen);
-            transform: translateY(-3px);
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--white);
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: var(--seagreen);
-            color: var(--white);
-            padding: 16px 24px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .download-btn:hover {
-            background: #2a7a4d;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-bottom p {
-            opacity: 0.6;
-        }
 
         /* Animations */
         @keyframes fadeInUp {
@@ -799,7 +706,8 @@
                         <p class="lead">We take this opportunity to introduce <strong>TPP Boilers Pvt. Ltd.</strong> as
                             a trusted Designer, Fabricator, and Erector of high-quality boiler components and equipment
                             made from steel plates, tubes, and pipes.</p>
-                        <p>We are a Small Scale Industry backed by our highly experienced CEO and CTO, along with a
+                        <p style="font-size: 1.85rem;">We are a Small Scale Industry backed by our highly experienced
+                            CEO and CTO, along with a
                             dedicated team of skilled workers — all of whom have roots in a reputed boiler manufacturing
                             and erection company. This unique blend allows us to deliver the expertise of a large
                             enterprise with the personalized service and cost-efficiency of a smaller organization.</p>
@@ -819,39 +727,41 @@
         </section>
 
         <!-- Features Section -->
-        <section class="features-section">
-            <div class="container">
-                <div class="section-header">
+        <section class="capabilities-showcase">
+            <div class="main-wrapper">
+                <div class="title-block">
                     <h2>Our Core Capabilities</h2>
                     <p>Comprehensive solutions for all your boiler component and steel fabrication needs</p>
                 </div>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                <div class="service-row">
+                    <div class="capability-box">
+                        <div class="icon-holder">
                             <i class="fas fa-drafting-compass"></i>
                         </div>
                         <h3>Design Engineering</h3>
                         <p>Advanced design capabilities for custom boiler components using cutting-edge CAD software and
                             engineering expertise to meet your specific requirements.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                    <div class="capability-box">
+                        <div class="icon-holder">
                             <i class="fas fa-industry"></i>
                         </div>
                         <h3>Precision Fabrication</h3>
                         <p>State-of-the-art fabrication facilities equipped with modern machinery for working with
                             carbon steels, alloy steels, and stainless steels of all specifications.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                </div>
+                <div class="service-row">
+                    <div class="capability-box">
+                        <div class="icon-holder">
                             <i class="fas fa-tools"></i>
                         </div>
                         <h3>Expert Erection</h3>
                         <p>Professional on-site erection services with experienced teams capable of handling complex
                             installations and ensuring optimal performance.</p>
                     </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
+                    <div class="capability-box">
+                        <div class="icon-holder">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Quality Assurance</h3>
@@ -860,6 +770,102 @@
                     </div>
                 </div>
             </div>
+
+            <style>
+                .capabilities-showcase {
+                    padding: 60px 0;
+                    background-color: #f8f9fa;
+                }
+
+                .main-wrapper {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0 20px;
+                }
+
+                .title-block {
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
+
+                .title-block h2 {
+                    font-size: 2.5rem;
+                    color: #333;
+                    margin-bottom: 15px;
+                    font-weight: 700;
+                }
+
+                .title-block p {
+                    font-size: 1.2rem;
+                    color: #666;
+                    max-width: 600px;
+                    margin: 0 auto;
+                }
+
+                .service-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 30px;
+                    margin-bottom: 30px;
+                }
+
+                .service-row:last-child {
+                    margin-bottom: 0;
+                }
+
+                .capability-box {
+                    background: white;
+                    padding: 40px 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+                    text-align: center;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                }
+
+                .capability-box:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+                }
+
+                .icon-holder {
+                    margin-bottom: 25px;
+                }
+
+                .icon-holder i {
+                    font-size: 3rem;
+                    color: #007bff;
+                }
+
+                .capability-box h3 {
+                    font-size: 1.5rem;
+                    color: #333;
+                    margin-bottom: 15px;
+                    font-weight: 600;
+                }
+
+                .capability-box p {
+                    color: #666;
+                    line-height: 1.6;
+                    font-size: 1rem;
+                }
+
+                @media (max-width: 768px) {
+                    .service-row {
+                        grid-template-columns: 1fr;
+                        gap: 20px;
+                    }
+
+                    .capability-box {
+                        padding: 30px 20px;
+                    }
+
+                    .title-block h2 {
+                        font-size: 2rem;
+                    }
+                }
+            </style>
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
         </section>
 
         <!-- Stats Section -->
@@ -1081,6 +1087,63 @@
             </div>
 
         </footer>
+        <!-- Scroll to Top Arrow -->
+        <div class="scroll-top" id="scrollTop">
+            ↑
+        </div>
+
+        <style>
+            .scroll-top {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                background: #ffffff;
+                border-radius: 50%;
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s, visibility 0.3s;
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .scroll-top.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .scroll-top:hover {
+                background: #23bc75;
+                transform: scale(1.1);
+            }
+        </style>
+
+        <script>
+            // Show/hide scroll to top button
+            window.addEventListener('scroll', function () {
+                const scrollTop = document.getElementById('scrollTop');
+                if (window.pageYOffset > 300) {
+                    scrollTop.classList.add('show');
+                } else {
+                    scrollTop.classList.remove('show');
+                }
+            });
+
+            // Scroll to top when clicked
+            document.getElementById('scrollTop').addEventListener('click', function () {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        </script>
         <script>
             // Simple animation trigger when elements come into view
             document.addEventListener('DOMContentLoaded', function () {
