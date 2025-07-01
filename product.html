@@ -332,7 +332,7 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
         }
 
@@ -341,15 +341,17 @@
             border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: none;
+            /* Hide all products by default */
         }
 
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        .product-card.active {
+            display: block;
+            /* Show only the active product */
         }
 
         .product-image {
-            height: 200px;
+            height: 300px;
             overflow: hidden;
             display: flex;
             justify-content: center;
@@ -364,37 +366,44 @@
         }
 
         .product-info {
-            padding: 15px;
+            padding: 20px;
         }
 
         .product-capacity {
             color: var(--accent-color);
             font-weight: 500;
             margin-bottom: 8px;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         .product-title {
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 15px;
             color: var(--primary-color);
         }
 
         .product-description {
             color: var(--text-color);
             margin-bottom: 15px;
-            font-size: 13px;
+            font-size: 16px;
+            line-height: 1.7;
         }
 
         .pagination {
             margin-top: 30px;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
         .pagination-text {
             font-size: 14px;
             color: var(--text-color);
             margin-bottom: 15px;
+            width: 100%;
+            text-align: center;
         }
 
         .page-numbers {
@@ -402,30 +411,33 @@
             justify-content: center;
             list-style: none;
             flex-wrap: wrap;
+            gap: 5px;
         }
 
         .page-numbers li {
-            margin: 5px;
+            margin: 0;
         }
 
         .page-numbers a {
             display: block;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
             text-align: center;
             text-decoration: none;
             color: var(--text-color);
             border: 1px solid var(--border-color);
             border-radius: 4px;
             transition: all 0.3s;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         .page-numbers a:hover,
         .page-numbers a.active {
             background-color: var(--primary-color);
             color: white;
+            border-color: var(--primary-color);
         }
 
         .about-section {
@@ -451,7 +463,6 @@
             position: relative;
             display: inline-block;
         }
-
 
         .about-section:hover h2::after {
             width: 80px;
@@ -536,6 +547,79 @@
             background-color: var(--secondary-color);
         }
 
+        /* Update pagination styles */
+        .pagination {
+            margin-top: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .pagination-text {
+            font-size: 14px;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .page-numbers {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .page-numbers li {
+            margin: 0;
+        }
+
+        .page-numbers a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 16px;
+            font-weight: 500;
+            background-color: var(--light-gray);
+        }
+
+        /* Active and hover states with green color */
+        .page-numbers a:hover,
+        .page-numbers a.active {
+            background-color: var(--primary-color);
+            /* Sea Green */
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Focus state for accessibility */
+        .page-numbers a:focus {
+            outline: 2px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .page-numbers a {
+                width: 35px;
+                height: 35px;
+                line-height: 35px;
+                font-size: 14px;
+            }
+        }
+
         @media (min-width: 768px) {
             .header-content {
                 flex-wrap: nowrap;
@@ -608,19 +692,19 @@
             }
 
             .product-image {
-                height: 250px;
+                height: 350px;
             }
 
             .product-info {
-                padding: 20px;
+                padding: 30px;
             }
 
             .product-title {
-                font-size: 20px;
+                font-size: 28px;
             }
 
             .product-description {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             .about-section {
@@ -921,24 +1005,27 @@
                 <div class="categories">
                     <h2>Categories</h2>
                     <ul class="category-list">
-                        <li><a href="#">Water Wall Panels</a></li>
-                        <li><a href="#">Economisers</a></li>
-                        <li><a href="#">Superheaters</a></li>
-                        <li><a href="#">Studded Tubes / Coils</a></li>
-                        <li><a href="#">Boiler Bank Tubes</a></li>
-                        <li><a href="#">Pipes & Tubes</a></li>
-                        <li><a href="#">Finned Tubes</a></li>
-                        <li><a href="#">Headers</a></li>
+                        <li><a href="#" onclick="filterByCategory('Water Wall Panels')">Water Wall Panels</a></li>
+                        <li><a href="#" onclick="filterByCategory('Economisers')">Economisers</a></li>
+                        <li><a href="#" onclick="filterByCategory('Superheaters')">Superheaters</a></li>
+                        <li><a href="#" onclick="filterByCategory('Studded Tubes / Coils')">Studded Tubes / Coils</a>
+                        </li>
+                        <li><a href="#" onclick="filterByCategory('Boiler Bank Tubes')">Boiler Bank Tubes</a></li>
+                        <li><a href="#" onclick="filterByCategory('Pipes & Tubes')">Pipes & Tubes</a></li>
+                        <li><a href="#" onclick="filterByCategory('Finned Tubes')">Finned Tubes</a></li>
+                        <li><a href="#" onclick="filterByCategory('Headers')">Headers</a></li>
+                        <li><a href="#" onclick="resetFilters(); return false;"
+                                style="color: var(--primary-color); font-weight: bold;">Show All Products</a></li>
                     </ul>
                 </div>
             </aside>
 
             <div class="product-listing">
-                <div class="results-info">Showing 1-8 of 24 Results</div>
+                <div class="results-info">Showing <span id="currentProductNumber">1</span> of 8 Results</div>
 
                 <div class="products-grid">
                     <!-- Product 1 -->
-                    <div class="product-card">
+                    <div class="product-card active" data-category="Water Wall Panels">
                         <div class="product-image">
                             <img src="assets/img/product/water-wall-panels-03.jpg" alt="Water Wall Panels">
                         </div>
@@ -957,7 +1044,7 @@
                     </div>
 
                     <!-- Product 2 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Economisers">
                         <div class="product-image">
                             <img src="assets/img/product/coil.jpg" alt="Economisers">
                         </div>
@@ -977,7 +1064,7 @@
                     </div>
 
                     <!-- Product 3 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Superheaters">
                         <div class="product-image">
                             <img src="assets/img/product/superheater.jpg" alt="Superheaters">
                         </div>
@@ -997,7 +1084,7 @@
                     </div>
 
                     <!-- Product 4 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Studded Tubes / Coils">
                         <div class="product-image">
                             <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Studded Tubes / Coils">
                         </div>
@@ -1017,7 +1104,7 @@
                     </div>
 
                     <!-- Product 5 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Boiler Bank Tubes">
                         <div class="product-image">
                             <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
                         </div>
@@ -1037,7 +1124,7 @@
                     </div>
 
                     <!-- Product 6 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Pipes & Tubes">
                         <div class="product-image">
                             <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tubes">
                         </div>
@@ -1070,7 +1157,7 @@
                     </div>
 
                     <!-- Product 7 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Finned Tubes">
                         <div class="product-image">
                             <img src="assets/img/product/studded-tubes-coils-01.jpg" alt="Finned Tubes">
                         </div>
@@ -1091,7 +1178,7 @@
                     </div>
 
                     <!-- Product 8 -->
-                    <div class="product-card">
+                    <div class="product-card" data-category="Headers">
                         <div class="product-image">
                             <img src="assets/img/product/headers.jpg" alt="Headers">
                         </div>
@@ -1112,7 +1199,21 @@
                     </div>
                 </div>
 
-
+                <div class="pagination">
+                    <div class="pagination-text">Page <span id="currentPage">1</span> of 8</div>
+                    <ul class="page-numbers">
+                        <li><a href="#" onclick="showProduct(1); return false;" class="active">1</a></li>
+                        <li><a href="#" onclick="showProduct(2); return false;">2</a></li>
+                        <li><a href="#" onclick="showProduct(3); return false;">3</a></li>
+                        <li><a href="#" onclick="showProduct(4); return false;">4</a></li>
+                        <li><a href="#" onclick="showProduct(5); return false;">5</a></li>
+                        <li><a href="#" onclick="showProduct(6); return false;">6</a></li>
+                        <li><a href="#" onclick="showProduct(7); return false;">7</a></li>
+                        <li><a href="#" onclick="showProduct(8); return false;">8</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
     <br>
     <footer class="footer-wrapper footer-layout5">
@@ -1184,9 +1285,6 @@
                             </a>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -1214,6 +1312,7 @@
             </div>
         </div>
 
+
     </footer>
 
     <script>
@@ -1225,62 +1324,116 @@
                 const sectionTop = aboutSection.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
 
-                // When the section is 100px into the viewport
                 if (sectionTop < windowHeight - 100) {
                     aboutSection.classList.add('visible');
-                    // Remove the event listener after animation triggers
                     window.removeEventListener('scroll', checkVisibility);
                 }
             }
 
-            // Check on initial load
             checkVisibility();
-
-            // Check on scroll
             window.addEventListener('scroll', checkVisibility);
+            showProduct(1);
         });
 
-        // (Previous searchProducts function remains the same)
-        function searchProducts() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const productCards = document.querySelectorAll('.product-card');
-
-            productCards.forEach(card => {
-                const title = card.querySelector('.product-title').textContent.toLowerCase();
-                const description = card.querySelector('.product-description').textContent.toLowerCase();
-
-                if (title.includes(searchTerm) || description.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
+        // Function to show a specific product
+        function showProduct(productNumber) {
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                product.classList.remove('active');
             });
 
-            // Update results count
-            const visibleProducts = document.querySelectorAll('.product-card[style="display: block;"]').length;
-            document.querySelector('.results-info').textContent = `Showing ${visibleProducts} of 24 Results`;
+            // Show the selected product if it's visible (not filtered out)
+            const visibleProducts = document.querySelectorAll('.product-card:not([style*="display: none"])');
+            if (visibleProducts[productNumber - 1]) {
+                visibleProducts[productNumber - 1].classList.add('active');
+            }
+
+            updatePagination(productNumber);
         }
+
+        // Function to update pagination display
+        function updatePagination(currentPage) {
+            document.getElementById('currentPage').textContent = currentPage;
+            document.getElementById('currentProductNumber').textContent = currentPage;
+
+            const pageLinks = document.querySelectorAll('.page-numbers a');
+            pageLinks.forEach(link => {
+                link.classList.remove('active');
+                if (parseInt(link.textContent) === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Function to filter products by category
+        function filterByCategory(category) {
+            const products = document.querySelectorAll('.product-card');
+            let foundProducts = 0;
+
+            products.forEach((product) => {
+                if (product.dataset.category === category) {
+                    product.style.display = 'block';
+                    foundProducts++;
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+
+            // Show first product in category
+            const firstVisible = document.querySelector('.product-card[style="display: block;"]');
+            if (firstVisible) {
+                const allProducts = Array.from(document.querySelectorAll('.product-card'));
+                const productIndex = allProducts.indexOf(firstVisible);
+                showProduct(productIndex + 1);
+            }
+
+            // Update results count
+            document.querySelector('.results-info').textContent = `Showing 1 of ${foundProducts} Results`;
+        }
+
+        // Function to search products
         function searchProducts() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             const productCards = document.querySelectorAll('.product-card');
+            let foundProducts = 0;
 
-            productCards.forEach(card => {
+            productCards.forEach((card) => {
                 const title = card.querySelector('.product-title').textContent.toLowerCase();
                 const description = card.querySelector('.product-description').textContent.toLowerCase();
 
                 if (title.includes(searchTerm) || description.includes(searchTerm)) {
                     card.style.display = 'block';
+                    foundProducts++;
                 } else {
                     card.style.display = 'none';
                 }
             });
 
+            if (foundProducts > 0) {
+                // Show the first matching product
+                const firstVisible = document.querySelector('.product-card[style="display: block;"]');
+                if (firstVisible) {
+                    const allProducts = Array.from(document.querySelectorAll('.product-card'));
+                    const productIndex = allProducts.indexOf(firstVisible);
+                    showProduct(productIndex + 1);
+                }
+                document.querySelector('.results-info').textContent = `Showing 1 of ${foundProducts} Results`;
+            } else {
+                document.querySelector('.results-info').textContent = `No results found for "${searchTerm}"`;
+            }
+            return false;
+        }
 
+        // Function to reset filters and show all products
+        function resetFilters() {
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                product.style.display = 'block';
+            });
 
-
-            // Update results count
-            const visibleProducts = document.querySelectorAll('.product-card[style="display: block;"]').length;
-            document.querySelector('.results-info').textContent = `Showing ${visibleProducts} of 24 Results`;
+            showProduct(1);
+            document.getElementById('searchInput').value = '';
+            document.querySelector('.results-info').textContent = `Showing 1 of ${products.length} Results`;
         }
     </script>
 </body>
