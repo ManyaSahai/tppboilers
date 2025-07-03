@@ -737,7 +737,7 @@
 </head>
 
 <body>
-    <div class="th-menu-wrapper">
+    <div class="th-menu-wrapper style">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo"><a class="icon-masking" href="#index.html">
                     <img src="assets/img/logo_1wh.png" alt="Webteck"></a></div>
@@ -749,7 +749,7 @@
                     <li><a href="product.html">Products</a>
 
                     </li>
-                    <li><a href="#"> Blog </a>
+                    <li><a href="#"> Blogs </a>
 
 
                     <li><a href="contact.html">Contact</a></li>
@@ -842,7 +842,7 @@
         </div>
     </div>
 
-    <div class="sticky-wrapper" style="background-color: navy;">
+    <div class="sticky-wrapper" style="background-color: navy; line-height: 1.6; font-size: 17px;">
 
         <div class="menu-area">
             <div class="container th-container5">
@@ -875,7 +875,7 @@
                                 <li class="menu-item-has-children mega-menu-wrap"><a href="index.html">Home</a>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="product.html">Products</a></li>
-                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Blogs</a></li>
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav><button type="button" class="th-menu-toggle d-block d-lg-none"><i
@@ -1014,8 +1014,7 @@
                         <li><a href="#" onclick="filterByCategory('Pipes & Tubes')">Pipes & Tubes</a></li>
                         <li><a href="#" onclick="filterByCategory('Finned Tubes')">Finned Tubes</a></li>
                         <li><a href="#" onclick="filterByCategory('Headers')">Headers</a></li>
-                        <li><a href="#" onclick="resetFilters(); return false;"
-                                style="color: var(--primary-color); font-weight: bold;">Show All Products</a></li>
+
                     </ul>
                 </div>
             </aside>
@@ -1267,7 +1266,7 @@
                                 <ul class="menu">
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="product.html">Products</a></li>
-                                    <li><a href="">Blog</a></li>
+                                    <li><a href="">Blogs</a></li>
                                     <li><a href="certification.html">Certification Standards</a></li>
 
                                     <li><a href="contact.html">Contact Us</a></li>
@@ -1425,16 +1424,7 @@
         }
 
         // Function to reset filters and show all products
-        function resetFilters() {
-            const products = document.querySelectorAll('.product-card');
-            products.forEach(product => {
-                product.style.display = 'block';
-            });
 
-            showProduct(1);
-            document.getElementById('searchInput').value = '';
-            document.querySelector('.results-info').textContent = `Showing 1 of ${products.length} Results`;
-        }
     </script>
 </body>
 
