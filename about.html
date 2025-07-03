@@ -43,8 +43,45 @@
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
+        .sticky-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+            background-color: transparent !important;
+        }
+
+        .sticky-wrapper.scrolled {
+            background-color: var(--navy) !important;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adjust the hero section to account for the sticky navbar */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: -80px;
+            /* Pull up to overlay navbar */
+            padding-top: 80px;
+            /* Push content down below navbar */
+            z-index: 1;
+        }
+
+        /* Ensure content doesn't hide behind navbar */
+        .main-content {
+            position: relative;
+            z-index: 2;
+        }
+
         :root {
-            --navy: #0a2342;
+            --navy: navy;
             --navy-dark: #061a36;
             --navy-light: rgba(10, 35, 66, 0.08);
             --seagreen: #2e8b57;
@@ -1350,6 +1387,20 @@
         </style>
 
         <script>
+            // Add this JavaScript to handle the navbar scroll effect
+            document.addEventListener('DOMContentLoaded', function () {
+                const stickyWrapper = document.querySelector('.sticky-wrapper');
+                const heroSection = document.querySelector('.hero');
+                const heroHeight = heroSection.offsetHeight;
+
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > heroHeight * 0.1) { // Adjust this value to control when the color changes
+                        stickyWrapper.classList.add('scrolled');
+                    } else {
+                        stickyWrapper.classList.remove('scrolled');
+                    }
+                });
+            });
             // Show/hide scroll to top button
             window.addEventListener('scroll', function () {
                 const scrollTop = document.getElementById('scrollTop');
