@@ -1,16 +1,15 @@
-<!doctype html>
-<html class="no-js" lang="zxx">
-<!-- Mirrored from html.themeholy.com/webteck/demo/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 May 2025 11:41:48 GMT -->
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Webteck - Technology & IT Solutions HTML Template - Blog Post</title>
-    <meta name="author" content="Themeholy">
-    <meta name="description" content="Webteck - Technology & IT Solutions HTML Template">
-    <meta name="keywords" content="Webteck - Technology & IT Solutions HTML Template">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPP Boilers - Blogs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
@@ -38,617 +37,1090 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .sticky-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            /* Higher z-index to ensure it stays on top */
+            transition: all 0.3s ease;
+            background-color: navy;
+        }
+
+        .sticky-wrapper.scrolled {
+            background-color: navy;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Adjust hero section to account for sticky navbar */
+        .hero {
+            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('assets/img/contact.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0 100px;
+            /* Increased top padding to account for navbar */
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 0;
+            /* Remove negative margin */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Ensure content doesn't hide behind navbar */
+        .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy-blue: #1e3a8a;
+            --sea-green: #20b2aa;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --dark-gray: #333;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .th-header {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #1e40af 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .th-header.scrolled {
+            background: rgba(30, 58, 138, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .th-container5 {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .menu-area {
+            padding: 1rem 0;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo img {
+            width: 200px;
+            height: 60px;
+            transition: transform 0.3s ease;
+        }
+
+        .header-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .main-menu ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .main-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--sea-green);
+            transition: width 0.3s ease;
+        }
+
+        .main-menu a:hover::after {
+            width: 100%;
+        }
+
+        .th-btn {
+            background: linear-gradient(135deg, var(--sea-green) 0%, #16a085 100%);
+            color: var(--white);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
+        }
+
+        .th-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #1e40af 100%);
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="rgba(255,255,255,0.1)"><polygon points="0,100 1000,0 1000,100"/></svg>') no-repeat center bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+
+        /* Blog Grid */
+        .blog-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .container {
+            max-width: 1970px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--navy-blue);
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        .blog-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .blog-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .blog-card:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .blog-card:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .blog-card:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .blog-card:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--sea-green) 0%, #16a085 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .blog-card:hover .blog-image::before {
+            transform: translateX(100%);
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--sea-green);
+        }
+
+        .blog-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card:hover .blog-title {
+            color: var(--sea-green);
+        }
+
+        .blog-excerpt {
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--sea-green);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: var(--navy-blue);
+            transform: translateX(5px);
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--sea-green);
+            color: var(--sea-green);
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--sea-green);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--navy-blue) 0%, #1e40af 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            color: var(--white);
+        }
+
+        .newsletter-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .newsletter-form button {
+            background: var(--sea-green);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
+        }
+
+        /* Footer Styles */
+        .footer-wrapper {
+
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-top {
+            margin-bottom: 40px;
+        }
+
+        .footer-newsletter {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .widget-area {
+            margin-bottom: 40px;
+        }
+
+        .widget-area .row {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .widget {
+            flex: 1;
+        }
+
+        .widget_title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .about-text {
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .th-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .th-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .th-social a:hover {
+            background: var(--sea-green);
+            transform: translateY(-2px);
+        }
+
+        .menu {
+            list-style: none;
+        }
+
+        .menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .menu a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .menu a:hover {
+            color: var(--sea-green);
+        }
+
+        .copyright-wrap {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px 0;
+        }
+
+        .copyright-text {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-links ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--sea-green);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .footer-links ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .widget-area .row {
+                flex-direction: column;
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="cursor"></div>
-    <div class="cursor2"></div>
-    <div class="color-scheme-wrap active"><button class="switchIcon"><i class="fa-solid fa-palette"></i></button>
-        <h4 class="color-scheme-wrap-title"><i class="far fa-palette me-2"></i>Style Swicher</h4>
-        <div class="color-switch-btns"><button data-color="#3E66F3"><i class="fa-solid fa-droplet"></i></button> <button
-                data-color="#684DF4"><i class="fa-solid fa-droplet"></i></button> <button data-color="#008080"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#323F7C"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#FC3737"><i
-                    class="fa-solid fa-droplet"></i></button> <button data-color="#8a2be2"><i
-                    class="fa-solid fa-droplet"></i></button></div><a href="https://themeforest.net/user/themeholy"
-            class="th-btn text-center w-100"><i class="fa fa-shopping-cart me-2"></i> Purchase</a>
-    </div>
-    <div id="preloader" class="preloader"><button class="th-btn th-radius preloaderCls">Cancel Preloader</button>
-        <div id="loader" class="th-preloader">
-            <div class="animation-preloader">
-                <div class="txt-loading"><span preloader-text="W" class="characters">W</span> <span preloader-text="E"
-                        class="characters">E</span> <span preloader-text="B" class="characters">B</span> <span
-                        preloader-text="T" class="characters">T</span> <span preloader-text="E"
-                        class="characters">E</span> <span preloader-text="C" class="characters">C</span> <span
-                        preloader-text="K" class="characters">K</span></div>
-            </div>
-        </div>
-    </div>
-    <div class="sidemenu-wrapper">
-        <div class="sidemenu-content"><button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget woocommerce widget_shopping_cart">
-                <h3 class="widget_title">Shopping cart</h3>
-                <div class="widget_shopping_cart_content">
-                    <ul class="woocommerce-mini-cart cart_list product_list_widget">
-                        <li class="woocommerce-mini-cart-item mini_cart_item"><a href="#"
-                                class="remove remove_from_cart_button"><i class="far fa-times"></i></a> <a href="#"><img
-                                    src="assets/img/product/product_thumb_1_1.jpg" alt="Cart Image">Gaming Computer</a>
-                            <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><span
-                                        class="woocommerce-Price-currencySymbol">$</span>940.00</span></span></li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item"><a href="#"
-                                class="remove remove_from_cart_button"><i class="far fa-times"></i></a> <a href="#"><img
-                                    src="assets/img/product/product_thumb_1_2.jpg" alt="Cart Image">Smartphone Vivo
-                                V9</a> <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><span
-                                        class="woocommerce-Price-currencySymbol">$</span>899.00</span></span></li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item"><a href="#"
-                                class="remove remove_from_cart_button"><i class="far fa-times"></i></a> <a href="#"><img
-                                    src="assets/img/product/product_thumb_1_3.jpg" alt="Cart Image">SanDisk Flash
-                                Drive</a> <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><span
-                                        class="woocommerce-Price-currencySymbol">$</span>756.00</span></span></li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item"><a href="#"
-                                class="remove remove_from_cart_button"><i class="far fa-times"></i></a> <a href="#"><img
-                                    src="assets/img/product/product_thumb_1_4.jpg" alt="Cart Image">Smart Power Bank</a>
-                            <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><span
-                                        class="woocommerce-Price-currencySymbol">$</span>723.00</span></span></li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item"><a href="#"
-                                class="remove remove_from_cart_button"><i class="far fa-times"></i></a> <a href="#"><img
-                                    src="assets/img/product/product_thumb_1_5.jpg" alt="Cart Image">Apple Smartwatch</a>
-                            <span class="quantity">1 × <span class="woocommerce-Price-amount amount"><span
-                                        class="woocommerce-Price-currencySymbol">$</span>1080.00</span></span></li>
-                    </ul>
-                    <p class="woocommerce-mini-cart__total total"><strong>Subtotal:</strong> <span
-                            class="woocommerce-Price-amount amount"><span
-                                class="woocommerce-Price-currencySymbol">$</span>4398.00</span></p>
-                    <p class="woocommerce-mini-cart__buttons buttons btn-wrap"><a href="cart.html"
-                            class="th-btn wc-forward">View cart</a> <a href="checkout.html"
-                            class="th-btn checkout wc-forward">Checkout</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popup-search-box d-none d-lg-block"><button class="searchClose"><i class="fal fa-times"></i></button>
-        <form action="#"><input type="text" placeholder="What are you looking for?"> <button type="submit"><i
-                    class="fal fa-search"></i></button></form>
-    </div>
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo"><a class="icon-masking" href="index.html"><span data-mask-src="assets/img/logo.svg"
-                        class="mask-icon"></span><img src="assets/img/logo.svg" alt="Webteck"></a></div>
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children mega-menu-wrap"><a href="#">Home</a>
-                        <ul class="mega-menu">
-                            <li><a href="#">Multipage</a>
-                                <ul>
-                                    <li><a href="index.html">Digital Agency</a></li>
-                                    <li><a href="home-web-development.html">Web Development</a></li>
-                                    <li><a href="home-software-company.html">Software Company</a></li>
-                                    <li><a href="home-software-company-2.html">Software Company Style 2</a></li>
-                                    <li><a href="home-startup-company.html">Startup Company</a></li>
-                                    <li><a href="home-it-solution.html">IT Solution</a></li>
-                                    <li><a href="home-web-agency.html">Web Agency</a></li>
-                                    <li><a href="home-startup.html">Home Startup</a></li>
-                                    <li><a href="home-game-solution.html">Game Solution</a></li>
-                                    <li><a href="home-sass-marketing.html">Sass Marketing</a></li>
-                                    <li><a href="home-sass-landing.html">Sass Landing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Multipage</a>
-                                <ul>
-                                    <li><a href="home-sass-landing-2.html">Sass Landing Style 2</a></li>
-                                    <li><a href="home-app-landing.html">App Landing</a></li>
-                                    <li><a href="home-ai-technology.html">AI Technology</a></li>
-                                    <li><a href="home-cyber-security.html">Cyber Security</a></li>
-                                    <li><a href="home-cyber-security-2.html">Cyber Security Style 2</a></li>
-                                    <li><a href="home-it-company.html">IT Company</a></li>
-                                    <li><a href="home-digital-marking.html">Digital Marking</a></li>
-                                    <li><a href="home-it-agency.html">IT Agency</a></li>
-                                    <li><a href="home-crm.html">Home CRM</a></li>
-                                    <li><a href="home-it-consulting.html">IT Consulting</a></li>
-                                    <li><a href="home-help-desk.html">Home Help Desk</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Onepage</a>
-                                <ul>
-                                    <li><a href="home-digital-agency-op.html">Digital Agency Onepage</a></li>
-                                    <li><a href="home-web-development-op.html">Web Development Onepage</a></li>
-                                    <li><a href="home-software-company-op.html">Software Company Onepage</a></li>
-                                    <li><a href="home-software-company-2-op.html">Software Company Style 2 Onepage</a>
-                                    </li>
-                                    <li><a href="home-startup-company-op.html">Startup Company Onepage</a></li>
-                                    <li><a href="home-it-solution-op.html">IT Solution Onepage</a></li>
-                                    <li><a href="home-web-agency-op.html">Web Agency Onepage</a></li>
-                                    <li><a href="home-startup-op.html">Home Startup Onepage</a></li>
-                                    <li><a href="home-game-solution-op.html">Game Solution Onepage</a></li>
-                                    <li><a href="home-sass-marketing-op.html">Sass Marketing Onepage</a></li>
-                                    <li><a href="home-sass-landing-op.html">Sass Landing Onepage</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Onepage</a>
-                                <ul>
-                                    <li><a href="home-sass-landing-2-op.html">Sass Landing Style 2 Onepage</a></li>
-                                    <li><a href="home-app-landing-op.html">App Landing Onepage</a></li>
-                                    <li><a href="home-ai-technology-op.html">AI Technology Onepage</a></li>
-                                    <li><a href="home-cyber-security-op.html">Cyber Security Onepage</a></li>
-                                    <li><a href="home-cyber-security-2-op.html">Cyber Security Style 2 Onepage</a></li>
-                                    <li><a href="home-it-company-op.html">IT Company Onepage</a></li>
-                                    <li><a href="home-digital-marking-op.html">Digital Marking Onepage</a></li>
-                                    <li><a href="home-it-agency-op.html">IT Agency Onepage</a></li>
-                                    <li><a href="home-crm-op.html">Home CRM Onepage</a></li>
-                                    <li><a href="home-it-consulting-op.html">IT Consulting Onepage</a></li>
-                                    <li><a href="home-help-desk-op.html">Home Help Desk</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li class="menu-item-has-children"><a href="#">Services</a>
-                        <ul class="sub-menu">
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="service-details.html">Services Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                <ul class="sub-menu">
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                    <li><a href="cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="team-details.html">Team Details</a></li>
-                            <li><a href="project.html">Project</a></li>
-                            <li><a href="project-details.html">Project Details</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="faq.html">Faq Page</a></li>
-                            <li><a href="error.html">Error Page</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="blog-details.html">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <header class="th-header header-layout1">
-        <div class="header-top">
-            <div class="container">
-                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
-                    <div class="col-auto d-none d-lg-block">
-                        <div class="header-links">
-                            <ul>
-                                <li><i class="fas fa-map-location"></i>54 NJ-12, Flemington, United States</li>
-                                <li><i class="fas fa-phone"></i><a href="tel:+1539873657">+153-987-3657</a></li>
-                                <li><i class="fas fa-envelope"></i><a
-                                        href="mailto:info@webteck.com">info@webteck.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-social"><span class="social-title">Follow Us On : </span><a
-                                href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a> <a
-                                href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a> <a
-                                href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a> <a
-                                href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a> <a
-                                href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Header Section -->
+    <header class="th-header header-layout4 header-absolute">
         <div class="sticky-wrapper">
             <div class="menu-area">
-                <div class="container">
+                <div class="container th-container5">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
-                            <div class="header-logo"><a class="icon-masking" href="index.html"><span
-                                        data-mask-src="assets/img/logo.svg" class="mask-icon"></span><img
-                                        src="assets/img/logo.svg" alt="Webteck"></a></div>
+                            <div class="header-logo"><a class="icon-masking" href="index.html"><img
+                                        src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
                         </div>
                         <div class="col-auto">
-                            <nav class="main-menu d-none d-lg-inline-block">
+                            <nav class="main-menu style2 d-none d-lg-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap"><a href="#">Home</a>
-                                        <ul class="mega-menu">
-                                            <li><a href="#">Multipage</a>
-                                                <ul>
-                                                    <li><a href="index.html">Digital Agency</a></li>
-                                                    <li><a href="home-web-development.html">Web Development</a></li>
-                                                    <li><a href="home-software-company.html">Software Company</a></li>
-                                                    <li><a href="home-software-company-2.html">Software Company Style
-                                                            2</a></li>
-                                                    <li><a href="home-startup-company.html">Startup Company</a></li>
-                                                    <li><a href="home-it-solution.html">IT Solution</a></li>
-                                                    <li><a href="home-web-agency.html">Web Agency</a></li>
-                                                    <li><a href="home-startup.html">Home Startup</a></li>
-                                                    <li><a href="home-game-solution.html">Game Solution</a></li>
-                                                    <li><a href="home-sass-marketing.html">Sass Marketing</a></li>
-                                                    <li><a href="home-sass-landing.html">Sass Landing</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Multipage</a>
-                                                <ul>
-                                                    <li><a href="home-sass-landing-2.html">Sass Landing Style 2</a></li>
-                                                    <li><a href="home-app-landing.html">App Landing</a></li>
-                                                    <li><a href="home-ai-technology.html">AI Technology</a></li>
-                                                    <li><a href="home-cyber-security.html">Cyber Security</a></li>
-                                                    <li><a href="home-cyber-security-2.html">Cyber Security Style 2</a>
-                                                    </li>
-                                                    <li><a href="home-it-company.html">IT Company</a></li>
-                                                    <li><a href="home-digital-marking.html">Digital Marking</a></li>
-                                                    <li><a href="home-it-agency.html">IT Agency</a></li>
-                                                    <li><a href="home-crm.html">Home CRM</a></li>
-                                                    <li><a href="home-it-consulting.html">IT Consulting</a></li>
-                                                    <li><a href="home-help-desk.html">Home Help Desk</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Onepage</a>
-                                                <ul>
-                                                    <li><a href="home-digital-agency-op.html">Digital Agency Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-web-development-op.html">Web Development
-                                                            Onepage</a></li>
-                                                    <li><a href="home-software-company-op.html">Software Company
-                                                            Onepage</a></li>
-                                                    <li><a href="home-software-company-2-op.html">Software Company Style
-                                                            2 Onepage</a></li>
-                                                    <li><a href="home-startup-company-op.html">Startup Company
-                                                            Onepage</a></li>
-                                                    <li><a href="home-it-solution-op.html">IT Solution Onepage</a></li>
-                                                    <li><a href="home-web-agency-op.html">Web Agency Onepage</a></li>
-                                                    <li><a href="home-startup-op.html">Home Startup Onepage</a></li>
-                                                    <li><a href="home-game-solution-op.html">Game Solution Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-sass-marketing-op.html">Sass Marketing Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-sass-landing-op.html">Sass Landing Onepage</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Onepage</a>
-                                                <ul>
-                                                    <li><a href="home-sass-landing-2-op.html">Sass Landing Style 2
-                                                            Onepage</a></li>
-                                                    <li><a href="home-app-landing-op.html">App Landing Onepage</a></li>
-                                                    <li><a href="home-ai-technology-op.html">AI Technology Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-cyber-security-op.html">Cyber Security Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-cyber-security-2-op.html">Cyber Security Style 2
-                                                            Onepage</a></li>
-                                                    <li><a href="home-it-company-op.html">IT Company Onepage</a></li>
-                                                    <li><a href="home-digital-marking-op.html">Digital Marking
-                                                            Onepage</a></li>
-                                                    <li><a href="home-it-agency-op.html">IT Agency Onepage</a></li>
-                                                    <li><a href="home-crm-op.html">Home CRM Onepage</a></li>
-                                                    <li><a href="home-it-consulting-op.html">IT Consulting Onepage</a>
-                                                    </li>
-                                                    <li><a href="home-help-desk-op.html">Home Help Desk</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="index.html">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="menu-item-has-children"><a href="#">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="service-details.html">Services Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item-has-children"><a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="team-details.html">Team Details</a></li>
-                                            <li><a href="project.html">Project</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children"><a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="product.html">Products</a></li>
+                                    <li><a href="#" style="color: var(--sea-green);">Blogs</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
-                            <div class="header-button"><button type="button"
-                                    class="icon-btn sideMenuToggler d-inline-block d-lg-none"><i
-                                        class="fal fa-shopping-cart"></i> <span class="badge">5</span></button> <button
-                                    type="button" class="th-menu-toggle d-inline-block d-lg-none"><i
-                                        class="far fa-bars"></i></button></div>
                         </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <div class="header-button"><button type="button" class="icon-btn searchBoxToggler"><i
-                                        class="fal fa-search"></i></button> <button type="button"
-                                    class="icon-btn sideMenuToggler"><i class="fal fa-shopping-cart"></i> <span
-                                        class="badge">5</span></button> <a href="contact.html"
-                                    class="th-btn style3 shadow-none">Make Appointment<i
-                                        class="fas fa-arrow-right ms-1"></i></a></div>
+                        <div class="col-auto d-none d-lg-inline-block">
+                            <div style="display: flex; align-items: center; gap: 15px;">
+                                <div class="header-button">
+                                    <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius">
+                                        Download Brochure
+                                    </a>
+                                </div>
+                                <div class="menu-item-has-children" style="position:relative; display:inline-block;">
+                                    <a href="index.html"
+                                        style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                        <i class="fas fa-globe" style="margin-right: 5px;"></i>
+                                        <span style="color: white; font-size: larger; font-weight: bold;">Global</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="logo-bg"></div>
             </div>
         </div>
     </header>
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/bg/breadcumb-bg.jpg">
+
+    <!-- Hero Section -->
+    <section class="hero-section">
         <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Blog Post</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Blog Post</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <section class="th-blog-wrapper space-top space-extra-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-8 col-lg-7">
-                    <div class="th-blog blog-single has-post-thumbnail">
-                        <div class="blog-img"><a href="blog-details.html"><img src="assets/img/blog/blog-s-1-1.jpg"
-                                    alt="Blog Image"></a></div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><img
-                                        src="assets/img/blog/author-1-1.png" alt="avater"> By Themeholy</a> <a
-                                    href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a> <a
-                                    href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Unsatiable entreaties may collecting
-                                    Power.</a></h2>
-                            <p class="blog-text">Progressively plagiarize quality metrics for impactful data.
-                                Assertively. Holisticly leverage existing magnetic functionalities. Assertively
-                                orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently
-                                enhance highly efficient infomediaries.</p><a href="blog-details.html"
-                                class="line-btn">Read More</a>
-                        </div>
-                    </div>
-                    <div class="th-blog blog-single has-post-thumbnail">
-                        <div class="blog-img th-carousel" data-arrows="true" data-slide-show="1" data-fade="true"><a
-                                href="blog-details.html"><img src="assets/img/blog/blog-s-1-2.jpg"
-                                    alt="Blog Image"></a><a href="blog-details.html"><img
-                                    src="assets/img/blog/blog-s-1-4.jpg" alt="Blog Image"></a></div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><img
-                                        src="assets/img/blog/author-1-1.png" alt="avater"> By Themeholy</a> <a
-                                    href="blog.html"><i class="fa-light fa-calendar-days"></i>22 June, 2024</a> <a
-                                    href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Regional Manager limited time
-                                    management.</a></h2>
-                            <p class="blog-text">Progressively plagiarize quality metrics for impactful data.
-                                Assertively. Holisticly leverage existing magnetic functionalities. Assertively
-                                orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently
-                                enhance highly efficient infomediaries.</p><a href="blog-details.html"
-                                class="line-btn">Read More</a>
-                        </div>
-                    </div>
-                    <div class="th-blog blog-single">
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><img
-                                        src="assets/img/blog/author-1-1.png" alt="avater"> By Themeholy</a> <a
-                                    href="blog.html"><i class="fa-light fa-calendar-days"></i>24 June, 2024</a> <a
-                                    href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">What’s the Holding Back It Solution
-                                    Industry?</a></h2>
-                            <p class="blog-text">Progressively plagiarize quality metrics for impactful data.
-                                Assertively. Holisticly leverage existing magnetic functionalities. Assertively
-                                orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently
-                                enhance highly efficient infomediaries.</p><a href="blog-details.html"
-                                class="line-btn">Read More</a>
-                        </div>
-                    </div>
-                    <div class="th-blog blog-single has-post-thumbnail">
-                        <div class="blog-img"><a href="blog-details.html"><img src="assets/img/blog/blog-s-1-3.jpg"
-                                    alt="Blog Image"></a><a href="https://www.youtube.com/watch?v=_sI_Ps7JSEk"
-                                class="play-btn popup-video"><i class="fas fa-play"></i></a></div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><img
-                                        src="assets/img/blog/author-1-1.png" alt="avater"> By Themeholy</a> <a
-                                    href="blog.html"><i class="fa-light fa-calendar-days"></i>24 June, 2024</a> <a
-                                    href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Latin derived from Cicero's 1st-century
-                                    BC</a></h2>
-                            <p class="blog-text">Progressively plagiarize quality metrics for impactful data.
-                                Assertively. Holisticly leverage existing magnetic functionalities. Assertively
-                                orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently
-                                enhance highly efficient infomediaries.</p><a href="blog-details.html"
-                                class="line-btn">Read More</a>
-                        </div>
-                    </div>
-                    <div class="th-blog blog-single has-post-thumbnail">
-                        <div class="blog-audio"><iframe title="Tell Me U Luv Me (with Trippie Redd) by Juice WRLD"
-                                src="https://w.soundcloud.com/player/?visual=true&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F830279092&amp;show_artwork=true&amp;maxwidth=751&amp;maxheight=1000&amp;dnt=1"></iframe>
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-meta"><a class="author" href="blog.html"><img
-                                        src="assets/img/blog/author-1-1.png" alt="avater"> By Themeholy</a> <a
-                                    href="blog.html"><i class="fa-light fa-calendar-days"></i>25 June, 2024</a> <a
-                                    href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                            </div>
-                            <h2 class="blog-title"><a href="blog-details.html">Regional Manager limited time
-                                    management.</a></h2>
-                            <p class="blog-text">Progressively plagiarize quality metrics for impactful data.
-                                Assertively. Holisticly leverage existing magnetic functionalities. Assertively
-                                orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently
-                                enhance highly efficient infomediaries.</p><a href="blog-details.html"
-                                class="line-btn">Read More</a>
-                        </div>
-                    </div>
-                    <div class="th-pagination text-center">
-                        <ul>
-                            <li><a href="blog.html">1</a></li>
-                            <li><a href="blog.html">2</a></li>
-                            <li><a href="blog.html">3</a></li>
-                            <li><a href="blog.html"><i class="far fa-arrow-right"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xxl-4 col-lg-5">
-                    <aside class="sidebar-area">
-                        <div class="widget widget_search">
-                            <form class="search-form"><input type="text" placeholder="Enter Keyword"> <button
-                                    type="submit"><i class="far fa-search"></i></button></form>
-                        </div>
-                        <div class="widget widget_categories">
-                            <h3 class="widget_title">Categories</h3>
-                            <ul>
-                                <li><a href="blog.html">IT Solution</a></li>
-                                <li><a href="blog.html">SEO Marketing</a></li>
-                                <li><a href="blog.html">Web Development</a></li>
-                                <li><a href="blog.html">Cloud Solution</a></li>
-                                <li><a href="blog.html">Network Marketing</a></li>
-                                <li><a href="blog.html">UI/UX Design</a></li>
-                            </ul>
-                        </div>
-                        <div class="widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-1.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit"
-                                                href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
-                                        </h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>21 June, 2024</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-2.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Regional
-                                                Manager limited time management.</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>22 June, 2024</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-1-3.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">What’s
-                                                the Holding Back It Solution Industry?</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>23 June, 2024</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <h3 class="widget_title">Gallery Post</h3>
-                            <div class="sidebar-gallery">
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_1.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_1.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_2.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_2.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_3.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_3.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_4.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_4.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_5.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_5.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                                <div class="gallery-thumb"><img src="assets/img/widget/gallery_1_6.jpg"
-                                        alt="Gallery Image"> <a href="assets/img/widget/gallery_1_6.jpg"
-                                        class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a></div>
-                            </div>
-                        </div>
-                        <div class="widget widget_tag_cloud">
-                            <h3 class="widget_title">Popular Tags</h3>
-                            <div class="tagcloud"><a href="blog.html">Technology</a> <a href="blog.html">Advice</a> <a
-                                    href="blog.html">Solution</a> <a href="blog.html">Consultion</a> <a
-                                    href="blog.html">Business</a> <a href="blog.html">Services</a> <a
-                                    href="blog.html">Start Up</a> <a href="blog.html">Agency</a> <a
-                                    href="blog.html">Software</a></div>
-                        </div>
-                    </aside>
-                </div>
+            <div class="hero-content">
+                <h1 class="hero-title">TPP Boilers Blog</h1>
+                <p class="hero-subtitle">Expert insights, maintenance tips, and project updates from India's trusted
+                    boiler manufacturer</p>
             </div>
         </div>
     </section>
-    <footer class="footer-wrapper footer-layout1">
-        <div class="footer-top">
-            <div class="logo-bg"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-3">
-                        <div class="footer-logo"><a class="icon-masking" href="index.html"><span
-                                    data-mask-src="assets/img/logo-white.svg" class="mask-icon"></span><img
-                                    src="assets/img/logo-white.svg" alt="Webteck"></a></div>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="section-title animate-on-scroll">
+                <h2>Latest from TPP Boilers</h2>
+                <p>Discover insights, updates, and expert knowledge from our boiler manufacturing experience</p>
+            </div>
+
+
+
+            <!-- Blog Grid -->
+            <div class="blog-grid">
+                <article class="blog-card" data-category="products">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-fire"></i>
+                        </div>
                     </div>
-                    <div class="col-xl-9">
-                        <div class="footer-contact-wrap">
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon"><i class="fas fa-phone"></i></div>
-                                <div class="media-body"><span class="footer-contact_text">Quick Call Us:</span> <a
-                                        href="tel:+19088000393" class="footer-contact_link">+190-8800-0393</a></div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> December 20, 2024</span>
+                            <span><i class="far fa-user"></i> TPP Team</span>
+                        </div>
+                        <h3 class="blog-title">Introducing Our New High-Efficiency Steam Boiler Series</h3>
+                        <p class="blog-excerpt">Discover TPP's latest steam boiler range designed for maximum efficiency
+                            and reliability in industrial applications. Built with over 500 man-years of expertise.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+
+
+
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> November 28, 2024</span>
+                            <span><i class="far fa-user"></i> Technical Expert</span>
+                        </div>
+                        <h3 class="blog-title">10 Ways to Reduce Boiler Fuel Consumption</h3>
+                        <p class="blog-excerpt">Practical tips to optimize your boiler's fuel efficiency and reduce
+                            operating costs. Expert advice from TPP's experienced professionals.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="products">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> November 20, 2024</span>
+                            <span><i class="far fa-user"></i> Engineering Team</span>
+                        </div>
+                        <h3 class="blog-title">Custom Boiler Components: Tailored Solutions for Your Industry</h3>
+                        <p class="blog-excerpt">Explore TPP's custom boiler component manufacturing capabilities and how
+                            we create tailored solutions for specific industrial requirements.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="projects">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-factory"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> November 15, 2024</span>
+                            <span><i class="far fa-user"></i> Project Lead</span>
+                        </div>
+                        <h3 class="blog-title">Food Processing Plant Boiler Upgrade Success Story</h3>
+                        <p class="blog-excerpt">Learn how TPP helped a food processing facility upgrade their boiler
+                            system for improved hygiene standards and energy efficiency.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="maintenance">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> November 10, 2024</span>
+                            <span><i class="far fa-user"></i> Service Team</span>
+                        </div>
+                        <h3 class="blog-title">When to Replace Your Boiler: Signs and Indicators</h3>
+                        <p class="blog-excerpt">Identify key warning signs that indicate it's time to replace your
+                            boiler. Learn about TPP's replacement services and modern solutions.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card" data-category="tips">
+                    <div class="blog-image">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                            <i class="fas fa-thermometer-half"></i>
+                        </div>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> November 5, 2024</span>
+                            <span><i class="far fa-user"></i> Operations Expert</span>
+                        </div>
+                        <h3 class="blog-title">Understanding Boiler Efficiency Ratings and What They Mean</h3>
+                        <p class="blog-excerpt">A comprehensive guide to boiler efficiency ratings, how they're
+                            calculated, and what they mean for your operating costs and performance.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+
+    <!-- Footer -->
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.th-header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Filter functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+
+                const filterValue = this.getAttribute('data-filter');
+
+                blogCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                        card.style.animation = 'slideInUp 0.6s ease forwards';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animate-on-scroll class
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Newsletter form submission
+        const newsletterForms = document.querySelectorAll('.newsletter-form');
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                if (email) {
+                    // Add success animation
+                    const button = this.querySelector('button');
+                    const originalText = button.textContent;
+                    button.textContent = 'Subscribed!';
+                    button.style.background = '#16a085';
+
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.style.background = '';
+                        this.reset();
+                    }, 2000);
+                }
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Blog card hover effects
+        blogCards.forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function () {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero-section');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Random blog card animations on load
+        function animateCardsRandomly() {
+            blogCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function () {
+            animateCardsRandomly();
+        });
+
+        // Add floating animation to filter buttons
+        filterButtons.forEach((button, index) => {
+            button.style.animationDelay = `${index * 0.1}s`;
+            button.style.animation = 'fadeInUp 0.6s ease forwards';
+        });
+
+        // Add ripple effect to buttons
+        function createRipple(event) {
+            const button = event.currentTarget;
+            const circle = document.createElement('span');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add('ripple');
+
+            const ripple = button.getElementsByClassName('ripple')[0];
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        // Add ripple effect styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background-color: rgba(255, 255, 255, 0.3);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Apply ripple effect to buttons
+        document.querySelectorAll('.th-btn, .filter-btn').forEach(button => {
+            button.addEventListener('click', createRipple);
+        });
+
+        // Loading animation for images
+        function loadImages() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function () {
+                    this.style.opacity = '1';
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        }
+
+        loadImages();
+
+        // Dynamic background colors for blog images
+        const colors = ['#20b2aa', '#1e3a8a', '#16a085', '#2563eb', '#059669'];
+        document.querySelectorAll('.blog-image').forEach((img, index) => {
+            const color = colors[index % colors.length];
+            img.style.background = `linear-gradient(135deg, ${color} 0%, ${color}dd 100%)`;
+        });
+
+        // Search functionality (if needed)
+        function addSearchFunctionality() {
+            const searchInput = document.createElement('input');
+            searchInput.type = 'text';
+            searchInput.placeholder = 'Search blogs...';
+            searchInput.style.cssText = `
+                width: 100%;
+                max-width: 400px;
+                padding: 12px 20px;
+                border: 2px solid var(--sea-green);
+                border-radius: 25px;
+                margin: 20px auto;
+                display: block;
+                font-size: 16px;
+                outline: none;
+                transition: all 0.3s ease;
+            `;
+
+            searchInput.addEventListener('focus', function () {
+                this.style.borderColor = 'var(--navy-blue)';
+                this.style.boxShadow = '0 0 0 3px rgba(32, 178, 170, 0.1)';
+            });
+
+            searchInput.addEventListener('blur', function () {
+                this.style.borderColor = 'var(--sea-green)';
+                this.style.boxShadow = 'none';
+            });
+
+            searchInput.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+                blogCards.forEach(card => {
+                    const title = card.querySelector('.blog-title').textContent.toLowerCase();
+                    const excerpt = card.querySelector('.blog-excerpt').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // Insert search input before filter buttons
+            const filterButtons = document.querySelector('.filter-buttons');
+            filterButtons.parentNode.insertBefore(searchInput, filterButtons);
+        }
+
+        // Uncomment the line below to add search functionality
+        // addSearchFunctionality();
+    </script>
+
+    <footer class="footer-wrapper footer-layout5">
+        <div class="container th-container5">
+            <div class="footer-top">
+                <div class="row gx-0 align-items-center">
+                    <div class="col-xl">
+                        <div class="footer-newsletter">
+                            <div class="footer-newsletter-content">
+                                <h2 class="newsletter-title">Subscribe for daily updates</h2>
                             </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon"><i class="fas fa-envelope"></i></div>
-                                <div class="media-body"><span class="footer-contact_text">Mail Us On:</span> <a
-                                        href="mailto:info@webteck.com" class="footer-contact_link">info@webteck.com</a>
-                                </div>
-                            </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon"><i class="fas fa-location-dot"></i></div>
-                                <div class="media-body"><span class="footer-contact_text">Visit Location:</span> <a
-                                        href="https://www.google.com/maps" class="footer-contact_link">54 Flemington,
-                                        USA</a></div>
-                            </div>
+                            <form class="newsletter-form"><i class="fa-sharp fa-light fa-envelope"></i> <input
+                                    class="form-control" type="email" placeholder="Email Address" required="">
+                                <button type="submit" class="th-btn">Subscribe Now</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="widget-area">
-            <div class="container">
+            <div class="widget-area">
                 <div class="row justify-content-between">
                     <div class="col-md-6 col-xxl-3 col-xl-4">
                         <div class="widget footer-widget">
                             <h3 class="widget_title">About Company</h3>
                             <div class="th-widget-about">
-                                <p class="about-text">Professionally redefine transparent ROI through low-risk
-                                    high-yield imperatives. Progressively create empowered. cost effective users via
-                                    team driven.</p>
+                                <p class="about-text">A specialized small-scale industry led by experienced
+                                    professionals, offering high-quality boiler components and steel fabrications
+                                    with
+                                    over 500 man-years of expertise. We combine advanced manufacturing with strict
+                                    quality control to deliver cost-effective, custom-engineered solutions.</p>
                                 <div class="th-social"><a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"><i
-                                            class="fab fa-twitter"></i></a> <a href="https://www.linkedin.com/"><i
-                                            class="fab fa-linkedin-in"></i></a> <a href="https://www.whatsapp.com/"><i
-                                            class="fab fa-whatsapp"></i></a> <a href="https://www.youtube.com/"><i
-                                            class="fab fa-youtube"></i></a></div>
+                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"
+                                        target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="black">
+                                            <path
+                                                d="M22.97 0H1.03C.46 0 0 .46 0 1.03v21.94C0 23.54.46 24 1.03 24h21.94c.57 0 1.03-.46 1.03-1.03V1.03C24 .46 23.54 0 22.97 0zM7.16 7.36h2.84l2.17 2.64 2.16-2.64h2.84l-3.9 4.67 4.04 5.02h-2.93l-2.41-2.96-2.42 2.96H7.17l4.03-5.02-4.04-4.67z" />
+                                        </svg>
+                                    </a>
+                                    </i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a
+                                        href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -658,105 +1130,57 @@
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="team.html">Meet Our Team</a></li>
-                                    <li><a href="project.html">Our Projects</a></li>
-                                    <li><a href="faq.html">Help & FAQs</a></li>
+                                    <li><a href="product.html">Products</a></li>
+                                    <li><a href="">Blogs</a></li>
+                                    <li><a href="certification.html">Certification Standards</a></li>
+
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">IT SERVICES</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="service-details.html">Web Development</a></li>
-                                    <li><a href="service-details.html">Business Development</a></li>
-                                    <li><a href="service-details.html">Product Management</a></li>
-                                    <li><a href="service-details.html">UI/UX Design</a></li>
-                                    <li><a href="service-details.html">Cloud services</a></li>
-                                </ul>
-                            </div>
+                        <div class="widget footer-widget" style="text-align: left;">
+                            <h3 class="widget_title">FOR MORE DETAILS</h3>
+                            <a href="assets/img/TPPBroucher.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
+            border: 2px solid navy; border-radius: 5px; text-decoration: none;
+            display: inline-block; transition: all 0.3s ease;">
+                                Download Brochure
+                            </a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-2-1.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit"
-                                                href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
-                                        </h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>21 June, 2024</a></div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img"><a href="blog-details.html"><img
-                                                src="assets/img/blog/recent-post-2-2.jpg" alt="Blog Image"></a></div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Regional
-                                                Manager limited time management.</a></h4>
-                                        <div class="recent-post-meta"><a href="blog.html"><i
-                                                    class="fal fa-calendar-days"></i>22 June, 2024</a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
                 </div>
             </div>
         </div>
-        <div class="copyright-wrap bg-title">
+        </div>
+        </div>
+        </div>
+        <div class="copyright-wrap">
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-lg-6">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a
-                                href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a
+                                href="https://themeforest.net/user/themeholy">TPP Boilers</a>. All Rights
+                            Reserved.</p>
                     </div>
-                    <div class="col-lg-6 text-end d-none d-lg-block">
+                    <div class="col-lg-6 text-lg-end text-center">
                         <div class="footer-links">
                             <ul>
-                                <li><a href="about.html">Terms & Condition</a></li>
-                                <li><a href="about.html">Careers</a></li>
-                                <li><a href="about.html">Privacy Policy</a></li>
+                                <li><a href="index.html">Terms & Condition</a></li>
+
+                                <li><a href="index.html">Privacy Policy</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="shape-left"><img src="assets/img/shape/footer_shape_2.svg" alt="shape"></div>
-        <div class="shape-right">
-            <div class="particle-1" id="particle-5"></div>
-        </div>
+
     </footer>
-    <div class="scroll-top"><svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
-            </path>
-        </svg></div>
-    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/js/circle-progress.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/tilt.jquery.min.js"></script>
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/ScrollTrigger.min.js"></script>
-    <script src="assets/js/smooth-scroll.js"></script>
-    <script src="assets/js/particles.min.js"></script>
-    <script src="assets/js/particles-config.js"></script>
-    <script src="assets/js/main.js"></script>
+
 </body>
-<!-- Mirrored from html.themeholy.com/webteck/demo/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 May 2025 11:41:52 GMT -->
 
 </html>
