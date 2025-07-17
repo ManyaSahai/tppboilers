@@ -322,14 +322,29 @@
                     background-position: center;
                     opacity: 0;
                     transition: opacity 1.5s ease-in-out;
+                    /* Ensure the image covers the area without cropping */
+                    background-repeat: no-repeat;
+                    /* Add this to prevent any potential cropping */
+                    object-fit: cover;
                 }
 
                 .slide.active {
                     opacity: 0.5;
-                    /* Using navy blue (#000080) with 50% transparency */
                     background-color: rgba(46, 139, 87, 0.5);
-                    /* Alternative: using sea green (#2E8B57) with 50% transparency */
-                    /* background-color: rgba(46, 139, 87, 0.5); */
+                    /* Add z-index to ensure active slide is on top */
+                    z-index: 1;
+
+                    /* Add this to your style section */
+                    .slide.fading {
+                        opacity: 0;
+                        transition: opacity 0.75s ease-in-out;
+                        /* Faster fade-out */
+                    }
+
+                    .slide:not(.active) {
+                        z-index: 0;
+                        /* Ensure inactive slides are below */
+                    }
                 }
             </style>
 
@@ -436,18 +451,33 @@
                         'We are specialized in Design, Fabrication of High Pressure and Temperature Boiler Parts, offering expertise in Power and Process Industries Boiler Spares.'
                     ];
 
+                    // Preload images to prevent loading delay
+                    function preloadImages() {
+                        textContent.forEach((_, index) => {
+                            const img = new Image();
+                            img.src = `assets/img/${index + 1}.jpeg`;
+                        });
+                    }
+                    preloadImages();
+
                     function nextSlide() {
-                        // Remove active class from current slide
-                        slides[currentSlide].classList.remove('active');
+                        // Add 'fading' class to current slide
+                        slides[currentSlide].classList.add('fading');
 
-                        // Calculate next slide index
-                        currentSlide = (currentSlide + 1) % slides.length;
+                        // Wait for the fade-out to complete before switching
+                        setTimeout(() => {
+                            slides[currentSlide].classList.remove('active');
+                            slides[currentSlide].classList.remove('fading');
 
-                        // Add active class to new slide
-                        slides[currentSlide].classList.add('active');
+                            // Calculate next slide index
+                            currentSlide = (currentSlide + 1) % slides.length;
 
-                        // Update text content
-                        dynamicText.textContent = textContent[currentSlide];
+                            // Add active class to new slide
+                            slides[currentSlide].classList.add('active');
+
+                            // Update text content
+                            dynamicText.textContent = textContent[currentSlide];
+                        }, 750); // Half of the transition duration
                     }
 
                     // Set interval for automatic sliding (6 seconds)
