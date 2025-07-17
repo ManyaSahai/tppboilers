@@ -704,6 +704,27 @@
                 margin-bottom: 10px;
             }
         }
+
+        .factory-title {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin: 80px 0 20px 0;
+            /* top right bottom left */
+            position: relative;
+            padding-bottom: 10px;
+            text-align: left;
+            /* This is what aligns it to the left */
+        }
+
+        .factory-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--sea-green);
+            bottom: 0;
+            left: 0;
+        }
     </style>
 </head>
 
@@ -984,7 +1005,8 @@
                             <i class="fas fa-envelope"></i>
                             <div class="info-content">
                                 <h4>Email</h4>
-                                <a href="mailto:tppboilers@gmail.com">tppboilers@gmail.com</a>
+                                <a href="mailto:tppboilers@gmail.com">tppboilers@gmail.com</a><br>
+                                <a href="mailto:infra@tppboilers.com">infra@tppboilers.com</a>
                             </div>
                         </div>
                         <div class="info-item">
@@ -995,7 +1017,8 @@
                             </div>
                         </div>
 
-                        <h3 style="margin-top: 30px;">Factory</h3>
+                        <h3>Factory</h3>
+
                         <div class="info-item">
                             <i class="fas fa-industry"></i>
                             <div class="info-content">
