@@ -97,61 +97,8 @@
             padding-top: 80px;
         }
 
-        /* Header Styles */
 
 
-
-
-
-        .header-logo img {
-            width: 200px;
-            height: 60px;
-            transition: transform 0.3s ease;
-        }
-
-        .header-logo:hover img {
-            transform: scale(1.05);
-        }
-
-        .main-menu ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-            align-items: center;
-        }
-
-        .main-menu a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 0;
-            white-space: nowrap;
-        }
-
-        .main-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--sea-green);
-            transition: width 0.3s ease;
-        }
-
-        .main-menu a:hover::after {
-            width: 100%;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
 
         .th-btn {
             background: linear-gradient(135deg, var(--sea-green) 0%, #16a085 100%);
@@ -616,854 +563,920 @@
 
 <body>
     <!-- Header Section -->
-    <header class="th-header header-layout4 header-absolute">
-        <div class="sticky-wrapper">
-            <div class="menu-area">
-                <div class="container th-container5">
-                    <div class="nav-row align-items-center justify-content-start">
-                        <div class="col-auto">
-                            <div class="header-logo"><a class="icon-masking" href="index.html"><img
-                                        src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
-                        </div>
-                        <div class="col-auto">
-                            <nav class="main-menu style2 d-none d-lg-inline-block">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="product.html">Products</a></li>
-                                    <li><a href="#" style="color: var(--sea-green);">Blogs</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <div class="col-auto">
-                            <div class="header-actions">
-                                <div class="header-button d-none d-lg-block">
-                                    <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius">
-                                        Download Brochure
-                                    </a>
-                                </div>
-                                <div class="menu-item-has-children d-none d-lg-block">
-                                    <a href="index.html"
-                                        style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
-                                        <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
-                                            viewBox="0 0 24 24">
-                                            <path
-                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
-                                        </svg>
-                                        <span style="color: white; font-size: larger; font-weight: bold;">Global</span>
-                                    </a>
-                                    <ul class="sub-menu">
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="index.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <i class="fas fa-globe"
-                                                    style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
-                                                <span style="font-size: 14px; font-weight: bold;">Global English</span>
-                                            </a>
-                                        </li>
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="pt.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <img src="https://flagcdn.com/w20/br.png"
-                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
-                                                <span style="font-size: 14px; font-weight: bold;">Brazil - Português
-                                                    (Portuguese)</span>
-                                            </a>
-                                        </li>
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="fr.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <img src="https://flagcdn.com/w20/ca.png"
-                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
-                                                <span style="font-size: 14px; font-weight: bold;">Canada - English |
-                                                    Français (French)</span>
-                                            </a>
-                                        </li>
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="es.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <img src="https://flagcdn.com/w20/mx.png"
-                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
-                                                <span style="font-size: 14px; font-weight: bold;">Mexico - Español
-                                                    (Spanish)</span>
-                                            </a>
-                                        </li>
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="es.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <img src="https://flagcdn.com/w20/pe.png"
-                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
-                                                <span style="font-size: 14px; font-weight: bold;">Peru - Español
-                                                    (Spanish)</span>
-                                            </a>
-                                        </li>
-                                        <li style="padding:8px 15px; white-space: nowrap;">
-                                            <a href="index.html"
-                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
-                                                <img src="https://flagcdn.com/w20/us.png"
-                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
-                                                <span style="font-size: 14px; font-weight: bold;">United States -
-                                                    English</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <button class="hamburger d-lg-none" onclick="toggleMobileMenu()">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <style>
-                        /* Force navbar items to stick left */
-                        .header-layout4 .th-container5 {
-                            padding-left: 0 !important;
-                            padding-right: 0 !important;
-                            max-width: 100% !important;
-                        }
 
-                        .nav-row {
-                            justify-content: flex-start !important;
-                            margin-left: 30px;
-                            /* Moves entire row slightly right */
-                            /* OR */
-                            padding-left: 30px;
-                            gap: 20px;
-                            /* Adjust spacing between items */
-                        }
+    <body>
 
-                        /* Remove any Bootstrap-induced spacing */
-                        .col-auto {
-                            padding-left: 0 !important;
-                            padding-right: 0 !important;
-                            margin-right: 0 !important;
-                        }
-                    </style>
+        <div class="bg-decoration"></div>
+        <div class="bg-decoration-2"></div>
+        <div class="bg-decoration-3"></div>
 
-                    <!-- Mobile Menu -->
-                    <div class="mobile-menu" id="mobileMenu">
+        <body>
+            <div class="th-menu-wrapper">
+                <div class="th-menu-area text-center"><button class="th-menu-toggle"><i
+                            class="fal fa-times"></i></button>
+                    <div class="mobile-logo"><a class="icon-masking" href="#index.html">
+                            <img src="assets/img/logo_1wh.png" alt="Webteck"></a></div>
+                    <div class="th-mobile-menu">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
+                            <li a href="index.html"><a href="#">Home</a>
+
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="product.html">Products</a></li>
-                            <li><a href="#" style="color: var(--sea-green);">Blogs</a></li>
+                            <li><a href="product.html">Products</a>
+
+                            </li>
+                            <li><a href="blog.html"> Blogs </a>
+
+
                             <li><a href="contact.html">Contact</a></li>
-                        </ul>
-
-                        <div class="mobile-actions">
-                            <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius">
-                                Download Brochure
-                            </a>
-
-                            <div class="mobile-global">
-                                <div class="mobile-global-header">
-                                    <svg style="width:16px;height:16px;margin-right:8px;fill:white;"
-                                        viewBox="0 0 24 24">
+                            <li class="menu-item-has-children" style="position:relative; display:inline-block;">
+                                <a href="index.html" style=" display:flex; align-items:center;">
+                                    <svg style="width:16px;height:16px;margin-right:5px;" viewBox="0 0 24 24"
+                                        fill="currentColor">
                                         <path
                                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
                                     </svg>
-                                    Global Options
-                                </div>
-                                <div class="mobile-global-options">
-                                    <a href="index.html">
-                                        <i class="fas fa-globe" style="margin-right:8px;color:#20b2aa;"></i>
-                                        Global English
-                                    </a>
-                                    <a href="pt.html">
-                                        <img src="https://flagcdn.com/w20/br.png" style="margin-right:8px;">
-                                        Brazil - Português
-                                    </a>
-                                    <a href="fr.html">
-                                        <img src="https://flagcdn.com/w20/ca.png" style="margin-right:8px;">
-                                        Canada - English | Français
-                                    </a>
-                                    <a href="es.html">
-                                        <img src="https://flagcdn.com/w20/mx.png" style="margin-right:8px;">
-                                        Mexico - Español
-                                    </a>
-                                    <a href="es.html">
-                                        <img src="https://flagcdn.com/w20/pe.png" style="margin-right:8px;">
-                                        Peru - Español
-                                    </a>
-                                    <a href="index.html">
-                                        <img src="https://flagcdn.com/w20/us.png" style="margin-right:8px;">
-                                        United States - English
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+                                    <span>Global</span>
+                                </a>
+                                <ul class="sub-menu"
+                                    style="display:none; position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd; min-width:200px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                    <li class="menu-item-has-children" style="position:relative; display:inline-block;">
+                                        <a href="index.html" style="display:flex; align-items:center;">
+                                            <svg style="width:16px;height:16px;margin-right:5px;" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                            </svg>
+                                            <span>Global</span>
+                                        </a>
+                                        <ul class="sub-menu"
+                                            style="display:none; position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd; min-width:200px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                            <li style="padding:5px 15px;">
+                                                <a href="index.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <i class="fas fa-globe"
+                                                        style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                    Global English
+                                                </a>
+                                            </li>
+                                            <li style="padding:5px 15px;">
+                                                <a href="pt.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/br.png"
+                                                        style="width:16px;height:12px;margin-right:8px;">
+                                                    Brazil - Português (Portuguese)
+                                                </a>
+                                            </li>
+                                            <li style="padding:5px 15px;">
+                                                <a href="/ca/en.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/ca.png"
+                                                        style="width:16px;height:12px;margin-right:8px;">
+                                                    Canada - English | Français (French)
+                                                </a>
+                                            </li>
+                                            <li style="padding:5px 15px;">
+                                                <a href="es.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/mx.png"
+                                                        style="width:16px;height:12px;margin-right:8px;">
+                                                    Mexico - Español (Spanish)
+                                                </a>
+                                            </li>
+                                            <li style="padding:5px 15px;">
+                                                <a href="es.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/pe.png"
+                                                        style="width:16px;height:12px;margin-right:8px;">
+                                                    Peru - Español (Spanish)
+                                                </a>
+                                            </li>
+                                            <li style="padding:5px 15px;">
+                                                <a href="index.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/us.png"
+                                                        style="width:16px;height:12px;margin-right:8px;">
+                                                    United States - English
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
 
-    <style>
-        .row {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 80px;
-        }
+                                    <style>
+                                        /* Hover to show dropdown */
+                                        .menu-item-has-children:hover .sub-menu {
+                                            display: block !important;
+                                        }
 
-        .nav-row {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: -100px;
-            /* Replace negative gap with a reasonable positive value */
-            margin-right: 0;
-            /* Remove right margin */
-            padding-right: 0;
-            /* Remove right padding */
-            justify-content: flex-start;
-            /* Force left alignment */
-            align-items: center;
-            /* Keep vertical alignment */
-        }
-
-        .col-auto {
-            flex-shrink: 0;
-        }
-
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            white-space: nowrap;
-        }
-
-        .menu-item-has-children {
-            position: relative;
-        }
-
-        .sub-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            min-width: 280px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .menu-item-has-children:hover .sub-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 10px;
-            background: none;
-            border: none;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: white;
-            margin: 2px 0;
-            transition: 0.3s;
-            border-radius: 2px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(-45deg) translate(-5px, 6px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(45deg) translate(-5px, -6px);
-        }
-
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px;
-            z-index: 1000;
-        }
-
-        .mobile-menu.active {
-            display: block;
-        }
-
-        .mobile-menu ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mobile-menu li {
-            margin: 15px 0;
-        }
-
-        .mobile-menu a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 500;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-actions {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .mobile-global {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-        }
-
-        .mobile-global-header {
-            display: flex;
-            align-items: center;
-            color: white;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .mobile-global-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .mobile-global-options a {
-            display: flex;
-            align-items: center;
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .mobile-global-options a:last-child {
-            border-bottom: none;
-        }
-
-        @media (max-width: 1024px) {
-            .main-menu {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
-            .d-lg-none {
-                display: flex !important;
-            }
-
-            .d-none.d-lg-block {
-                display: none !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header-button {
-                display: none;
-            }
-
-            .menu-item-has-children {
-                display: none;
-            }
-        }
-    </style>
-
-    <script>
-        function toggleMobileMenu() {
-            const hamburger = document.querySelector('.hamburger');
-            const mobileMenu = document.getElementById('mobileMenu');
-
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        }
-    </script>
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title" style="color: white;">Our Blogs</h1>
-                <p class="hero-subtitle" style="color: rgb(200, 190, 190);">
-                    Expert insights, maintenance tips, and project updates from India's trusted boiler manufacturer
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section class="blog-section">
-        <div class="container">
-            <div class="section-title animate-on-scroll">
-                <h2>Latest from TPP Boilers</h2>
-                <p>Discover insights, updates, and expert knowledge from our boiler manufacturing experience</p>
-            </div>
-
-            <!-- Blog Grid -->
-            <div class="blog-grid">
-                <article class="blog-card" data-category="products">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-fire"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> December 20, 2024</span>
-                            <span><i class="far fa-user"></i> Manufacturing Team</span>
-                        </div>
-                        <h3 class="blog-title">Introducing Our New High-Efficiency Steam Boiler Series</h3>
-                        <p class="blog-excerpt">Discover TPP's latest steam boiler range designed for maximum efficiency
-                            and reliability in industrial applications. Built with over 500 man-years of expertise.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="tips">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> November 28, 2024</span>
-                            <span><i class="far fa-user"></i> Technical Expert</span>
-                        </div>
-                        <h3 class="blog-title">10 Ways to Reduce Boiler Fuel Consumption</h3>
-                        <p class="blog-excerpt">Practical tips to optimize your boiler's fuel efficiency and reduce
-                            operating costs. Expert advice from TPP's experienced professionals.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="products">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> November 20, 2024</span>
-                            <span><i class="far fa-user"></i> Engineering Team</span>
-                        </div>
-                        <h3 class="blog-title">Custom Boiler Components: Tailored Solutions for Your Industry</h3>
-                        <p class="blog-excerpt">Explore TPP's custom boiler component manufacturing capabilities and how
-                            we create tailored solutions for specific industrial requirements.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="projects">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-factory"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> November 15, 2024</span>
-                            <span><i class="far fa-user"></i> Project Lead</span>
-                        </div>
-                        <h3 class="blog-title">Food Processing Plant Boiler Upgrade Success Story</h3>
-                        <p class="blog-excerpt">Learn how TPP helped a food processing facility upgrade their boiler
-                            system for improved hygiene standards and energy efficiency.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="maintenance">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> November 10, 2024</span>
-                            <span><i class="far fa-user"></i> Service Team</span>
-                        </div>
-                        <h3 class="blog-title">When to Replace Your Boiler: Signs and Indicators</h3>
-                        <p class="blog-excerpt">Identify key warning signs that indicate it's time to replace your
-                            boiler. Learn about TPP's replacement services and modern solutions.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="blog-card" data-category="tips">
-                    <div class="blog-image">
-                        <div
-                            style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
-                            <i class="fas fa-thermometer-half"></i>
-                        </div>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="far fa-calendar"></i> November 5, 2024</span>
-                            <span><i class="far fa-user"></i> Operations Expert</span>
-                        </div>
-                        <h3 class="blog-title">Understanding Boiler Efficiency Ratings and What They Mean</h3>
-                        <p class="blog-excerpt">A comprehensive guide to boiler efficiency ratings, how they're
-                            calculated, and what they mean for your operating costs and performance.</p>
-                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer-wrapper footer-layout5">
-        <div class="container th-container5">
-            <div class="footer-top">
-                <div class="row gx-0 align-items-center">
-                    <div class="col-xl">
-                        <div class="footer-newsletter">
-                            <div class="footer-newsletter-content">
-                                <h2 class="newsletter-title">Subscribe for daily updates</h2>
-                            </div>
-                            <form class="newsletter-form"><i class="fa-sharp fa-light fa-envelope"></i> <input
-                                    class="form-control" type="email" placeholder="Email Address" required="">
-                                <button type="submit" class="th-btn">Subscribe Now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="widget-area">
-                <div class="row justify-content-between align-items-start gy-4">
-                    <div class="col-md-4">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">About Company</h3>
-                            <div class="th-widget-about">
-                                <p class="about-text">A specialized small-scale industry led by experienced
-                                    professionals, offering high-quality boiler components and steel fabrications
-                                    with
-                                    over 500 man-years of expertise. We combine advanced manufacturing with strict
-                                    quality control to deliver cost-effective, custom-engineered solutions.</p>
-                                <div class="th-social"><a href="https://www.facebook.com/"><i
-                                            class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"
-                                        target="_blank">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="black">
-                                            <path
-                                                d="M22.97 0H1.03C.46 0 0 .46 0 1.03v21.94C0 23.54.46 24 1.03 24h21.94c.57 0 1.03-.46 1.03-1.03V1.03C24 .46 23.54 0 22.97 0zM7.16 7.36h2.84l2.17 2.64 2.16-2.64h2.84l-3.9 4.67 4.04 5.02h-2.93l-2.41-2.96-2.42 2.96H7.17l4.03-5.02-4.04-4.67z" />
-                                        </svg>
-                                    </a>
-                                    </i></a> <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a
-                                        href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Quick Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="product.html">Products</a></li>
-                                    <li><a href="">Blogs</a></li>
-                                    <li><a href="certification.html">Certification Standards</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                        /* Hover effect on links */
+                                        .sub-menu a:hover {
+                                            background: #f5f5f5;
+                                        }
+                                    </style>
                                 </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky-wrapper">
+
+                <div class="menu-area">
+                    <div class="container th-container5">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto">
+                                <div class="header-logo"><a class="icon-masking" href="index.html"><img
+                                            src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
+                            </div>
+                            <style>
+                                .header-logo img {
+                                    width: 200px;
+                                    /* Adjust this value as needed (50% is just an example) */
+                                    height: 60px
+                                        /* Maintain aspect ratio */
+                                }
+
+                                /* Hover to show dropdown */
+                                .menu-item-has-children:hover .sub-menu {
+                                    display: block !important;
+                                }
+
+                                /* Hover effect on links */
+                                .sub-menu a:hover {
+                                    background: #f5f5f5;
+                                }
+                            </style>
+                            <div class="col-auto">
+                                <nav class="main-menu style2 d-none d-lg-inline-block">
+                                    <ul>
+                                        <li class="menu-item-has-children mega-menu-wrap"><a href="index.html">Home</a>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li><a href="product.html">Products</a></li>
+                                        <li><a href="blog.html">Blogs</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav><button type="button" class="th-menu-toggle d-block d-lg-none"><i
+                                        class="far fa-bars"></i></button>
+                            </div>
+                            <div class="col-auto d-none d-lg-inline-block">
+                                <div style="display: flex; align-items: center; gap: 15px;">
+                                    <div class="header-button">
+                                        <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius">
+                                            Download Brochure
+                                        </a>
+                                    </div>
+
+                                    <!-- Global Language Selector moved here after brochure -->
+                                    <div class="menu-item-has-children"
+                                        style="position:relative; display:inline-block;">
+                                        <a href="index.html"
+                                            style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                            <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                            </svg>
+                                            <span
+                                                style="color: white; font-size: larger; font-weight: bold;">Global</span>
+                                        </a>
+                                        <ul class="sub-menu"
+                                            style="display:none; position:absolute; right:0; top:100%; background:#fff; border:1px solid #ddd; min-width:250px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="index.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <i class="fas fa-globe"
+                                                        style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                    <span style="font-size: 14px; font-weight: bold;">Global
+                                                        English</span>
+                                                </a>
+                                            </li>
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="pt.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/br.png"
+                                                        style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                    <span style="font-size: 14px; font-weight: bold;">Brazil - Português
+                                                        (Portuguese)</span>
+                                                </a>
+                                            </li>
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="fr.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/ca.png"
+                                                        style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                    <span style="font-size: 14px; font-weight: bold;">Canada - English |
+                                                        Français (French)</span>
+                                                </a>
+                                            </li>
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="es.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/mx.png"
+                                                        style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                    <span style="font-size: 14px; font-weight: bold;">Mexico - Español
+                                                        (Spanish)</span>
+                                                </a>
+                                            </li>
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="es.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/pe.png"
+                                                        style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                    <span style="font-size: 14px; font-weight: bold;">Peru - Español
+                                                        (Spanish)</span>
+                                                </a>
+                                            </li>
+                                            <li style="padding:8px 15px; white-space: nowrap;">
+                                                <a href="index.html"
+                                                    style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                    <img src="https://flagcdn.com/w20/us.png"
+                                                        style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                    <span style="font-size: 14px; font-weight: bold;">United States -
+                                                        English</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">FOR MORE DETAILS</h3>
-                            <a href="assets/img/TPPBroucher.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
+                </div>
+            </div>
+            </header>
+            <style>
+                .row {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: 80px;
+                }
+
+                .nav-row {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    gap: -100px;
+                    /* Replace negative gap with a reasonable positive value */
+                    margin-right: 0;
+                    /* Remove right margin */
+                    padding-right: 0;
+                    /* Remove right padding */
+                    justify-content: flex-start;
+                    /* Force left alignment */
+                    align-items: center;
+                    /* Keep vertical alignment */
+                }
+
+                .col-auto {
+                    flex-shrink: 0;
+                }
+
+                .header-actions {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    white-space: nowrap;
+                }
+
+                .menu-item-has-children {
+                    position: relative;
+                }
+
+                .sub-menu {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    background: white;
+                    border-radius: 8px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                    min-width: 280px;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-10px);
+                    transition: all 0.3s ease;
+                    z-index: 1000;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .menu-item-has-children:hover .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+                }
+
+                .hamburger {
+                    display: none;
+                    flex-direction: column;
+                    cursor: pointer;
+                    padding: 10px;
+                    background: none;
+                    border: none;
+                }
+
+                .hamburger span {
+                    width: 25px;
+                    height: 3px;
+                    background: white;
+                    margin: 2px 0;
+                    transition: 0.3s;
+                    border-radius: 2px;
+                }
+
+                .hamburger.active span:nth-child(1) {
+                    transform: rotate(-45deg) translate(-5px, 6px);
+                }
+
+                .hamburger.active span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                .hamburger.active span:nth-child(3) {
+                    transform: rotate(45deg) translate(-5px, -6px);
+                }
+
+                .mobile-menu {
+                    display: none;
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: rgba(0, 0, 0, 0.95);
+                    backdrop-filter: blur(10px);
+                    padding: 20px;
+                    z-index: 1000;
+                }
+
+                .mobile-menu.active {
+                    display: block;
+                }
+
+                .mobile-menu ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+
+                .mobile-menu li {
+                    margin: 15px 0;
+                }
+
+                .mobile-menu a {
+                    color: white;
+                    text-decoration: none;
+                    font-size: 18px;
+                    font-weight: 500;
+                    display: block;
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .mobile-actions {
+                    margin-top: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+
+                .mobile-global {
+                    background: rgba(255, 255, 255, 0.1);
+                    padding: 15px;
+                    border-radius: 8px;
+                }
+
+                .mobile-global-header {
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+
+                .mobile-global-options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+
+                .mobile-global-options a {
+                    display: flex;
+                    align-items: center;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 14px;
+                    padding: 8px 0;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .mobile-global-options a:last-child {
+                    border-bottom: none;
+                }
+
+                @media (max-width: 1024px) {
+                    .main-menu {
+                        display: none;
+                    }
+
+                    .hamburger {
+                        display: flex;
+                    }
+
+                    .d-lg-none {
+                        display: flex !important;
+                    }
+
+                    .d-none.d-lg-block {
+                        display: none !important;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .header-button {
+                        display: none;
+                    }
+
+                    .menu-item-has-children {
+                        display: none;
+                    }
+                }
+            </style>
+
+            <script>
+                function toggleMobileMenu() {
+                    const hamburger = document.querySelector('.hamburger');
+                    const mobileMenu = document.getElementById('mobileMenu');
+
+                    hamburger.classList.toggle('active');
+                    mobileMenu.classList.toggle('active');
+                }
+            </script>
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title" style="color: white;">Our Blogs</h1>
+                        <p class="hero-subtitle" style="color: rgb(200, 190, 190);">
+                            Expert insights, maintenance tips, and project updates from India's trusted boiler
+                            manufacturer
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Blog Section -->
+            <section class="blog-section">
+                <div class="container">
+                    <div class="section-title animate-on-scroll">
+                        <h2>Latest from TPP Boilers</h2>
+                        <p>Discover insights, updates, and expert knowledge from our boiler manufacturing experience</p>
+                    </div>
+
+                    <!-- Blog Grid -->
+                    <div class="blog-grid">
+                        <article class="blog-card" data-category="products">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-fire"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> December 20, 2024</span>
+                                    <span><i class="far fa-user"></i> Manufacturing Team</span>
+                                </div>
+                                <h3 class="blog-title">Introducing Our New High-Efficiency Steam Boiler Series</h3>
+                                <p class="blog-excerpt">Discover TPP's latest steam boiler range designed for maximum
+                                    efficiency
+                                    and reliability in industrial applications. Built with over 500 man-years of
+                                    expertise.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" data-category="tips">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-lightbulb"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> November 28, 2024</span>
+                                    <span><i class="far fa-user"></i> Technical Expert</span>
+                                </div>
+                                <h3 class="blog-title">10 Ways to Reduce Boiler Fuel Consumption</h3>
+                                <p class="blog-excerpt">Practical tips to optimize your boiler's fuel efficiency and
+                                    reduce
+                                    operating costs. Expert advice from TPP's experienced professionals.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" data-category="products">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> November 20, 2024</span>
+                                    <span><i class="far fa-user"></i> Engineering Team</span>
+                                </div>
+                                <h3 class="blog-title">Custom Boiler Components: Tailored Solutions for Your Industry
+                                </h3>
+                                <p class="blog-excerpt">Explore TPP's custom boiler component manufacturing capabilities
+                                    and how
+                                    we create tailored solutions for specific industrial requirements.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" data-category="projects">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-factory"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> November 15, 2024</span>
+                                    <span><i class="far fa-user"></i> Project Lead</span>
+                                </div>
+                                <h3 class="blog-title">Food Processing Plant Boiler Upgrade Success Story</h3>
+                                <p class="blog-excerpt">Learn how TPP helped a food processing facility upgrade their
+                                    boiler
+                                    system for improved hygiene standards and energy efficiency.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" data-category="maintenance">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> November 10, 2024</span>
+                                    <span><i class="far fa-user"></i> Service Team</span>
+                                </div>
+                                <h3 class="blog-title">When to Replace Your Boiler: Signs and Indicators</h3>
+                                <p class="blog-excerpt">Identify key warning signs that indicate it's time to replace
+                                    your
+                                    boiler. Learn about TPP's replacement services and modern solutions.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+
+                        <article class="blog-card" data-category="tips">
+                            <div class="blog-image">
+                                <div
+                                    style="display: flex; align-items: center; justify-content: center; height: 100%; color: white; font-size: 3rem;">
+                                    <i class="fas fa-thermometer-half"></i>
+                                </div>
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span><i class="far fa-calendar"></i> November 5, 2024</span>
+                                    <span><i class="far fa-user"></i> Operations Expert</span>
+                                </div>
+                                <h3 class="blog-title">Understanding Boiler Efficiency Ratings and What They Mean</h3>
+                                <p class="blog-excerpt">A comprehensive guide to boiler efficiency ratings, how they're
+                                    calculated, and what they mean for your operating costs and performance.</p>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer-wrapper footer-layout5">
+                <div class="container th-container5">
+                    <div class="footer-top">
+                        <div class="row gx-0 align-items-center">
+                            <div class="col-xl">
+                                <div class="footer-newsletter">
+                                    <div class="footer-newsletter-content">
+                                        <h2 class="newsletter-title">Subscribe for daily updates</h2>
+                                    </div>
+                                    <form class="newsletter-form"><i class="fa-sharp fa-light fa-envelope"></i> <input
+                                            class="form-control" type="email" placeholder="Email Address" required="">
+                                        <button type="submit" class="th-btn">Subscribe Now</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-area">
+                        <div class="row justify-content-between align-items-start gy-4">
+                            <div class="col-md-4">
+                                <div class="widget footer-widget">
+                                    <h3 class="widget_title">About Company</h3>
+                                    <div class="th-widget-about">
+                                        <p class="about-text">A specialized small-scale industry led by experienced
+                                            professionals, offering high-quality boiler components and steel
+                                            fabrications
+                                            with
+                                            over 500 man-years of expertise. We combine advanced manufacturing with
+                                            strict
+                                            quality control to deliver cost-effective, custom-engineered solutions.</p>
+                                        <div class="th-social"><a href="https://www.facebook.com/"><i
+                                                    class="fab fa-facebook-f"></i></a> <a
+                                                href="https://www.twitter.com/" target="_blank">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="black">
+                                                    <path
+                                                        d="M22.97 0H1.03C.46 0 0 .46 0 1.03v21.94C0 23.54.46 24 1.03 24h21.94c.57 0 1.03-.46 1.03-1.03V1.03C24 .46 23.54 0 22.97 0zM7.16 7.36h2.84l2.17 2.64 2.16-2.64h2.84l-3.9 4.67 4.04 5.02h-2.93l-2.41-2.96-2.42 2.96H7.17l4.03-5.02-4.04-4.67z" />
+                                                </svg>
+                                            </a>
+                                            </i></a> <a href="https://www.linkedin.com/"><i
+                                                    class="fab fa-linkedin-in"></i></a>
+                                            <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a> <a
+                                                href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget widget_nav_menu footer-widget">
+                                    <h3 class="widget_title">Quick Links</h3>
+                                    <div class="menu-all-pages-container">
+                                        <ul class="menu">
+                                            <li><a href="about.html">About Us</a></li>
+                                            <li><a href="product.html">Products</a></li>
+                                            <li><a href="">Blogs</a></li>
+                                            <li><a href="certification.html">Certification Standards</a></li>
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="widget footer-widget">
+                                    <h3 class="widget_title">FOR MORE DETAILS</h3>
+                                    <a href="assets/img/TPPBroucher.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
                         border: 2px solid navy; border-radius: 5px; text-decoration: none;
                         display: inline-block; transition: all 0.3s ease;">
-                                Download Brochure
-                            </a>
+                                        Download Brochure
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="copyright-wrap">
-                <div class="container">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-6">
-                            <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a
-                                    href="https://themeforest.net/user/themeholy">TPP Boilers</a>. All Rights
-                                Reserved.</p>
-                        </div>
-                        <div class="col-lg-6 text-lg-end text-center">
-                            <div class="footer-links">
-                                <ul>
-                                    <li><a href="index.html">Terms & Condition</a></li>
-                                    <li><a href="index.html">Privacy Policy</a></li>
-                                </ul>
+                    <div class="copyright-wrap">
+                        <div class="container">
+                            <div class="row justify-content-between align-items-center">
+                                <div class="col-lg-6">
+                                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a
+                                            href="https://themeforest.net/user/themeholy">TPP Boilers</a>. All Rights
+                                        Reserved.</p>
+                                </div>
+                                <div class="col-lg-6 text-lg-end text-center">
+                                    <div class="footer-links">
+                                        <ul>
+                                            <li><a href="index.html">Terms & Condition</a></li>
+                                            <li><a href="index.html">Privacy Policy</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </footer>
+            <!-- Scroll to Top Arrow -->
+            <div class="scroll-top" id="scrollTop">
+                ↑
             </div>
-        </div>
-    </footer>
-    <!-- Scroll to Top Arrow -->
-    <div class="scroll-top" id="scrollTop">
-        ↑
-    </div>
-    <style>
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            background: #ffffff;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .scroll-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: #23bc75;
-            transform: scale(1.1);
-        }
-    </style>
-
-    <script>
-        // Add this JavaScript to handle the navbar scroll effect
-        document.addEventListener('DOMContentLoaded', function () {
-            const stickyWrapper = document.querySelector('.sticky-wrapper');
-            const heroSection = document.querySelector('.hero');
-            const heroHeight = heroSection.offsetHeight;
-
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > heroHeight * 0.1) { // Adjust this value to control when the color changes
-                    stickyWrapper.classList.add('scrolled');
-                } else {
-                    stickyWrapper.classList.remove('scrolled');
+            <style>
+                .scroll-top {
+                    position: fixed;
+                    bottom: 30px;
+                    right: 30px;
+                    width: 50px;
+                    height: 50px;
+                    background: #ffffff;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 0.3s, visibility 0.3s;
+                    z-index: 9999;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-size: 20px;
+                    font-weight: bold;
                 }
-            });
-        });
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', function () {
-            const scrollTop = document.getElementById('scrollTop');
-            if (window.pageYOffset > 300) {
-                scrollTop.classList.add('show');
-            } else {
-                scrollTop.classList.remove('show');
-            }
-        });
 
-        // Scroll to top when clicked
-        document.getElementById('scrollTop').addEventListener('click', function () {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
+                .scroll-top.show {
+                    opacity: 1;
+                    visibility: visible;
+                }
 
-    <!-- JavaScript -->
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('.th-header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+                .scroll-top:hover {
+                    background: #23bc75;
+                    transform: scale(1.1);
+                }
+            </style>
 
-        // Filter functionality
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const blogCards = document.querySelectorAll('.blog-card');
+            <script>
+                // Add this JavaScript to handle the navbar scroll effect
+                document.addEventListener('DOMContentLoaded', function () {
+                    const stickyWrapper = document.querySelector('.sticky-wrapper');
+                    const heroSection = document.querySelector('.hero');
+                    const heroHeight = heroSection.offsetHeight;
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                // Add active class to clicked button
-                this.classList.add('active');
-
-                const filterValue = this.getAttribute('data-filter');
-
-                blogCards.forEach(card => {
-                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'block';
-                        card.style.animation = 'slideInUp 0.6s ease forwards';
+                    window.addEventListener('scroll', function () {
+                        if (window.scrollY > heroHeight * 0.1) { // Adjust this value to control when the color changes
+                            stickyWrapper.classList.add('scrolled');
+                        } else {
+                            stickyWrapper.classList.remove('scrolled');
+                        }
+                    });
+                });
+                // Show/hide scroll to top button
+                window.addEventListener('scroll', function () {
+                    const scrollTop = document.getElementById('scrollTop');
+                    if (window.pageYOffset > 300) {
+                        scrollTop.classList.add('show');
                     } else {
-                        card.style.display = 'none';
+                        scrollTop.classList.remove('show');
                     }
                 });
-            });
-        });
 
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+                // Scroll to top when clicked
+                document.getElementById('scrollTop').addEventListener('click', function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            </script>
 
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animated');
-                }
-            });
-        }, observerOptions);
+            <!-- JavaScript -->
+            <script>
+                // Header scroll effect
+                window.addEventListener('scroll', function () {
+                    const header = document.querySelector('.th-header');
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
 
-        // Observe all elements with animate-on-scroll class
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+                // Filter functionality
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                const blogCards = document.querySelectorAll('.blog-card');
 
-        // Newsletter form submission
-        const newsletterForms = document.querySelectorAll('.newsletter-form');
-        newsletterForms.forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const email = this.querySelector('input[type="email"]').value;
-                if (email) {
-                    // Add success animation
-                    const button = this.querySelector('button');
-                    const originalText = button.textContent;
-                    button.textContent = 'Subscribed!';
-                    button.style.background = '#16a085';
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', function () {
+                        // Remove active class from all buttons
+                        filterButtons.forEach(btn => btn.classList.remove('active'));
+                        // Add active class to clicked button
+                        this.classList.add('active');
 
-                    setTimeout(() => {
-                        button.textContent = originalText;
-                        button.style.background = '';
-                        this.reset();
-                    }, 2000);
-                }
-            });
-        });
+                        const filterValue = this.getAttribute('data-filter');
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                        blogCards.forEach(card => {
+                            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                                card.style.display = 'block';
+                                card.style.animation = 'slideInUp 0.6s ease forwards';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                    });
+                });
+
+                // Scroll animations
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animated');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observe all elements with animate-on-scroll class
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    observer.observe(el);
+                });
+
+                // Newsletter form submission
+                const newsletterForms = document.querySelectorAll('.newsletter-form');
+                newsletterForms.forEach(form => {
+                    form.addEventListener('submit', function (e) {
+                        e.preventDefault();
+                        const email = this.querySelector('input[type="email"]').value;
+                        if (email) {
+                            // Add success animation
+                            const button = this.querySelector('button');
+                            const originalText = button.textContent;
+                            button.textContent = 'Subscribed!';
+                            button.style.background = '#16a085';
+
+                            setTimeout(() => {
+                                button.textContent = originalText;
+                                button.style.background = '';
+                                this.reset();
+                            }, 2000);
+                        }
+                    });
+                });
+
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                });
+
+                // Blog card hover effects
+                blogCards.forEach(card => {
+                    card.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateY(-10px) scale(1.02)';
+                    });
+
+                    card.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                // Parallax effect for hero section
+                window.addEventListener('scroll', function () {
+                    const scrolled = window.pageYOffset;
+                    const hero = document.querySelector('.hero-section');
+                    if (hero) {
+                        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                    }
+                });
+
+                // Random blog card animations on load
+                function animateCardsRandomly() {
+                    blogCards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 150);
                     });
                 }
-            });
-        });
 
-        // Blog card hover effects
-        blogCards.forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
+                // Initialize animations when page loads
+                window.addEventListener('load', function () {
+                    animateCardsRandomly();
+                });
 
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
+                // Add floating animation to filter buttons
+                filterButtons.forEach((button, index) => {
+                    button.style.animationDelay = `${index * 0.1}s`;
+                    button.style.animation = 'fadeInUp 0.6s ease forwards';
+                });
 
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function () {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero-section');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
+                // Add ripple effect to buttons
+                function createRipple(event) {
+                    const button = event.currentTarget;
+                    const circle = document.createElement('span');
+                    const diameter = Math.max(button.clientWidth, button.clientHeight);
+                    const radius = diameter / 2;
 
-        // Random blog card animations on load
-        function animateCardsRandomly() {
-            blogCards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 150);
-            });
-        }
+                    circle.style.width = circle.style.height = `${diameter}px`;
+                    circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+                    circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+                    circle.classList.add('ripple');
 
-        // Initialize animations when page loads
-        window.addEventListener('load', function () {
-            animateCardsRandomly();
-        });
+                    const ripple = button.getElementsByClassName('ripple')[0];
+                    if (ripple) {
+                        ripple.remove();
+                    }
 
-        // Add floating animation to filter buttons
-        filterButtons.forEach((button, index) => {
-            button.style.animationDelay = `${index * 0.1}s`;
-            button.style.animation = 'fadeInUp 0.6s ease forwards';
-        });
+                    button.appendChild(circle);
+                }
 
-        // Add ripple effect to buttons
-        function createRipple(event) {
-            const button = event.currentTarget;
-            const circle = document.createElement('span');
-            const diameter = Math.max(button.clientWidth, button.clientHeight);
-            const radius = diameter / 2;
-
-            circle.style.width = circle.style.height = `${diameter}px`;
-            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-            circle.classList.add('ripple');
-
-            const ripple = button.getElementsByClassName('ripple')[0];
-            if (ripple) {
-                ripple.remove();
-            }
-
-            button.appendChild(circle);
-        }
-
-        // Add ripple effect styles
-        const style = document.createElement('style');
-        style.textContent = `
+                // Add ripple effect styles
+                const style = document.createElement('style');
+                style.textContent = `
             .ripple {
                 position: absolute;
                 border-radius: 50%;
@@ -1480,33 +1493,33 @@
                 }
             }
         `;
-        document.head.appendChild(style);
+                document.head.appendChild(style);
 
-        // Apply ripple effect to buttons
-        document.querySelectorAll('.th-btn, .filter-btn').forEach(button => {
-            button.addEventListener('click', createRipple);
-        });
-
-        // Loading animation for images
-        function loadImages() {
-            const images = document.querySelectorAll('img');
-            images.forEach(img => {
-                img.addEventListener('load', function () {
-                    this.style.opacity = '1';
-                    this.style.transform = 'scale(1)';
+                // Apply ripple effect to buttons
+                document.querySelectorAll('.th-btn, .filter-btn').forEach(button => {
+                    button.addEventListener('click', createRipple);
                 });
-            });
-        }
 
-        loadImages();
+                // Loading animation for images
+                function loadImages() {
+                    const images = document.querySelectorAll('img');
+                    images.forEach(img => {
+                        img.addEventListener('load', function () {
+                            this.style.opacity = '1';
+                            this.style.transform = 'scale(1)';
+                        });
+                    });
+                }
 
-        // Dynamic background colors for blog images
-        const colors = ['#20b2aa', '#1e3a8a', '#16a085', '#2563eb', '#059669'];
-        document.querySelectorAll('.blog-image').forEach((img, index) => {
-            const color = colors[index % colors.length];
-            img.style.background = `linear-gradient(135deg, ${color} 0%, ${color}dd 100%)`;
-        });
-    </script>
-</body>
+                loadImages();
+
+                // Dynamic background colors for blog images
+                const colors = ['#20b2aa', '#1e3a8a', '#16a085', '#2563eb', '#059669'];
+                document.querySelectorAll('.blog-image').forEach((img, index) => {
+                    const color = colors[index % colors.length];
+                    img.style.background = `linear-gradient(135deg, ${color} 0%, ${color}dd 100%)`;
+                });
+            </script>
+        </body>
 
 </html>
