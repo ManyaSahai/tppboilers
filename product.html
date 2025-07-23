@@ -749,7 +749,7 @@
                     <li><a href="product.html">Products</a>
 
                     </li>
-                    <li><a href="blog.html"> Blogs </a>
+                    <li><a href="certification.html">Certification</a></li>
 
 
                     <li><a href="contact.html">Contact</a></li>
@@ -875,7 +875,8 @@
                                 <li class="menu-item-has-children mega-menu-wrap"><a href="index.html">Home</a>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="product.html">Products</a></li>
-                                <li><a href="blog.html">Blogs</a></li>
+                                <li><a href="certification.html">Certification</a></li>
+
                                 <li><a href="contact.html">Contact</a></li>
                             </ul>
                         </nav><button type="button" class="th-menu-toggle d-block d-lg-none"><i
@@ -1002,17 +1003,20 @@
             </aside>
 
             <div class="product-listing">
-                <div class="results-info">Showing <span id="currentProductNumber">1</span> of 8 Results</div>
+                <div class="results-info">Showing <span id="currentProductNumber">1</span> of <span
+                        id="totalProducts">8</span> Results</div>
 
                 <div class="products-grid">
                     <!-- Product 1 -->
                     <div class="product-card active" data-category="Water Wall Panels">
                         <div class="product-image">
                             <div class="image-slide active">
-                                <img src="assets/img/product/water-wall-panels-03 (1).jpg" alt="Water Wall Panels">
+                                <img src="assets/img/Waterwall Panel-20250723T171803Z-1-001/Waterwall Panel/01.png"
+                                    alt="Water Wall Panels">
                             </div>
                             <div class="image-slide">
-                                <img src="assets/img/product/water.webp" alt="Water Wall Panels">
+                                <img src="assets/img/Waterwall Panel-20250723T171803Z-1-001/Waterwall Panel/02.webp"
+                                    alt="Water Wall Panels">
                             </div>
                         </div>
                         <div class="slide-nav">
@@ -1038,10 +1042,12 @@
                     <div class="product-card" data-category="Economisers">
                         <div class="product-image">
                             <div class="image-slide active">
-                                <img src="assets/img/product/coil.jpg" alt="Economisers">
+                                <img src="assets/img/Economiser_Coils-20250723T171753Z-1-001/Economiser_Coils/01.jpg"
+                                    alt="Economisers">
                             </div>
                             <div class="image-slide">
-                                <img src="assets/img/product/economisers-coils-02.jpg" alt="Economisers">
+                                <img src="assets/img/Economiser_Coils-20250723T171753Z-1-001/Economiser_Coils/02.jpg"
+                                    alt="Economisers">
                             </div>
                         </div>
                         <div class="slide-nav">
@@ -1070,10 +1076,12 @@
                     <div class="product-card" data-category="Superheaters">
                         <div class="product-image">
                             <div class="image-slide active">
-                                <img src="assets/img/product/superheater.jpg" alt="Superheaters">
+                                <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/04.jpg"
+                                    alt="Superheaters">
                             </div>
                             <div class="image-slide">
-                                <img src="assets/img/product/superheater-coils-03.jpg" alt="Superheaters">
+                                <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/02.jpeg"
+                                    alt="Superheaters">
                             </div>
                         </div>
                         <div class="slide-nav">
@@ -1130,10 +1138,12 @@
                     <div class="product-card" data-category="Boiler Bank Tubes">
                         <div class="product-image">
                             <div class="image-slide active">
-                                <img src="assets/img/product/boilerbank.jpg" alt="Boiler Bank Tubes">
+                                <img src="assets/img/BoilerBank_Tube-20250723T171753Z-1-001/BoilerBank_Tube/02.png"
+                                    alt="Boiler Bank Tubes">
                             </div>
                             <div class="image-slide">
-                                <img src="assets/img/product/boiler.webp" alt="Boiler Bank Tubes">
+                                <img src="assets/img/BoilerBank_Tube-20250723T171753Z-1-001/BoilerBank_Tube/03.jpg"
+                                    alt="Boiler Bank Tubes">
                             </div>
                         </div>
                         <div class="slide-nav">
@@ -1159,10 +1169,12 @@
                     <div class="product-card" data-category="Pipes & Tubes">
                         <div class="product-image">
                             <div class="image-slide active">
-                                <img src="assets/img/product/pipes-tube-tpp-boilers-01.jpg" alt="Pipes & Tubes">
+                                <img src="assets/img/Pipe_Tubes-20250723T171758Z-1-001/Pipe_Tubes/02.jpg"
+                                    alt="Pipes & Tubes">
                             </div>
                             <div class="image-slide">
-                                <img src="assets/img/product/seamless-pipes-tubes-03.jpg" alt="Pipes & Tubes">
+                                <img src="assets/img/Pipe_Tubes-20250723T171758Z-1-001/Pipe_Tubes/01.jpg"
+                                    alt="Pipes & Tubes">
                             </div>
                         </div>
                         <div class="slide-nav">
@@ -1259,7 +1271,8 @@
                 </div>
 
                 <div class="pagination">
-                    <div class="pagination-text">Page <span id="currentPage">1</span> of 8</div>
+                    <div class="pagination-text">Page <span id="currentPage">1</span> of <span id="totalPages">8</span>
+                    </div>
                     <ul class="page-numbers">
                         <li><a href="#" onclick="showProduct(1); return false;" class="active">1</a></li>
                         <li><a href="#" onclick="showProduct(2); return false;">2</a></li>
@@ -1317,6 +1330,7 @@
             cursor: pointer;
             line-height: 25px;
             text-align: center;
+            font-size: 12px;
         }
 
         .slide-dot.active {
@@ -1326,17 +1340,23 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Initialize all slides
+        // Global variable to store all slide intervals
+        const slideIntervals = {};
+
+        function initializeSlideshows() {
             const productCards = document.querySelectorAll('.product-card');
 
             productCards.forEach(card => {
                 const slides = card.querySelectorAll('.image-slide');
                 const dots = card.querySelectorAll('.slide-dot');
+                const cardId = card.getAttribute('data-category') + '-' + Array.from(productCards).indexOf(card);
 
                 // Make sure first slide is active
                 slides[0].classList.add('active');
                 dots[0].classList.add('active');
+
+                // Start slideshow for this product
+                startSlideShow(card, cardId);
 
                 // Add click events to dots
                 dots.forEach(dot => {
@@ -1352,33 +1372,78 @@
                         dots.forEach((d, index) => {
                             d.classList.toggle('active', index === slideIndex);
                         });
+
+                        // Reset the interval when manually changing slides
+                        if (slideIntervals[cardId]) {
+                            clearInterval(slideIntervals[cardId]);
+                            startSlideShow(card, cardId);
+                        }
                     });
                 });
             });
+        }
 
-            // Show first product by default
-            showProduct(1);
-        });
+        function startSlideShow(card, cardId) {
+            const slides = card.querySelectorAll('.image-slide');
+            const dots = card.querySelectorAll('.slide-dot');
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+
+            // Clear any existing interval for this card
+            if (slideIntervals[cardId]) {
+                clearInterval(slideIntervals[cardId]);
+            }
+
+            // Start new interval with 3-second timer
+            slideIntervals[cardId] = setInterval(() => {
+                // Move to next slide
+                currentSlide = (currentSlide + 1) % totalSlides;
+
+                // Update slides
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentSlide);
+                });
+
+                // Update dots
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }, 3000); // Change slide every 3 seconds
+        }
 
         function showProduct(pageNumber) {
             const products = document.querySelectorAll('.product-card');
-            const productsPerPage = 1;
-            const startIndex = (pageNumber - 1) * productsPerPage;
-            const endIndex = startIndex + productsPerPage;
+            const visibleProducts = Array.from(products).filter(p => window.getComputedStyle(p).display !== 'none');
+            const totalVisible = visibleProducts.length;
+            const totalPages = Math.ceil(totalVisible / 1); // 1 product per page
 
-            // Hide all products
+            // Update pagination info
+            document.getElementById('totalPages').textContent = totalPages;
+            document.getElementById('totalProducts').textContent = totalVisible;
+
+            if (pageNumber < 1) pageNumber = 1;
+            if (pageNumber > totalPages) pageNumber = totalPages;
+
+            const startIndex = (pageNumber - 1) * 1;
+            const endIndex = startIndex + 1;
+
+            // Hide all products first
             products.forEach(product => {
                 product.classList.remove('active');
             });
 
             // Show products for current page
-            for (let i = startIndex; i < endIndex && i < products.length; i++) {
-                products[i].classList.add('active');
+            for (let i = 0; i < visibleProducts.length; i++) {
+                if (i >= startIndex && i < endIndex) {
+                    visibleProducts[i].classList.add('active');
+                    const cardId = visibleProducts[i].getAttribute('data-category') + '-' + i;
+                    startSlideShow(visibleProducts[i], cardId);
+                }
             }
 
-            // Update pagination
+            // Update pagination display
             document.getElementById('currentPage').textContent = pageNumber;
-            document.getElementById('currentProductNumber').textContent = pageNumber;
+            document.getElementById('currentProductNumber').textContent = startIndex + 1;
 
             // Update active page number
             const pageLinks = document.querySelectorAll('.page-numbers a');
@@ -1394,36 +1459,27 @@
             const products = document.querySelectorAll('.product-card');
             let visibleCount = 0;
 
-            products.forEach(product => {
+            products.forEach((product, index) => {
                 if (product.getAttribute('data-category') === category) {
                     product.style.display = 'block';
                     visibleCount++;
+
+                    // Start slideshow for this product
+                    const cardId = category + '-' + index;
+                    startSlideShow(product, cardId);
                 } else {
                     product.style.display = 'none';
+                    product.classList.remove('active');
                 }
             });
 
             // Update results info
             document.getElementById('currentProductNumber').textContent = visibleCount > 0 ? 1 : 0;
+            document.getElementById('totalProducts').textContent = visibleCount;
             document.querySelector('.results-info').textContent = `Showing ${visibleCount > 0 ? 1 : 0} of ${visibleCount} Results`;
 
-            // Reset pagination
-            document.getElementById('currentPage').textContent = 1;
-            const pageLinks = document.querySelectorAll('.page-numbers a');
-            pageLinks.forEach(link => {
-                link.classList.toggle('active', link.textContent === '1');
-            });
-
-            // Show first matching product
-            if (visibleCount > 0) {
-                products.forEach(product => {
-                    product.classList.remove('active');
-                    if (product.getAttribute('data-category') === category) {
-                        product.classList.add('active');
-                        return;
-                    }
-                });
-            }
+            // Reset pagination to first page
+            showProduct(1);
         }
 
         function searchProducts() {
@@ -1431,44 +1487,38 @@
             const products = document.querySelectorAll('.product-card');
             let visibleCount = 0;
 
-            products.forEach(product => {
+            products.forEach((product, index) => {
                 const title = product.querySelector('.product-title').textContent.toLowerCase();
                 const description = product.querySelector('.product-description').textContent.toLowerCase();
 
                 if (title.includes(searchTerm) || description.includes(searchTerm)) {
                     product.style.display = 'block';
                     visibleCount++;
+
+                    // Start slideshow for this product
+                    const cardId = product.getAttribute('data-category') + '-' + index;
+                    startSlideShow(product, cardId);
                 } else {
                     product.style.display = 'none';
+                    product.classList.remove('active');
                 }
             });
 
             // Update results info
             document.getElementById('currentProductNumber').textContent = visibleCount > 0 ? 1 : 0;
+            document.getElementById('totalProducts').textContent = visibleCount;
             document.querySelector('.results-info').textContent = `Showing ${visibleCount > 0 ? 1 : 0} of ${visibleCount} Results`;
 
-            // Reset pagination
-            document.getElementById('currentPage').textContent = 1;
-            const pageLinks = document.querySelectorAll('.page-numbers a');
-            pageLinks.forEach(link => {
-                link.classList.toggle('active', link.textContent === '1');
-            });
-
-            // Show first matching product
-            if (visibleCount > 0) {
-                products.forEach(product => {
-                    product.classList.remove('active');
-                    const title = product.querySelector('.product-title').textContent.toLowerCase();
-                    const description = product.querySelector('.product-description').textContent.toLowerCase();
-                    if ((title.includes(searchTerm) || description.includes(searchTerm)) && visibleCount > 0) {
-                        product.classList.add('active');
-                        visibleCount--;
-                    }
-                });
-            }
+            // Reset pagination to first page
+            showProduct(1);
         }
-    </script>
 
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            initializeSlideshows();
+            showProduct(1);
+        });
+    </script>
     </section>
     <br>
     <footer class="footer-wrapper footer-layout5">
@@ -1522,8 +1572,8 @@
                                 <ul class="menu">
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="product.html">Products</a></li>
-                                    <li><a href="blog.html">Blogs</a></li>
-                                    <li><a href="certification.html">Certification Standards</a></li>
+                                    <li><a href="certification.html">Certification</a></li>
+
 
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
