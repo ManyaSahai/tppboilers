@@ -393,88 +393,36 @@
 
         <script>
             // Smooth scrolling animation observer
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
 
-            // Observe all animated elements
-            document.addEventListener('DOMContentLoaded', () => {
-                const animatedElements = document.querySelectorAll('.feature-card, .cert-card');
-                animatedElements.forEach(el => {
-                    observer.observe(el);
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.feature-card, .cert-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-5px) scale(1.02)';
                 });
 
-                // Add hover effects to cards
-                const cards = document.querySelectorAll('.feature-card, .cert-card');
-                cards.forEach(card => {
-                    card.addEventListener('mouseenter', () => {
-                        card.style.transform = 'translateY(-5px) scale(1.02)';
-                    });
-
-                    card.addEventListener('mouseleave', () => {
-                        card.style.transform = 'translateY(0) scale(1)';
-                    });
-                });
-
-                // Animate certification icons on hover
-                const certIcons = document.querySelectorAll('.cert-icon');
-                certIcons.forEach(icon => {
-                    icon.addEventListener('mouseenter', () => {
-                        icon.style.transform = 'rotate(360deg) scale(1.1)';
-                        icon.style.transition = 'transform 0.6s ease';
-                    });
-
-                    icon.addEventListener('mouseleave', () => {
-                        icon.style.transform = 'rotate(0deg) scale(1)';
-                    });
-                });
-
-                // Add subtle parallax effect to background
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const parallax = document.body;
-                    const speed = scrolled * 0.5;
-                    parallax.style.transform = `translateY(${speed}px)`;
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0) scale(1)';
                 });
             });
 
-            // Add ripple effect to buttons/cards
-            function createRipple(event) {
-                const button = event.currentTarget;
-                const circle = document.createElement("span");
-                const diameter = Math.max(button.clientWidth, button.clientHeight);
-                const radius = diameter / 2;
+            // Animate certification icons on hover
+            const certIcons = document.querySelectorAll('.cert-icon');
+            certIcons.forEach(icon => {
+                icon.addEventListener('mouseenter', () => {
+                    icon.style.transform = 'rotate(360deg) scale(1.1)';
+                    icon.style.transition = 'transform 0.6s ease';
+                });
 
-                circle.style.width = circle.style.height = `${diameter}px`;
-                circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-                circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-                circle.classList.add("ripple");
-
-                const ripple = button.getElementsByClassName("ripple")[0];
-                if (ripple) {
-                    ripple.remove();
-                }
-
-                button.appendChild(circle);
-            }
-
-            // Apply ripple effect to cards
-            document.addEventListener('DOMContentLoaded', () => {
-                const rippleElements = document.querySelectorAll('.cert-card, .feature-card');
-                rippleElements.forEach(element => {
-                    element.addEventListener('click', createRipple);
+                icon.addEventListener('mouseleave', () => {
+                    icon.style.transform = 'rotate(0deg) scale(1)';
                 });
             });
+
+
+
+
         </script>
 
         <style>
