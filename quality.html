@@ -369,10 +369,48 @@
                 <div class="cert-card">
                     <div class="cert-icon">ISO</div>
                     <h3>ISO 9001:2015</h3>
-                    <img src="assets/img/certificates/ISO Certificate_page-0001.jpg" alt="ISO Certificate"
-                        class="cert-img" />
-
+                    <div class="cert-images-scrollable">
+                        <img src="assets/img/certificates/ISO Certificate_page-0001.jpg" alt="ISO Certificate Page 1"
+                            class="cert-img" />
+                        <img src="assets/img/certificates/ISO Certificate_page-0002.jpg" alt="ISO Certificate Page 2"
+                            class="cert-img" />
+                    </div>
                 </div>
+                <style>
+                    .cert-images-scrollable {
+                        display: flex;
+                        overflow-x: auto;
+                        gap: 15px;
+                        padding: 10px 0;
+                        scroll-snap-type: x mandatory;
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    .cert-images-scrollable .cert-img {
+                        scroll-snap-align: start;
+                        flex: 0 0 auto;
+                        width: 100%;
+                        max-width: 300px;
+                        height: auto;
+                        margin: 0;
+                    }
+
+                    /* Hide scrollbar but keep functionality */
+                    .cert-images-scrollable::-webkit-scrollbar {
+                        height: 5px;
+                    }
+
+                    .cert-images-scrollable::-webkit-scrollbar-track {
+                        background: #f1f1f1;
+                        border-radius: 10px;
+                    }
+
+                    .cert-images-scrollable::-webkit-scrollbar-thumb {
+                        background: #0d9488;
+                        border-radius: 10px;
+                    }
+                </style>
                 <div class="cert-card">
                     <div class="cert-icon">ASME</div>
                     <h3>ASME Certification</h3>
