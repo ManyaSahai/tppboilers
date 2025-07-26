@@ -4,6 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Company Certifications</title>
     <style>
         :root {
@@ -26,32 +57,8 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
 
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, var(--navy-blue) 0%, #003366 100%);
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 50px;
-        }
 
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
 
         /* Certificates Grid */
         .certificates-section {
@@ -311,6 +318,204 @@
 </head>
 
 <body>
+    <header class="th-header header-layout4 header-absolute">
+        <div class="sticky-wrapper">
+            <div class="menu-area">
+                <div class="container th-container5">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo"><a class="icon-masking" href="index.html"><img
+                                        src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
+                        </div>
+                        <style>
+                            /* Logo styling */
+                            .header-logo img {
+                                width: 220px;
+                                /* Slightly reduced to make space */
+                                height: 65px;
+                            }
+
+                            /* Main menu container - critical for one-line */
+                            .tpp-main-nav-container {
+                                display: flex;
+                                white-space: nowrap;
+                                overflow: visible;
+                            }
+
+                            /* Main menu list - critical for one-line */
+                            .tpp-main-nav-list {
+                                display: flex;
+                                flex-wrap: nowrap;
+                                margin: 0;
+                                padding: 0;
+                                list-style: none;
+                            }
+
+                            /* Menu items - critical for one-line */
+                            .tpp-main-nav-item {
+                                flex-shrink: 0;
+                                margin: 0 6px !important;
+                                /* Reduced spacing */
+                            }
+
+                            /* Menu links */
+                            .tpp-main-nav-link {
+                                display: block;
+                                padding: 10px 8px !important;
+                                /* Reduced padding */
+                                font-size: 20px !important;
+                                /* Slightly smaller */
+                                white-space: nowrap;
+                            }
+
+                            /* Global selector styling */
+                            .tpp-global-selector {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            /* Hover to show dropdown */
+                            .tpp-global-selector:hover .tpp-global-dropdown {
+                                display: block !important;
+                            }
+
+                            /* Dropdown menu */
+                            .tpp-global-dropdown {
+                                display: none;
+                                position: absolute;
+                                right: 0;
+                                top: 100%;
+                                background: #fff;
+                                border: 1px solid #ddd;
+                                min-width: 250px;
+                                padding: 10px 0;
+                                margin: 0;
+                                list-style: none;
+                                z-index: 1000;
+                                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            }
+
+                            /* Ensure no wrapping anywhere */
+                            .tpp-no-wrap {
+                                white-space: nowrap !important;
+                            }
+
+                            /* Mobile menu button - hidden on desktop */
+                            .tpp-mobile-menu-btn {
+                                display: none;
+                            }
+
+                            @media (max-width: 991px) {
+                                .tpp-mobile-menu-btn {
+                                    display: block;
+                                }
+
+                                .tpp-main-nav-container {
+                                    display: none;
+                                }
+                            }
+                        </style>
+                        <div class="col-auto">
+                            <nav class="main-menu style2 d-none d-lg-inline-block tpp-main-nav-container">
+                                <ul class="tpp-main-nav-list">
+                                    <li class="tpp-main-nav-item"><a href="index.html"
+                                            class="tpp-main-nav-link">Home</a></li>
+                                    <li class="tpp-main-nav-item"><a href="about.html" class="tpp-main-nav-link">About
+                                            Us</a></li>
+                                    <li class="tpp-main-nav-item"><a href="product.html"
+                                            class="tpp-main-nav-link">Products</a></li>
+                                    <li class="tpp-main-nav-item"><a href="certification.html"
+                                            class="tpp-main-nav-link">Certifications</a></li>
+                                    <li class="tpp-main-nav-item"><a href="quality.html"
+                                            class="tpp-main-nav-link">Quality</a></li>
+                                    <li class="tpp-main-nav-item"><a href="contact.html"
+                                            class="tpp-main-nav-link">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-lg-none tpp-mobile-menu-btn">
+                                <i class="far fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="col-auto d-none d-lg-inline-block">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div class="header-button">
+                                    <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius tpp-no-wrap">
+                                        Download Brochure
+                                    </a>
+                                </div>
+
+                                <!-- Global Language Selector -->
+                                <div class="tpp-global-selector">
+                                    <a href="index.html" class="tpp-no-wrap"
+                                        style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                        <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                        </svg>
+                                        <span style="font-size: 18px;">Global</span>
+                                    </a>
+                                    <ul class="tpp-global-dropdown">
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <i class="fas fa-globe"
+                                                    style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                <span style="font-size: 14px; font-weight: bold;">Global English</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="pt.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/br.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Brazil -
+                                                    Português</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="fr.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/ca.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Canada -
+                                                    English/Français</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/mx.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Mexico -
+                                                    Español</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/pe.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Peru - Español</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/us.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">United States -
+                                                    English</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
     <!-- Header Section -->
     <header class="header">
         <div class="container">
@@ -330,23 +535,23 @@
                 <!-- Certificate 1 -->
                 <div class="certificate-card">
                     <div class="certificate-img">
-                        <img src="assets/img/certificates/Performance Certificate Lanzing_page-0001.jpg"
-                            alt="ASME Certification">
+                        <img src="assets/img/certificates/ABMA Membership Certificate.jpg" alt="ASME Certification">
                     </div>
                     <div class="certificate-info">
-                        <h3>ASME Certification</h3>
-                        <p>The American Society of Mechanical Engineers</p>
+                        <h3>ABMA Certification</h3>
+                        <p>American Boiler Manufacturers Associations</p>
                     </div>
                 </div>
 
                 <!-- Certificate 2 -->
                 <div class="certificate-card">
                     <div class="certificate-img">
-                        <img src="assets/img/certificates/ASME CERTIFICATE_page-0001.jpg" alt="ISO 9001 Certification">
+                        <img src="assets/img/certificates/ASME certificate(1)_001 (002).jpg"
+                            alt="ISO 9001 Certification">
                     </div>
                     <div class="certificate-info">
-                        <h3>ABMA Certification</h3>
-                        <p>American Boiler Manufacturers Association</p>
+                        <h3>ASME Certification</h3>
+                        <p>The American Society of Mechanical Engineers</p>
                     </div>
                 </div>
 

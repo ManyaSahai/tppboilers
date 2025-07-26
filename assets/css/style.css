@@ -192,7 +192,7 @@ h5,
 .h6,
 h6 {
   font-family: "MONTSERRAT";
-  color: var(--title-color);
+  color: white;
   text-transform: none;
   font-weight: 700;
   line-height: 1.4;
