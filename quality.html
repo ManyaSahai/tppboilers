@@ -599,62 +599,137 @@
                             class="cert-img" />
                     </div>
                 </div>
-                <style>
-                    .cert-images-scrollable {
-                        display: flex;
-                        overflow-x: auto;
-                        gap: 15px;
-                        padding: 10px 0;
-                        scroll-snap-type: x mandatory;
-                        width: 100%;
-                        max-width: 100%;
-                    }
-
-                    .cert-images-scrollable .cert-img {
-                        scroll-snap-align: start;
-                        flex: 0 0 auto;
-                        width: 100%;
-                        max-width: 300px;
-                        height: auto;
-                        margin: 0;
-                    }
-
-                    /* Hide scrollbar but keep functionality */
-                    .cert-images-scrollable::-webkit-scrollbar {
-                        height: 5px;
-                    }
-
-                    .cert-images-scrollable::-webkit-scrollbar-track {
-                        background: #f1f1f1;
-                        border-radius: 10px;
-                    }
-
-                    .cert-images-scrollable::-webkit-scrollbar-thumb {
-                        background: #0d9488;
-                        border-radius: 10px;
-                    }
-                </style>
                 <div class="cert-card">
                     <div class="cert-icon">ASME</div>
                     <h3>ASME Certification</h3>
                     <img src="assets/img/certificates/ASME CERTIFICATE_page-0001.jpg" alt="ASME Certificate"
                         class="cert-img" />
-
                 </div>
                 <div class="cert-card">
                     <div class="cert-icon">IBR</div>
                     <h3>IBR Certification</h3>
                     <img src="assets/img/certificates/IBR_Certificate_Boiler_Pressure_Part_Manufacture.jpg"
                         alt="IBR Certificate" class="cert-img" />
-
                 </div>
             </div>
         </div>
 
+        <!-- Modal for zoomed certificates -->
+        <div class="cert-modal" id="certModal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div class="caption"></div>
+        </div>
+
+        <style>
+            .cert-images-scrollable {
+                display: flex;
+                overflow-x: auto;
+                gap: 15px;
+                padding: 10px 0;
+                scroll-snap-type: x mandatory;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .cert-images-scrollable .cert-img {
+                scroll-snap-align: start;
+                flex: 0 0 auto;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+                margin: 0;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+            }
+
+            /* Hide scrollbar but keep functionality */
+            .cert-images-scrollable::-webkit-scrollbar {
+                height: 5px;
+            }
+
+            .cert-images-scrollable::-webkit-scrollbar-track {
+                background: #f1f1f1;
+                border-radius: 10px;
+            }
+
+            .cert-images-scrollable::-webkit-scrollbar-thumb {
+                background: #0d9488;
+                border-radius: 10px;
+            }
+
+            /* Modal styles */
+            .cert-modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                padding-top: 60px;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                overflow: auto;
+            }
+
+            .modal-content {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 1200px;
+                max-height: 80vh;
+                object-fit: contain;
+            }
+
+            .close-modal {
+                position: absolute;
+                top: 15px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+            }
+
+            .close-modal:hover,
+            .close-modal:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .caption {
+                margin: auto;
+                display: block;
+                width: 80%;
+                max-width: 1200px;
+                text-align: center;
+                color: #ccc;
+                padding: 10px 0;
+                height: 30px;
+            }
+
+            /* Animation for modal */
+            .modal-content,
+            .caption {
+                animation-name: zoom;
+                animation-duration: 0.6s;
+            }
+
+            @keyframes zoom {
+                from {
+                    transform: scale(0)
+                }
+
+                to {
+                    transform: scale(1)
+                }
+            }
+        </style>
 
         <script>
             // Smooth scrolling animation observer
-
 
             // Add hover effects to cards
             const cards = document.querySelectorAll('.feature-card, .cert-card');
@@ -681,9 +756,40 @@
                 });
             });
 
+            // Zoom functionality for certificates
+            const modal = document.getElementById("certModal");
+            const modalImg = document.getElementById("modalImage");
+            const captionText = document.querySelector(".caption");
 
+            // Get all certificate images
+            const certImages = document.querySelectorAll(".cert-img");
 
+            certImages.forEach(img => {
+                img.addEventListener("click", function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt;
+                });
+            });
 
+            // Close modal when clicking the X
+            document.querySelector(".close-modal").onclick = function () {
+                modal.style.display = "none";
+            }
+
+            // Close modal when clicking outside the image
+            modal.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Close modal with ESC key
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape" && modal.style.display === "block") {
+                    modal.style.display = "none";
+                }
+            });
         </script>
 
         <style>
