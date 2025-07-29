@@ -453,10 +453,12 @@
                     <div class="col-auto d-none d-lg-inline-block">
                         <div style="display: flex; align-items: center; gap: 10px;">
                             <div class="header-button">
-                                <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius tpp-no-wrap">
+                                <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius tpp-no-wrap"
+                                    target="_blank" rel="noopener noreferrer">
                                     Download Brochure
                                 </a>
                             </div>
+
 
                             <!-- Global Language Selector -->
                             <div class="tpp-global-selector">
@@ -761,6 +763,9 @@
             const modalImg = document.getElementById("modalImage");
             const captionText = document.querySelector(".caption");
 
+            // Track if modal is open
+            let isModalOpen = false;
+
             // Get all certificate images
             const certImages = document.querySelectorAll(".cert-img");
 
@@ -769,27 +774,48 @@
                     modal.style.display = "block";
                     modalImg.src = this.src;
                     captionText.innerHTML = this.alt;
+                    isModalOpen = true;
+
+                    // Store current scroll position
+                    const scrollY = window.scrollY;
+                    modal.dataset.scrollY = scrollY;
                 });
             });
 
             // Close modal when clicking the X
             document.querySelector(".close-modal").onclick = function () {
-                modal.style.display = "none";
+                closeModal();
             }
 
             // Close modal when clicking outside the image
             modal.addEventListener("click", function (e) {
                 if (e.target === modal) {
-                    modal.style.display = "none";
+                    closeModal();
                 }
             });
 
             // Close modal with ESC key
             document.addEventListener("keydown", function (e) {
-                if (e.key === "Escape" && modal.style.display === "block") {
-                    modal.style.display = "none";
+                if (e.key === "Escape" && isModalOpen) {
+                    closeModal();
                 }
             });
+
+            // Close modal on scroll
+            window.addEventListener('scroll', function () {
+                if (isModalOpen) {
+                    // Check if user has scrolled significantly (more than 20px)
+                    const initialScroll = parseInt(modal.dataset.scrollY) || 0;
+                    if (Math.abs(window.scrollY - initialScroll) > 20) {
+                        closeModal();
+                    }
+                }
+            });
+
+            function closeModal() {
+                modal.style.display = "none";
+                isModalOpen = false;
+            }
         </script>
 
         <style>
