@@ -749,7 +749,6 @@
     </style>
 
     <script>
-        // Function to handle certificate image clicks
         document.addEventListener('DOMContentLoaded', function () {
             // Create modal element
             const modal = document.createElement('div');
@@ -763,6 +762,9 @@
             const modalImg = document.getElementById('modal-cert-image');
             const closeBtn = document.querySelector('.close-cert');
 
+            // Track if modal is open
+            let isModalOpen = false;
+
             // Add click event to all certificate images
             const certImages = document.querySelectorAll('.certificate-img img, .cert-img');
             certImages.forEach(img => {
@@ -770,27 +772,48 @@
                     modal.style.display = 'block';
                     modalImg.src = this.src;
                     modalImg.alt = this.alt;
+                    isModalOpen = true;
+
+                    // Store current scroll position
+                    const scrollY = window.scrollY;
+                    modal.dataset.scrollY = scrollY;
                 });
             });
 
             // Close modal when X is clicked
             closeBtn.addEventListener('click', function () {
-                modal.style.display = 'none';
+                closeModal();
             });
 
             // Close modal when clicking outside image
             modal.addEventListener('click', function (e) {
                 if (e.target === modal) {
-                    modal.style.display = 'none';
+                    closeModal();
                 }
             });
 
             // Close modal with ESC key
             document.addEventListener('keydown', function (e) {
-                if (e.key === 'Escape' && modal.style.display === 'block') {
-                    modal.style.display = 'none';
+                if (e.key === 'Escape' && isModalOpen) {
+                    closeModal();
                 }
             });
+
+            // Close modal on scroll
+            window.addEventListener('scroll', function () {
+                if (isModalOpen) {
+                    // Check if user has scrolled significantly (more than 20px)
+                    const initialScroll = parseInt(modal.dataset.scrollY) || 0;
+                    if (Math.abs(window.scrollY - initialScroll) > 20) {
+                        closeModal();
+                    }
+                }
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                isModalOpen = false;
+            }
         });
     </script>
 
