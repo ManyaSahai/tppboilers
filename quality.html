@@ -619,7 +619,9 @@
         <!-- Modal for zoomed certificates -->
         <div class="cert-modal" id="certModal">
             <span class="close-modal">&times;</span>
-            <img class="modal-content" id="modalImage">
+            <div class="modal-image-container">
+                <img class="modal-content" id="modalImage">
+            </div>
             <div class="caption"></div>
         </div>
 
@@ -661,11 +663,11 @@
             }
 
             /* Modal styles */
+            /* Modal styles */
             .cert-modal {
                 display: none;
                 position: fixed;
                 z-index: 1000;
-                padding-top: 60px;
                 left: 0;
                 top: 0;
                 width: 100%;
@@ -674,93 +676,99 @@
                 overflow: auto;
             }
 
+            .modal-content-container {
+                display: flex;
+                min-height: 100vh;
+                align-items: center;
+                justify-content: center;
+                padding: 60px 20px;
+                box-sizing: border-box;
+            }
+
+            .modal-content-scrollable {
+                display: flex;
+                gap: 20px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                max-width: 100%;
+                padding: 20px 0;
+            }
+
             .modal-content {
-                margin: auto;
-                display: block;
-                width: 80%;
-                max-width: 1200px;
-                max-height: 80vh;
+                scroll-snap-align: start;
+                flex: 0 0 auto;
+                max-width: 90vw;
+                max-height: 90vh;
                 object-fit: contain;
+                cursor: grab;
+            }
+
+            .modal-content:active {
+                cursor: grabbing;
             }
 
             .close-modal {
-                position: absolute;
-                top: 15px;
-                right: 35px;
+                position: fixed;
+                top: 20px;
+                right: 30px;
                 color: #f1f1f1;
                 font-size: 40px;
                 font-weight: bold;
                 transition: 0.3s;
                 cursor: pointer;
-            }
-
-            .close-modal:hover,
-            .close-modal:focus {
-                color: #bbb;
-                text-decoration: none;
-                cursor: pointer;
+                z-index: 1001;
             }
 
             .caption {
-                margin: auto;
-                display: block;
-                width: 80%;
-                max-width: 1200px;
+                position: fixed;
+                bottom: 20px;
+                left: 0;
+                width: 100%;
                 text-align: center;
                 color: #ccc;
                 padding: 10px 0;
-                height: 30px;
             }
 
-            /* Animation for modal */
-            .modal-content,
-            .caption {
-                animation-name: zoom;
-                animation-duration: 0.6s;
+            /* Hide scrollbar but keep functionality */
+            .modal-content-scrollable::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            .modal-content-scrollable::-webkit-scrollbar-track {
+                background: rgba(241, 241, 241, 0.1);
+                border-radius: 10px;
+            }
+
+            .modal-content-scrollable::-webkit-scrollbar-thumb {
+                background: #0d9488;
+                border-radius: 10px;
             }
 
             @keyframes zoom {
                 from {
-                    transform: scale(0)
+                    transform: scale(0.8);
+                    opacity: 0;
                 }
 
                 to {
-                    transform: scale(1)
+                    transform: scale(1);
+                    opacity: 1;
                 }
             }
         </style>
 
         <script>
-            // Smooth scrolling animation observer
-
-            // Add hover effects to cards
-            const cards = document.querySelectorAll('.feature-card, .cert-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-5px) scale(1.02)';
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0) scale(1)';
-                });
-            });
-
-            // Animate certification icons on hover
-            const certIcons = document.querySelectorAll('.cert-icon');
-            certIcons.forEach(icon => {
-                icon.addEventListener('mouseenter', () => {
-                    icon.style.transform = 'rotate(360deg) scale(1.1)';
-                    icon.style.transition = 'transform 0.6s ease';
-                });
-
-                icon.addEventListener('mouseleave', () => {
-                    icon.style.transform = 'rotate(0deg) scale(1)';
-                });
-            });
-
             // Zoom functionality for certificates
             const modal = document.getElementById("certModal");
-            const modalImg = document.getElementById("modalImage");
+            const modalContainer = document.createElement('div');
+            modalContainer.className = 'modal-content-container';
+            modal.appendChild(modalContainer);
+
+            const modalScrollable = document.createElement('div');
+            modalScrollable.className = 'modal-content-scrollable';
+            modalContainer.appendChild(modalScrollable);
+
+            const closeModalBtn = document.querySelector(".close-modal");
             const captionText = document.querySelector(".caption");
 
             // Track if modal is open
@@ -772,18 +780,38 @@
             certImages.forEach(img => {
                 img.addEventListener("click", function () {
                     modal.style.display = "block";
-                    modalImg.src = this.src;
+                    document.body.style.overflow = "hidden";
+                    modalScrollable.innerHTML = '';
+
+                    // Check if this is part of a scrollable group
+                    const scrollableParent = this.closest('.cert-images-scrollable');
+
+                    if (scrollableParent) {
+                        // It's part of a multi-image group (like ISO cert)
+                        const allImages = scrollableParent.querySelectorAll('.cert-img');
+                        allImages.forEach(image => {
+                            const modalImg = document.createElement('img');
+                            modalImg.className = 'modal-content';
+                            modalImg.src = image.src;
+                            modalImg.alt = image.alt;
+                            modalScrollable.appendChild(modalImg);
+                        });
+                    } else {
+                        // Single image
+                        const modalImg = document.createElement('img');
+                        modalImg.className = 'modal-content';
+                        modalImg.src = this.src;
+                        modalImg.alt = this.alt;
+                        modalScrollable.appendChild(modalImg);
+                    }
+
                     captionText.innerHTML = this.alt;
                     isModalOpen = true;
-
-                    // Store current scroll position
-                    const scrollY = window.scrollY;
-                    modal.dataset.scrollY = scrollY;
                 });
             });
 
             // Close modal when clicking the X
-            document.querySelector(".close-modal").onclick = function () {
+            closeModalBtn.onclick = function () {
                 closeModal();
             }
 
@@ -801,39 +829,33 @@
                 }
             });
 
-            // Close modal on scroll
-            window.addEventListener('scroll', function () {
-                if (isModalOpen) {
-                    // Check if user has scrolled significantly (more than 20px)
-                    const initialScroll = parseInt(modal.dataset.scrollY) || 0;
-                    if (Math.abs(window.scrollY - initialScroll) > 20) {
-                        closeModal();
-                    }
-                }
-            });
-
             function closeModal() {
                 modal.style.display = "none";
+                document.body.style.overflow = "auto";
                 isModalOpen = false;
             }
-        </script>
 
-        <style>
-            .ripple {
-                position: absolute;
-                border-radius: 50%;
-                transform: scale(0);
-                animation: ripple 600ms linear;
-                background-color: rgba(13, 148, 136, 0.3);
-            }
+            // Add touch support for mobile devices
+            let touchStartX = 0;
+            let touchEndX = 0;
 
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
+            modalScrollable.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            modalScrollable.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const threshold = 50;
+                if (touchEndX < touchStartX - threshold) {
+                    // Swipe left
+                    modalScrollable.scrollBy({ left: 300, behavior: 'smooth' });
+                } else if (touchEndX > touchStartX + threshold) {
+                    // Swipe right
+                    modalScrollable.scrollBy({ left: -300, behavior: 'smooth' });
                 }
             }
-        </style>
-</body>
-
-</html>
+        </script>
