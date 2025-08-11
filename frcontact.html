@@ -7,8 +7,43 @@
     <title>Contact Us - TPP Boilers Pvt. Ltd.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
+        /* Sticky Navbar Styles */
+
+
+        /* Ensure content doesn't hide behind navbar */
+
+
         .contact-persons a {
             text-decoration: none;
             color: inherit;
@@ -16,19 +51,14 @@
         }
 
         :root {
-            --navy-blue: #001f3f;
+            --navy-blue: navy;
             --sea-green: #2e8b57;
             --white: #ffffff;
             --light-gray: #f5f5f5;
             --dark-gray: #333333;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+
 
         body {
             background-color: var(--light-gray);
@@ -36,106 +66,6 @@
             line-height: 1.6;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background-color: var(--navy-blue);
-            color: var(--white);
-            padding: 20px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 50px;
-            margin-right: 15px;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-        }
-
-        .logo span {
-            color: var(--sea-green);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 30px;
-        }
-
-        nav ul li a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        nav ul li a:hover {
-            color: var(--sea-green);
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background-color: var(--sea-green);
-            bottom: -5px;
-            left: 0;
-            transition: width 0.3s;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('assets/img/contact.jpg');
-
-            background-size: cover;
-            background-position: center;
-            color: var(--white);
-            padding: 100px 0;
-            text-align: center;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: slideUp 1s ease-in-out;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            animation: slideUp 1.2s ease-in-out;
-        }
 
         .contact-section {
             padding: 80px 0;
@@ -495,46 +425,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
-        footer {
-            background-color: var(--navy-blue);
-            color: var(--white);
-            padding: 40px 0 20px;
-            margin-top: 80px;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 30px;
-        }
-
-        .footer-column {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 20px;
-        }
-
-        .footer-column h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background-color: var(--sea-green);
-            bottom: 0;
-            left: 0;
-        }
-
-        .footer-column p {
-            margin-bottom: 15px;
-        }
 
         .social-links {
             display: flex;
@@ -558,12 +448,7 @@
             transform: translateY(-5px);
         }
 
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
+
 
         @keyframes fadeIn {
             from {
@@ -680,6 +565,27 @@
                 margin-bottom: 10px;
             }
         }
+
+        .factory-title {
+            color: var(--navy-blue);
+            font-size: 1.5rem;
+            margin: 80px 0 20px 0;
+            /* top right bottom left */
+            position: relative;
+            padding-bottom: 10px;
+            text-align: left;
+            /* This is what aligns it to the left */
+        }
+
+        .factory-title::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--sea-green);
+            bottom: 0;
+            left: 0;
+        }
     </style>
 </head>
 
@@ -688,230 +594,574 @@
     <div class="bg-decoration"></div>
     <div class="bg-decoration-2"></div>
     <div class="bg-decoration-3"></div>
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <img src="assets/img/logo_1wh.png" alt="TPP Boilers Logo">
 
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="frproduct.html">Produits</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="frabout.html">À Propos</a></li>
-                    <li><a href="frcontact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <body>
+        <div class="th-menu-wrapper">
+            <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
+                <div class="mobile-logo"><a class="icon-masking" href="#index.html">
+                        <img src="assets/img/logo_1wh.png" alt="Webteck"></a></div>
+                <div class="th-mobile-menu">
+                    <ul>
+                        <li><a href="fr.html">Accueil</a></li>
+                        <li><a href="frabout.html">À propos</a></li>
+                        <li><a href="frproduct.html">Produits</a></li>
+                        <li><a href="certification.html">Certifications</a></li>
+                        <li><a href="frcontact.html">Contact</a></li>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Contactez-Nous</h2>
-            <p>Nous sommes là pour répondre à toutes vos questions concernant nos produits et services. Contactez-nous
-                et nous répondrons dans les plus brefs délais.</p>
-        </div>
-    </section>
+                        <li class="menu-item-has-children" style="position:relative; display:inline-block;">
+                            <a href="index.html" style=" display:flex; align-items:center;">
+                                <svg style="width:16px;height:16px;margin-right:5px;" viewBox="0 0 24 24"
+                                    fill="currentColor">
+                                    <path
+                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                </svg>
+                                <span>Global</span>
+                            </a>
+                            <ul class="sub-menu"
+                                style="display:none; position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd; min-width:200px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                <li class="menu-item-has-children" style="position:relative; display:inline-block;">
+                                    <a href="index.html" style="display:flex; align-items:center;">
+                                        <svg style="width:16px;height:16px;margin-right:5px;" viewBox="0 0 24 24"
+                                            fill="currentColor">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                        </svg>
+                                        <span>Global</span>
+                                    </a>
+                                    <ul class="sub-menu"
+                                        style="display:none; position:absolute; left:0; top:100%; background:#fff; border:1px solid #ddd; min-width:200px; padding:10px 0; margin:0; list-style:none; z-index:1000; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+                                        <li style="padding:5px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <i class="fas fa-globe"
+                                                    style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                Global English
+                                            </a>
+                                        </li>
+                                        <li style="padding:5px 15px;">
+                                            <a href="pt.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/br.png"
+                                                    style="width:16px;height:12px;margin-right:8px;">
+                                                Brazil - Português (Portuguese)
+                                            </a>
+                                        </li>
+                                        <li style="padding:5px 15px;">
+                                            <a href="/ca/en.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/ca.png"
+                                                    style="width:16px;height:12px;margin-right:8px;">
+                                                Canada - English | Français (French)
+                                            </a>
+                                        </li>
+                                        <li style="padding:5px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/mx.png"
+                                                    style="width:16px;height:12px;margin-right:8px;">
+                                                Mexico - Español (Spanish)
+                                            </a>
+                                        </li>
+                                        <li style="padding:5px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/pe.png"
+                                                    style="width:16px;height:12px;margin-right:8px;">
+                                                Peru - Español (Spanish)
+                                            </a>
+                                        </li>
+                                        <li style="padding:5px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/us.png"
+                                                    style="width:16px;height:12px;margin-right:8px;">
+                                                United States - English
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
 
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Informations de Contact</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Bureau de Vente</h3>
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="info-content">
-                            <h4>Adresse</h4>
-                            <p>69/70, Ashok Chambers,
-                                Devji Ratanshi( Bharuch) Marg,
-                                Off. P.D'mello Road, Masjid Bunder(E),
-                                Mumbai - 400 009 INDIA </p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="info-content">
-                            <h4>Téléphone</h4>
-                            <p>Tél: 022-234484045/46</p>
-                            <p>Fax: 022-23480384</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="info-content">
-                            <h4>E-mail</h4>
-                            <a href="mailto:tppboilers@gmail.com">tppboilers@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-globe"></i>
-                        <div class="info-content">
-                            <h4>Site Web</h4>
-                            <a href="http://www.tppboilers.com" target="_blank">www.tppboilers.com</a>
-                        </div>
-                    </div>
+                                <style>
+                                    /* Hover to show dropdown */
+                                    .menu-item-has-children:hover .sub-menu {
+                                        display: block !important;
+                                    }
 
-                    <h3 style="margin-top: 30px;">Usine</h3>
-                    <div class="info-item">
-                        <i class="fas fa-industry"></i>
-                        <div class="info-content">
-                            <h4>Adresse</h4>
-                            <p>Plot no. 703-716, Road X, GIDC Waghodia, Dist- Vadodara - 391760, Gujarat, India</p>
-                        </div>
-                    </div>
-
-
-                    <div class="contact-persons">
-                        <h3>Contacts Principaux</h3>
-                        <div class="person-card">
-                            <h4>M. Himanshu D. Desai</h4>
-                            <p>Directeur</p>
-                            <a href="tel:09821022114"><i class="fas fa-phone"></i> 09821022114</a>
-                        </div>
-                        <div class="person-card">
-                            <h4>M. Arvind Tripathi</h4>
-                            <p>ASM (Directeur des Ventes Régionales)</p>
-                            <a href="tel:09819872867"><i class="fas fa-phone"></i> 09819872867</a>
-                        </div>
-                        <div class="person-card">
-                            <h4>M. Khushal Parate</h4>
-                            <p>Directeur Technique Senior</p>
-                            <a href="tel:08369928743"><i class="fas fa-phone"></i> 08369928743</a>
-                        </div>
-                        <div class="person-card">
-                            <h4>M. Sameer Chaughule</h4>
-                            <p>ASM (Directeur des Ventes Régionales)</p>
-                            <a href="tel:09892375511"><i class="fas fa-phone"></i> 09892375511</a>
-                        </div>
-                    </div>
+                                    /* Hover effect on links */
+                                    .sub-menu a:hover {
+                                        background: #f5f5f5;
+                                    }
+                                </style>
+                            </ul>
                 </div>
-
-                <div class="contact-form">
-                    <h3>Envoyez-nous un Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Votre Nom</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Votre E-mail</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Numéro de Téléphone</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Votre Message</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Envoyer le Message <i
-                                class="fas fa-paper-plane"></i></button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="map-container">
-                <h3 class="section-title">Notre Localisation</h3>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.805380983622!2d73.3745225!3d22.2926337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fd98c70e71f05%3A0x3cf09b40ffb45de1!2sTPP%20BOILERS%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
-                    allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>À Propos de TPP Boilers</h3>
-                    <p>TPP Boilers Pvt. Ltd. est un fabricant leader de chaudières de haute qualité et d'équipements
-                        connexes, servant les industries à travers l'Inde et au-delà.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <header class="th-header header-layout4 header-absolute">
+            <div class="sticky-wrapper">
+                <div class="menu-area">
+                    <div class="container th-container5">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-auto">
+                                <div class="header-logo"><a class="icon-masking" href="index.html"><img
+                                            src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
+                            </div>
+                            <style>
+                                /* Logo styling */
+                                .header-logo img {
+                                    width: 220px;
+                                    /* Slightly reduced to make space */
+                                    height: 65px;
+                                }
 
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                /* Main menu container - critical for one-line */
+                                .tpp-main-nav-container {
+                                    display: flex;
+                                    white-space: nowrap;
+                                    overflow: visible;
+                                }
+
+                                /* Main menu list - critical for one-line */
+                                .tpp-main-nav-list {
+                                    display: flex;
+                                    flex-wrap: nowrap;
+                                    margin: 0;
+                                    padding: 0;
+                                    list-style: none;
+                                }
+
+                                /* Menu items - critical for one-line */
+                                .tpp-main-nav-item {
+                                    flex-shrink: 0;
+                                    margin: 0 6px !important;
+                                    /* Reduced spacing */
+                                }
+
+                                /* Menu links */
+                                .tpp-main-nav-link {
+                                    display: block;
+                                    padding: 10px 8px !important;
+                                    /* Reduced padding */
+                                    font-size: 20px !important;
+                                    /* Slightly smaller */
+                                    white-space: nowrap;
+                                }
+
+                                /* Global selector styling */
+                                .tpp-global-selector {
+                                    position: relative;
+                                    display: inline-block;
+                                }
+
+                                /* Hover to show dropdown */
+                                .tpp-global-selector:hover .tpp-global-dropdown {
+                                    display: block !important;
+                                }
+
+                                /* Dropdown menu */
+                                .tpp-global-dropdown {
+                                    display: none;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 100%;
+                                    background: #fff;
+                                    border: 1px solid #ddd;
+                                    min-width: 250px;
+                                    padding: 10px 0;
+                                    margin: 0;
+                                    list-style: none;
+                                    z-index: 1000;
+                                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                                }
+
+                                /* Ensure no wrapping anywhere */
+                                .tpp-no-wrap {
+                                    white-space: nowrap !important;
+                                }
+
+                                /* Mobile menu button - hidden on desktop */
+                                .tpp-mobile-menu-btn {
+                                    display: none;
+                                }
+
+                                @media (max-width: 991px) {
+                                    .tpp-mobile-menu-btn {
+                                        display: block;
+                                    }
+
+                                    .tpp-main-nav-container {
+                                        display: none;
+                                    }
+                                }
+                            </style>
+                            <div class="col-auto">
+                                <nav class="main-menu style2 d-none d-lg-inline-block tpp-main-nav-container">
+                                    <ul class="tpp-main-nav-list">
+                                        <li class="tpp-main-nav-item"><a href="fr.html"
+                                                class="tpp-main-nav-link">Accueil</a></li>
+                                        <li class="tpp-main-nav-item"><a href="frabout.html" class="tpp-main-nav-link">À
+                                                propos</a></li>
+                                        <li class="tpp-main-nav-item"><a href="frproduct.html"
+                                                class="tpp-main-nav-link">Produits</a></li>
+                                        <li class="tpp-main-nav-item"><a href="certification.html"
+                                                class="tpp-main-nav-link">Certifications</a></li>
+                                        <li class="tpp-main-nav-item"><a href="quality.html"
+                                                class="tpp-main-nav-link">Qualité</a></li>
+                                        <li class="tpp-main-nav-item"><a href="frcontact.html"
+                                                class="tpp-main-nav-link">Contact</a></li>
+                                    </ul>
+                                </nav>
+
+                                <button type="button" class="th-menu-toggle d-block d-lg-none tpp-mobile-menu-btn">
+                                    <i class="far fa-bars"></i>
+                                </button>
+                            </div>
+                            <div class="col-auto d-none d-lg-inline-block">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="header-button">
+                                        <div class="header-button">
+                                            <a href="assets/img/TPPBroucher.pdf"
+                                                class="th-btn style6 style-radius tpp-no-wrap" target="_blank"
+                                                rel="noopener noreferrer">
+                                                Download Brochure
+                                            </a>
+                                        </div>
+
+
+                                        <!-- Global Language Selector -->
+                                        <div class="tpp-global-selector">
+                                            <a href="index.html" class="tpp-no-wrap"
+                                                style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                                <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                                </svg>
+                                                <span style="font-size: 18px;">Global</span>
+                                            </a>
+                                            <ul class="tpp-global-dropdown">
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="index.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <i class="fas fa-globe"
+                                                            style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                        <span style="font-size: 14px; font-weight: bold;">Global
+                                                            English</span>
+                                                    </a>
+                                                </li>
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="pt.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <img src="https://flagcdn.com/w20/br.png"
+                                                            style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                        <span style="font-size: 14px; font-weight: bold;">Brazil -
+                                                            Português</span>
+                                                    </a>
+                                                </li>
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="fr.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <img src="https://flagcdn.com/w20/ca.png"
+                                                            style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                        <span style="font-size: 14px; font-weight: bold;">Canada -
+                                                            English/Français</span>
+                                                    </a>
+                                                </li>
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="es.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <img src="https://flagcdn.com/w20/mx.png"
+                                                            style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                        <span style="font-size: 14px; font-weight: bold;">Mexico -
+                                                            Español</span>
+                                                    </a>
+                                                </li>
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="es.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <img src="https://flagcdn.com/w20/pe.png"
+                                                            style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                        <span style="font-size: 14px; font-weight: bold;">Peru -
+                                                            Español</span>
+                                                    </a>
+                                                </li>
+                                                <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                                    <a href="index.html"
+                                                        style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                        <img src="https://flagcdn.com/w20/us.png"
+                                                            style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                        <span style="font-size: 14px; font-weight: bold;">United States
+                                                            -
+                                                            English</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </header>
+        <section class="hero">
+            <div class="container">
+                <h2 style="color: white;">Contactez-Nous</h2>
+                <p style="color: white;">
+                    Nous sommes là pour répondre à toutes vos questions concernant nos produits et services.
+                    Contactez-nous et nous répondrons dans les plus brefs délais.
+                </p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Informations de Contact</h2>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Bureau des Ventes</h3>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="info-content">
+                                <h4>Adresse</h4>
+                                <p>69/70, Ashok Chambers,
+                                    Devji Ratanshi (Bharuch) Marg,
+                                    Off. P.D'mello Road, Masjid Bunder (E),
+                                    Mumbai - 400 009 INDE</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="info-content">
+                                <h4>Téléphone</h4>
+                                <p>M. Himanshu Desai
+                                    Mobile : +91 98210 22114</p>
+                                <p>Numéro Vert en Inde : 1800 22 8772 (TPPB)</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="info-content">
+                                <h4>Email</h4>
+                                <a href="">tppboilers@gmail.com</a><br>
+                                <a href="">info@tppboilers.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-globe"></i>
+                            <div class="info-content">
+                                <h4>Site Web</h4>
+                                <a href="http://www.tppboilers.com" target="_blank">www.tppboilers.com</a>
+                            </div>
+                        </div>
+
+                        <div class="factory-section">
+                            <h3>Usine</h3>
+                            <div class="info-item">
+                                <i class="fas fa-industry"></i>
+                                <div class="info-content">
+                                    <h4>Adresse</h4>
+                                    <p>Parcelle n° 703-716, Route X, GIDC Waghodia, Dist- Vadodara - 391760, Gujarat,
+                                        Inde
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-persons">
+
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Envoyez-Nous un Message</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Votre Nom</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Votre Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Numéro de Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Sujet</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Votre Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Envoyer le Message <i
+                                    class="fas fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
-                <div class="footer-column">
-                    <h3>Liens Rapides</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="#"
-                                style="color: var(--white); text-decoration: none; margin-bottom: 10px; display: inline-block;">Accueil</a>
-                        </li>
-                        <li><a href="#"
-                                style="color: var(--white); text-decoration: none; margin-bottom: 10px; display: inline-block;">Produits</a>
-                        </li>
-                        <li><a href="#"
-                                style="color: var(--white); text-decoration: none; margin-bottom: 10px; display: inline-block;">Blog</a>
-                        </li>
-                        <li><a href="#"
-                                style="color: var(--white); text-decoration: none; margin-bottom: 10px; display: inline-block;">À
-                                Propos</a></li>
-                        <li><a href="#"
-                                style="color: var(--white); text-decoration: none; margin-bottom: 10px; display: inline-block;">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Informations de Contact</h3>
-                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Plot no. 703-716, Road X, GIDC
-                        Waghodia, Dist- Vadodara - 391760, Gujarat</p>
-                    <p><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 022-234484045/46</p>
-                    <p><i class="fas fa-envelope" style="margin-right: 10px;"></i> tppboilers@gmail.com</p>
+
+                <div class="map-container">
+                    <h3 class="section-title" style="color: var(--navy-blue);">Notre Emplacement</h3>
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.805380983622!2d73.3745225!3d22.2926337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fd98c70e71f05%3A0x3cf09b40ffb45de1!2sTPP%20BOILERS%20PVT%20LTD!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin"
+                        allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 TPP Boilers Pvt. Ltd. Tous Droits Réservés.</p>
+        </section>
+
+        <footer class="footer-wrapper footer-layout5">
+            <div class="container th-container5">
+                <div class="footer-top">
+                    <div class="row gx-0 align-items-center">
+                        <div class="col-xl">
+                            <div class="footer-newsletter">
+                                <div class="footer-newsletter-content">
+                                    <h2 class="newsletter-title">Subscribe for daily updates</h2>
+                                </div>
+                                <form class="newsletter-form"><i class="fa-sharp fa-light fa-envelope"></i> <input
+                                        class="form-control" type="email" placeholder="Email Address" required="">
+                                    <button type="submit" class="th-btn">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="widget-area">
+                    <div class="row justify-content-between">
+                        <div class="col-md-6 col-xxl-3 col-xl-4">
+                            <div class="widget footer-widget">
+                                <h3 class="widget_title">About Company</h3>
+                                <div class="th-widget-about">
+                                    <p class="about-text">A specialized small-scale industry led by experienced
+                                        professionals, offering high-quality boiler components and steel fabrications
+                                        with
+                                        over 500 man-years of expertise. We combine advanced manufacturing with strict
+                                        quality control to deliver cost-effective, custom-engineered solutions.</p>
+                                    <div class="th-social"><a href="https://www.facebook.com/"><i
+                                                class="fab fa-facebook-f"></i></a> <a href="https://www.twitter.com/"
+                                            target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="black">
+                                                <path
+                                                    d="M22.97 0H1.03C.46 0 0 .46 0 1.03v21.94C0 23.54.46 24 1.03 24h21.94c.57 0 1.03-.46 1.03-1.03V1.03C24 .46 23.54 0 22.97 0zM7.16 7.36h2.84l2.17 2.64 2.16-2.64h2.84l-3.9 4.67 4.04 5.02h-2.93l-2.41-2.96-2.42 2.96H7.17l4.03-5.02-4.04-4.67z" />
+                                            </svg>
+                                        </a>
+                                        </i></a> <a href="https://www.linkedin.com/"><i
+                                                class="fab fa-linkedin-in"></i></a>
+                                        <a href="https://wa.me/9819872867"><i class="fab fa-whatsapp"></i></a> <a
+                                            href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-auto">
+                            <div class="widget widget_nav_menu footer-widget">
+                                <h3 class="widget_title">Quick Links</h3>
+                                <div class="menu-all-pages-container">
+                                    <ul class="menu">
+                                        <li><a href="frabout.html">About Us</a></li>
+                                        <li><a href="frproduct.html">Products</a></li>
+                                        <li><a href="blog.html">Blogs</a></li>
+                                        <li><a href="certification.html">Certifications</a></li>
+
+                                        <li><a href="frcontact.html">Contact Us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-auto">
+                            <div class="widget footer-widget" style="text-align: left;">
+                                <h3 class="widget_title">FOR MORE DETAILS</h3>
+                                <a href="assets/img/TPPBroucher.pdf" download style="background-color: rgb(93, 183, 132); color: navy; padding: 10px 20px; font-weight: bold;
+            border: 2px solid navy; border-radius: 5px; text-decoration: none;
+            display: inline-block; transition: all 0.3s ease;">
+                                    Download Brochure
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
             </div>
-        </div>
-    </footer>
+            </div>
+            </div>
+            </div>
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-6">
+                            <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2025 <a
+                                    href="https://themeforest.net/user/themeholy">TPP Boilers</a>. All Rights
+                                Reserved.</p>
+                        </div>
+                        <div class="col-lg-6 text-lg-end text-center">
+                            <div class="footer-links">
+                                <ul>
+                                    <li><a href="index.html">Terms & Condition</a></li>
 
-    <script>
+                                    <li><a href="index.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
+        </footer>
 
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const stickyWrapper = document.querySelector('.sticky-wrapper');
+                const heroSection = document.querySelector('.hero');
 
-
-            this.reset();
-        });
-
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const animateOnScroll = function () {
-                const elements = document.querySelectorAll('.contact-info, .contact-form, .map-container');
-
-                elements.forEach(element => {
-                    const elementPosition = element.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-
-                    if (elementPosition < windowHeight - 100) {
-                        element.style.opacity = '1';
-                        element.style.transform = 'translateY(0)';
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 50) { // Adjust this value to control when the color changes
+                        stickyWrapper.classList.add('scrolled');
+                    } else {
+                        stickyWrapper.classList.remove('scrolled');
                     }
                 });
-            };
+            });
+
+            document.getElementById('contactForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
 
 
-            animateOnScroll();
+                this.reset();
+            });
 
-            window.addEventListener('scroll', animateOnScroll);
-        });
-    </script>
-</body>
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const animateOnScroll = function () {
+                    const elements = document.querySelectorAll('.contact-info, .contact-form, .map-container');
+
+                    elements.forEach(element => {
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const windowHeight = window.innerHeight;
+
+                        if (elementPosition < windowHeight - 100) {
+                            element.style.opacity = '1';
+                            element.style.transform = 'translateY(0)';
+                        }
+                    });
+                };
+
+
+                animateOnScroll();
+
+                window.addEventListener('scroll', animateOnScroll);
+            });
+        </script>
+    </body>
 
 </html>

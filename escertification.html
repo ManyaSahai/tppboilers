@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/img/favicons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/img/favicons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/favicons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/favicons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Certifications</title>
+    <style>
+        :root {
+            --navy-blue: #001f3f;
+            --seagreen: #20b2aa;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--navy-blue);
+            line-height: 1.6;
+        }
+
+
+
+
+        /* Certificates Grid */
+        .certificates-section {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--navy-blue);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--seagreen);
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        /* Create a container for the last two cards */
+        .last-two-cards {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .last-two-cards .certificate-card {
+            flex: 0 0 350px;
+            max-width: 350px;
+        }
+
+        .certificate-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 31, 63, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 31, 63, 0.2);
+        }
+
+        .certificate-img {
+            height: 300px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            border-bottom: 2px solid var(--seagreen);
+        }
+
+        .certificate-img img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        /* Specific styling for the last two certificate images to ensure they're centered */
+        .certificate-card:nth-child(4) .certificate-img img,
+        .certificate-card:nth-child(5) .certificate-img img {
+            object-fit: contain;
+            object-position: center;
+            width: auto;
+            height: auto;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .certificate-card:hover .certificate-img img {
+            transform: scale(1.05);
+        }
+
+        .certificate-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .certificate-info h3 {
+            color: var(--navy-blue);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .certificate-info p {
+            color: var(--seagreen);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tech Stack Section */
+        .tech-stack-section {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            padding: 60px 0;
+            margin-top: 50px;
+        }
+
+        .tech-stack-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .tech-stack-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tech-stack-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .tech-stack-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--seagreen);
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .tech-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 25px 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .tech-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--seagreen);
+        }
+
+        .tech-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .tech-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .certificates-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .last-two-cards .certificate-card {
+                flex: 0 0 300px;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+
+            .header p {
+                font-size: 1rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .certificate-img {
+                height: 250px;
+            }
+
+            .tech-stack-grid {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .certificates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 0;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .last-two-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .last-two-cards .certificate-card {
+                flex: 0 0 auto;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="th-header header-layout4 header-absolute">
+        <div class="sticky-wrapper">
+            <div class="menu-area">
+                <div class="container th-container5">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-auto">
+                            <div class="header-logo"><a class="icon-masking" href="index.html"><img
+                                        src="assets/img/logo_1wh.png" alt="TPP Boilers"></a></div>
+                        </div>
+                        <style>
+                            /* Logo styling */
+                            .header-logo img {
+                                width: 220px;
+                                /* Slightly reduced to make space */
+                                height: 65px;
+                            }
+
+                            /* Main menu container - critical for one-line */
+                            .tpp-main-nav-container {
+                                display: flex;
+                                white-space: nowrap;
+                                overflow: visible;
+                            }
+
+                            /* Main menu list - critical for one-line */
+                            .tpp-main-nav-list {
+                                display: flex;
+                                flex-wrap: nowrap;
+                                margin: 0;
+                                padding: 0;
+                                list-style: none;
+                            }
+
+                            /* Menu items - critical for one-line */
+                            .tpp-main-nav-item {
+                                flex-shrink: 0;
+                                margin: 0 6px !important;
+                                /* Reduced spacing */
+                            }
+
+                            /* Menu links */
+                            .tpp-main-nav-link {
+                                display: block;
+                                padding: 10px 8px !important;
+                                /* Reduced padding */
+                                font-size: 20px !important;
+                                /* Slightly smaller */
+                                white-space: nowrap;
+                            }
+
+                            /* Global selector styling */
+                            .tpp-global-selector {
+                                position: relative;
+                                display: inline-block;
+                            }
+
+                            /* Hover to show dropdown */
+                            .tpp-global-selector:hover .tpp-global-dropdown {
+                                display: block !important;
+                            }
+
+                            /* Dropdown menu */
+                            .tpp-global-dropdown {
+                                display: none;
+                                position: absolute;
+                                right: 0;
+                                top: 100%;
+                                background: #fff;
+                                border: 1px solid #ddd;
+                                min-width: 250px;
+                                padding: 10px 0;
+                                margin: 0;
+                                list-style: none;
+                                z-index: 1000;
+                                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            }
+
+                            /* Ensure no wrapping anywhere */
+                            .tpp-no-wrap {
+                                white-space: nowrap !important;
+                            }
+
+                            /* Mobile menu button - hidden on desktop */
+                            .tpp-mobile-menu-btn {
+                                display: none;
+                            }
+
+                            @media (max-width: 991px) {
+                                .tpp-mobile-menu-btn {
+                                    display: block;
+                                }
+
+                                .tpp-main-nav-container {
+                                    display: none;
+                                }
+                            }
+                        </style>
+                        <div class="col-auto">
+                            <nav class="main-menu style2 d-none d-lg-inline-block tpp-main-nav-container">
+                                <ul class="tpp-main-nav-list">
+                                    <li class="tpp-main-nav-item"><a href="es.html" class="tpp-main-nav-link">Home</a>
+                                    </li>
+                                    <li class="tpp-main-nav-item"><a href="esabout.html" class="tpp-main-nav-link">About
+                                            Us</a></li>
+                                    <li class="tpp-main-nav-item"><a href="esproduct.html"
+                                            class="tpp-main-nav-link">Products</a></li>
+                                    <li class="tpp-main-nav-item"><a href="escertification.html"
+                                            class="tpp-main-nav-link">Certifications</a></li>
+                                    <li class="tpp-main-nav-item"><a href="quality.html"
+                                            class="tpp-main-nav-link">Quality</a></li>
+                                    <li class="tpp-main-nav-item"><a href="escontact.html"
+                                            class="tpp-main-nav-link">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <button type="button" class="th-menu-toggle d-block d-lg-none tpp-mobile-menu-btn">
+                                <i class="far fa-bars"></i>
+                            </button>
+                        </div>
+                        <div class="col-auto d-none d-lg-inline-block">
+                            <div style="display: flex; align-items: center; gap: 10px;">
+                                <div class="header-button">
+                                    <a href="assets/img/TPPBroucher.pdf" class="th-btn style6 style-radius tpp-no-wrap">
+                                        Download Brochure
+                                    </a>
+                                </div>
+
+                                <!-- Global Language Selector -->
+                                <div class="tpp-global-selector">
+                                    <a href="index.html" class="tpp-no-wrap"
+                                        style="display:flex; align-items:center; color: white; font-weight: bold; text-decoration: none;">
+                                        <svg style="width:16px;height:16px;margin-right:5px; fill: white;"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+                                        </svg>
+                                        <span style="font-size: 18px;">Global</span>
+                                    </a>
+                                    <ul class="tpp-global-dropdown">
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <i class="fas fa-globe"
+                                                    style="font-size:16px; margin-right:8px; color:#20b2aa;"></i>
+                                                <span style="font-size: 14px; font-weight: bold;">Global English</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="pt.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/br.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Brazil -
+                                                    Português</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="fr.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/ca.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Canada -
+                                                    English/Français</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/mx.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Mexico -
+                                                    Español</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="es.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/pe.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">Peru - Español</span>
+                                            </a>
+                                        </li>
+                                        <li class="tpp-no-wrap" style="padding:8px 15px;">
+                                            <a href="index.html"
+                                                style="display:flex; align-items:center; text-decoration:none; color:#333;">
+                                                <img src="https://flagcdn.com/w20/us.png"
+                                                    style="width:16px;height:12px;margin-right:8px; flex-shrink:0;">
+                                                <span style="font-size: 14px; font-weight: bold;">United States -
+                                                    English</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Our Certifications</h1>
+            <p>Validating our commitment to excellence through recognized industry standards and achievements</p>
+        </div>
+    </header>
+
+    <!-- Certificates Section -->
+    <section class="certificates-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Accreditation</h2>
+            </div>
+
+            <div class="certificates-grid">
+                <!-- Original Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ABMA Membership Certificate.jpg" alt="ASME Certification">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ABMA Certification</h3>
+                        <p>American Boiler Manufacturers Associations</p>
+                    </div>
+                </div>
+
+                <!-- Original Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ASME certificate(1)_001 (002).jpg"
+                            alt="ISO 9001 Certification">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ASME Certification</h3>
+                        <p>The American Society of Mechanical Engineers</p>
+                    </div>
+                </div>
+
+                <!-- Original Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/ASME CERTIFICATE_page-0001.jpg" alt="Performance Certificate">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ASME Certification</h3>
+                        <p>The American School of Mechanical Engineers</p>
+                    </div>
+                </div>
+
+                <!-- ISO Certificate with horizontal scroll -->
+                <div class="certificate-card">
+                    <div class="certificate-img cert-horizontal-scroll">
+                        <div class="cert-images-scrollable">
+                            <img src="assets/img/certificates/ISO Certificate_page-0001.jpg"
+                                alt="ISO Certificate Page 1" class="cert-img">
+                            <img src="assets/img/certificates/ISO Certificate_page-0002.jpg"
+                                alt="ISO Certificate Page 2" class="cert-img">
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>ISO 9001:2015</h3>
+                        <p>Quality Management System Certification</p>
+                    </div>
+                </div>
+
+                <!-- IBR Certificate -->
+                <!-- Original Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="certificate-img">
+                        <img src="assets/img/certificates/IBR_Certificate_Boiler_Pressure_Part_Manufacture.jpg"
+                            alt="Performance Certificate">
+                    </div>
+                    <div class="certificate-info">
+                        <h3>IBR Certification</h3>
+                        <p>Officer of the Director of Boiler, Gujarat State</p>
+                    </div>
+                </div>
+                <!-- Original Certificate 3 -->
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-img {
+            height: 200px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            flex-shrink: 0;
+        }
+
+        /* Special style for horizontal scroll container */
+        .certificate-img.cert-horizontal-scroll {
+            padding: 0;
+            justify-content: flex-start;
+            height: 200px;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+
+        .certificate-img img {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+        }
+
+        .certificate-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .certificate-info h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .certificate-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Horizontal scrollable styles */
+        .cert-images-scrollable {
+            display: flex;
+            height: 100%;
+            gap: 15px;
+            padding: 0 15px;
+            align-items: center;
+        }
+
+        .cert-images-scrollable .cert-img {
+            height: 180px;
+            width: auto;
+            max-width: 280px;
+            object-fit: contain;
+            background: white;
+            border: 1px solid #eee;
+            flex-shrink: 0;
+        }
+
+        /* Scrollbar styling */
+        .cert-horizontal-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .cert-horizontal-scroll::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .cert-horizontal-scroll::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 10px;
+        }
+
+        .cert-horizontal-scroll::-webkit-scrollbar-thumb:hover {
+            background: #0b7a6d;
+        }
+
+        /* Modal styles */
+        .cert-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .modal-content-container {
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-scrollable {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .cert-modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close-cert {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .cert-modal-caption {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+        }
+
+        /* Modal scrollbar styling */
+        .modal-scrollable::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .modal-scrollable::-webkit-scrollbar-track {
+            background: rgba(241, 241, 241, 0.1);
+            border-radius: 10px;
+        }
+
+        .modal-scrollable::-webkit-scrollbar-thumb {
+            background: #0d9488;
+            border-radius: 10px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Create modal element
+            const modal = document.createElement('div');
+            modal.className = 'cert-modal';
+            modal.innerHTML = `
+            <span class="close-cert">&times;</span>
+            <div class="modal-content-container">
+                <div class="modal-scrollable" id="modal-scrollable"></div>
+            </div>
+            <div class="cert-modal-caption" id="modal-caption"></div>
+        `;
+            document.body.appendChild(modal);
+
+            const modalScrollable = document.getElementById('modal-scrollable');
+            const closeBtn = document.querySelector('.close-cert');
+            const caption = document.getElementById('modal-caption');
+
+            // Track if modal is open
+            let isModalOpen = false;
+
+            // Add click event to all certificate images
+            const certImages = document.querySelectorAll('.certificate-img img, .cert-img');
+            certImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                    modalScrollable.innerHTML = '';
+
+                    // Check if this is part of a scrollable group
+                    const scrollableParent = this.closest('.cert-images-scrollable');
+
+                    if (scrollableParent) {
+                        // It's part of a multi-image group (like ISO cert)
+                        const allImages = scrollableParent.querySelectorAll('.cert-img');
+                        allImages.forEach(image => {
+                            const modalImg = document.createElement('img');
+                            modalImg.className = 'cert-modal-content';
+                            modalImg.src = image.src;
+                            modalImg.alt = image.alt;
+                            modalScrollable.appendChild(modalImg);
+                        });
+                        caption.innerHTML = this.alt.replace(/Page \d+$/, ''); // Remove page number from caption
+                    } else {
+                        // Single image
+                        const modalImg = document.createElement('img');
+                        modalImg.className = 'cert-modal-content';
+                        modalImg.src = this.src;
+                        modalImg.alt = this.alt;
+                        modalScrollable.appendChild(modalImg);
+                        caption.innerHTML = this.alt;
+                    }
+
+                    isModalOpen = true;
+                });
+            });
+
+            // Close modal when clicking the X
+            closeBtn.onclick = function () {
+                closeModal();
+            }
+
+            // Close modal when clicking outside the image
+            modal.addEventListener('click', function (e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && isModalOpen) {
+                    closeModal();
+                }
+            });
+
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                isModalOpen = false;
+            }
+        });
+    </script>
+
+    <!-- Tech Stack Section -->
+    <section class="tech-stack-section">
+        <div class="tech-stack-container">
+            <div class="tech-stack-title">
+                <h2>Certification Standards</h2>
+            </div>
+
+            <div class="tech-stack-grid">
+                <!-- Tech Item 1 -->
+                <div class="tech-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>ASME Standards</h3>
+                    <p>BPVC Section I</p>
+                </div>
+
+                <!-- Tech Item 2 -->
+                <div class="tech-item">
+                    <i class="fas fa-certificate"></i>
+                    <h3>ISO Standards</h3>
+                    <p>9001:2015</p>
+                </div>
+
+                <!-- Tech Item 3 -->
+                <div class="tech-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Safety</h3>
+                    <p>OSHA Compliance</p>
+                </div>
+
+                <!-- Tech Item 4 -->
+                <div class="tech-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Environmental</h3>
+                    <p>ISO 14001</p>
+                </div>
+
+                <!-- Tech Item 5 -->
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Performance</h3>
+                    <p>Industry Benchmarks</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 TPP Boilers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animation on scroll
+        document.addEventListener('DOMContentLoaded', function () {
+            const certificateCards = document.querySelectorAll('.certificate-card');
+            const techItems = document.querySelectorAll('.tech-item');
+
+            // Animate certificates on scroll
+            const animateOnScroll = function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(animateOnScroll, {
+                threshold: 0.1
+            });
+
+            // Set initial state for animation
+            certificateCards.forEach((card, index) => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            techItems.forEach((item, index) => {
+                item.style.opacity = 0;
+                item.style.transform = 'translateY(30px)';
+                item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+                observer.observe(item);
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
