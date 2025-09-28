@@ -1,10 +1,24 @@
-# Enable Gzip Compression (makes files smaller for faster loading)
+# -------------------------
+# Redirect index.html to root
+# -------------------------
+RewriteEngine On
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# Ensure DirectoryIndex includes index.html
+DirectoryIndex index.html index.php
+
+# -------------------------
+# Enable Gzip Compression
+# -------------------------
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css application/javascript
   AddOutputFilterByType DEFLATE application/json image/svg+xml
 </IfModule>
 
-# Browser Caching (store files so they don’t reload every visit)
+# -------------------------
+# Browser Caching
+# -------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
   # Images: cache for 1 year
@@ -19,9 +33,12 @@
   ExpiresByType application/javascript "access plus 1 month"
 </IfModule>
 
-# Cache-Control headers (extra speed)
+# -------------------------
+# Cache-Control headers
+# -------------------------
 <IfModule mod_headers.c>
   <FilesMatch "\.(jpg|jpeg|png|gif|webp|css|js|ico|svg)$">
     Header set Cache-Control "max-age=31536000, public"
   </FilesMatch>
 </IfModule>
+
