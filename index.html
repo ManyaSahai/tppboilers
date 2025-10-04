@@ -372,208 +372,153 @@
     </header>
     <div class="th-hero-wrapper hero-5" id="hero">
         <div class="hero-inner">
-            <!-- Image slider -->
             <div class="slider">
                 <div class="slide active">
                     <img src="assets/img/Economiser_Coils-20250723T171753Z-1-001/Economiser_Coils/01.jpg"
                         alt="Economiser Coil">
                 </div>
                 <div class="slide">
-                    <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/04.JPG"
+                    <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/04.webp"
                         alt="Superheater Coil">
                 </div>
                 <div class="slide">
-                    <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/05.jpg" alt="Image 3"
-                        style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="assets/img/Superheater Coil-20250723T171759Z-1-001/Superheater Coil/05.jpg"
+                        alt="Boiler Superheater Coil">
                 </div>
-
             </div>
-
-
-            <style>
-                /* Slider styles */
-                .slider {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: -1;
-                }
-
-                .slide {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background-size: cover;
-                    background-position: center;
-                    opacity: 0;
-                    transition: opacity 1.5s ease-in-out;
-                    /* Ensure the image covers the area without cropping */
-                    background-repeat: no-repeat;
-                    /* Add this to prevent any potential cropping */
-                    object-fit: cover;
-                }
-
-                .slide.active {
-                    opacity: 0.5;
-                    background-color: rgba(46, 139, 87, 0.5);
-                    /* Add z-index to ensure active slide is on top */
-                    z-index: 1;
-
-                    /* Add this to your style section */
-                    .slide.fading {
-                        opacity: 0;
-                        transition: opacity 0.75s ease-in-out;
-                        /* Faster fade-out */
-                    }
-
-                    .slide:not(.active) {
-                        z-index: 0;
-                        /* Ensure inactive slides are below */
-                    }
-                }
-            </style>
 
             <div class="container th-container5">
-                <div class="hero-style5"><span class="sub-title style1 text-white">Welcome to TPP Boilers</span>
-                    <h1 class="hero-title text-white" id="dynamic-text" style="font-size: 48px; line-height: 1.4;">A
-                        leading name providing Comprehensive ASME Boiler Pressure parts Solutions.
+                <div class="hero-style5">
+                    <span class="sub-title style1 text-white">Welcome to TPP Boilers</span>
+                    <h1 class="hero-title text-white" id="dynamic-text">
+                        A leading name providing Comprehensive ASME Boiler Pressure parts Solutions.
                     </h1>
-                    <div class="btn-group mt-35"><a href="product.html" class="th-btn style6 style-radius">View
-                            Products</a></div>
+                    <div class="btn-group mt-35">
+                        <a href="product.html" class="th-btn style6 style-radius">View Products</a>
+                    </div>
                 </div>
             </div>
-            <style>
-                @media (max-width: 768px) {
-                    .btn-group.mt-35 {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        margin-top: 20px;
-                    }
-
-                    .btn-group.mt-35 a {
-                        width: 80%;
-                        height: 50px;
-                        display: flex;
-                        align-items: flex-start;
-                        /* align text toward top */
-                        justify-content: center;
-                        /* center horizontally */
-
-                        /* small push up */
-                        font-size: 16px;
-                        /* make sure font fits */
-                        white-space: nowrap;
-                        /* prevent breaking into two lines */
-                        overflow: hidden;
-                        /* prevent overflow issues */
-                        text-overflow: ellipsis;
-                        /* if text is too long, show ... */
-                    }
-                }
-
-
-
-                /* 🌊 WAVE-PRESERVING FIX - PASTE AFTER </script> */
-                .th-hero-wrapper {
-                    position: relative !important;
-                    width: 100% !important;
-                    height: auto !important;
-                    /* Let content dictate height */
-                    min-height: 80vh !important;
-                    /* Minimum hero height */
-                    overflow: hidden !important;
-                }
-
-                .slider {
-                    position: absolute !important;
-                    top: 0 !important;
-                    left: 0 !important;
-                    width: 100% !important;
-                    height: 100% !important;
-                    z-index: 1 !important;
-                }
-
-                .slide {
-                    position: absolute !important;
-                    width: 100% !important;
-                    height: 100% !important;
-                    background-size: cover !important;
-                    background-position: center !important;
-                }
-
-                /* Original wave effect container */
-                .hero-inner {
-                    position: relative !important;
-                    height: auto !important;
-                    padding-bottom: 120px !important;
-                    /* Space for wave */
-                }
-
-                /* Responsive tweaks */
-                @media (max-width: 768px) {
-                    .th-hero-wrapper {
-                        min-height: 60vh !important;
-                    }
-
-                    .hero-inner {
-                        padding-bottom: 80px !important;
-                    }
-                }
-            </style>
-
-            <script>
-                // Simple image slider functionality with dynamic text
-                document.addEventListener('DOMContentLoaded', function () {
-                    const slides = document.querySelectorAll('.slide');
-                    const dynamicText = document.getElementById('dynamic-text');
-                    let currentSlide = 0;
-
-                    // Text content for each slide
-                    const textContent = [
-                        'A leading name providing Comprehensive ASME Boiler Pressure parts Solutions.',
-                        'Our fabrication facilities are ASME S -stamp certified.',
-                        'We are specialized in Design, Fabrication of High Pressure and Temperature Boiler Parts, offering expertise in Power and Process Industries Boiler Spares.'
-                    ];
-
-                    // Preload images to prevent loading delay
-                    function preloadImages() {
-                        textContent.forEach((_, index) => {
-                            const img = new Image();
-                            img.src = `assets/img/${index + 1}.jpeg`;
-                        });
-                    }
-                    preloadImages();
-
-                    function nextSlide() {
-                        // Add 'fading' class to current slide
-                        slides[currentSlide].classList.add('fading');
-
-                        // Wait for the fade-out to complete before switching
-                        setTimeout(() => {
-                            slides[currentSlide].classList.remove('active');
-                            slides[currentSlide].classList.remove('fading');
-
-                            // Calculate next slide index
-                            currentSlide = (currentSlide + 1) % slides.length;
-
-                            // Add active class to new slide
-                            slides[currentSlide].classList.add('active');
-
-                            // Update text content
-                            dynamicText.textContent = textContent[currentSlide];
-                        }, 750); // Half of the transition duration
-                    }
-
-                    // Set interval for automatic sliding (6 seconds)
-                    setInterval(nextSlide, 6000);
-                });
-            </script>
         </div>
+
+        <style>
+            /* --- General Hero Setup --- */
+            .th-hero-wrapper {
+                position: relative;
+                overflow: hidden;
+                min-height: 80vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hero-inner {
+                position: relative;
+                width: 100%;
+            }
+
+            /* --- Slider and Slide Styling --- */
+            .slider {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+
+            .slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 1.5s ease-in-out;
+            }
+
+            /* This is the key fix for making images fit properly */
+            .slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* Ensures image covers the area without distortion */
+                object-position: center;
+            }
+
+            /* --- Active and Fading States (Reverted to Original Overlay Method) --- */
+            .slide.active {
+                opacity: 0.5;
+                /* Makes the entire slide, including the image, semi-transparent */
+                background-color: rgba(46, 139, 87, 0.5);
+                /* Applies the green tint */
+            }
+
+            .slide.fading {
+                opacity: 0;
+                transition: opacity 0.75s ease-in-out;
+                /* Faster fade-out */
+            }
+
+            /* --- Hero Content --- */
+            .th-container5 {
+                position: relative;
+                /* Ensure content is on top of the slider */
+                z-index: 2;
+            }
+
+            /* --- Responsive Styles for Mobile --- */
+            @media (max-width: 768px) {
+                .th-hero-wrapper {
+                    min-height: 70vh;
+                }
+
+                .hero-title {
+                    font-size: 32px !important;
+                    line-height: 1.3 !important;
+                }
+
+                .btn-group.mt-35 {
+                    justify-content: center;
+                    display: flex;
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const slides = document.querySelectorAll('.slide');
+                const dynamicText = document.getElementById('dynamic-text');
+                let currentSlide = 0;
+
+                const textContent = [
+                    'A leading name providing Comprehensive ASME Boiler Pressure parts Solutions.',
+                    'Our fabrication facilities are ASME S -stamp certified.',
+                    'Specializing in High Pressure Boiler Parts for Power and Process Industries.'
+                ];
+
+                function preloadImages() {
+                    slides.forEach(slide => {
+                        const img = slide.querySelector('img');
+                        if (img && img.src) {
+                            const newImg = new Image();
+                            newImg.src = img.src;
+                        }
+                    });
+                }
+                preloadImages();
+
+                function nextSlide() {
+                    slides[currentSlide].classList.add('fading');
+                    setTimeout(() => {
+                        slides[currentSlide].classList.remove('active', 'fading');
+                        currentSlide = (currentSlide + 1) % slides.length;
+                        slides[currentSlide].classList.add('active');
+                        dynamicText.textContent = textContent[currentSlide];
+                    }, 750);
+                }
+                setInterval(nextSlide, 6000);
+            });
+        </script>
     </div>
     <!DOCTYPE html>
     <html lang="en">
